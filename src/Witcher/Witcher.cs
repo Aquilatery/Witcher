@@ -1,6 +1,5 @@
 ﻿#region Imports
 
-using System;
 
 #endregion
 
@@ -25,7 +24,7 @@ namespace Witcher
     {
         #region Name
 
-        ///
+        //
 
         #endregion
     }
