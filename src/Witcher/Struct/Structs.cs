@@ -22,8 +22,10 @@ namespace Witcher.Struct
         {
             public EdgeLocationType Location;
             public Enums.NotifyType Type;
-            public Enums.ThemaType Thema;
+            public Enums.AlertType Alert;
+            public Enums.ThemaType Theme;
             public string Text;
+            public int Time;
         }
         #endregion
     }

@@ -70,7 +70,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.BeepOnError = true;
-            this.maskedTextBox1.Location = new System.Drawing.Point(120, 72);
+            this.maskedTextBox1.Location = new System.Drawing.Point(126, 72);
             this.maskedTextBox1.Mask = "0";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(48, 20);
@@ -91,7 +91,7 @@
             this.button1.TabStop = false;
             this.button1.Text = "Success";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.button1.Click += new System.EventHandler(this.Show_Click);
             // 
             // button2
             // 
@@ -103,6 +103,7 @@
             this.button2.TabStop = false;
             this.button2.Text = "Error";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Show_Click);
             // 
             // button3
             // 
@@ -114,6 +115,7 @@
             this.button3.TabStop = false;
             this.button3.Text = "Warning";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Show_Click);
             // 
             // button4
             // 
@@ -125,6 +127,7 @@
             this.button4.TabStop = false;
             this.button4.Text = "Info";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Show_Click);
             // 
             // comboBox1
             // 
@@ -151,7 +154,7 @@
             // maskedTextBox2
             // 
             this.maskedTextBox2.BeepOnError = true;
-            this.maskedTextBox2.Location = new System.Drawing.Point(174, 72);
+            this.maskedTextBox2.Location = new System.Drawing.Point(180, 73);
             this.maskedTextBox2.Mask = "0000";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(48, 20);
@@ -179,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(240, 130);
+            this.ClientSize = new System.Drawing.Size(240, 136);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.comboBox1);

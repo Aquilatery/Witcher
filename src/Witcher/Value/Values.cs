@@ -18,11 +18,6 @@ namespace Witcher.Value
         /// <summary>
         /// 
         /// </summary>
-        internal static int Time = 3000;
-
-        /// <summary>
-        /// 
-        /// </summary>
         internal static int Active = 0;
 
         /// <summary>
@@ -37,8 +32,10 @@ namespace Witcher.Value
         {
             Location = EdgeLocationType.BotRight,
             Type = Enums.NotifyType.Standard,
-            Thema = Enums.ThemaType.Dark,
-            Text = "Witcher"
+            Alert = Enums.AlertType.Success,
+            Theme = Enums.ThemaType.Dark,
+            Text = "Witcher",
+            Time = 5000
         };
 
         /// <summary>

@@ -18,8 +18,10 @@ namespace Witcher_CR
         {
             Location = EdgeLocationType.TopRight,
             Type = NotifyType.Standard,
-            Thema = ThemaType.Dark,
-            Text = "Witcher_CR"
+            Alert = AlertType.Success,
+            Theme = ThemaType.Dark,
+            Text = "Witcher_CR Test Notify!",
+            Time = 5000
         };
 
         public Main()
@@ -45,11 +47,11 @@ namespace Witcher_CR
         {
             if (string.IsNullOrEmpty(maskedTextBox2.Text) || string.IsNullOrWhiteSpace(maskedTextBox2.Text))
             {
-                Time = 3000;
+                Data.Time = 5000;
             }
             else
             {
-                Time = Convert.ToInt32(maskedTextBox2.Text);
+                Data.Time = Convert.ToInt32(maskedTextBox2.Text);
             }
         }
 
@@ -61,11 +63,11 @@ namespace Witcher_CR
             {
                 if (RB.Text == "Dark")
                 {
-                    Data.Thema = ThemaType.Dark;
+                    Data.Theme = ThemaType.Dark;
                 }
                 else
                 {
-                    Data.Thema = ThemaType.Light;
+                    Data.Theme = ThemaType.Light;
                 }
             }
         }
@@ -80,8 +82,18 @@ namespace Witcher_CR
             Data.Type = (NotifyType)comboBox2.SelectedIndex;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Show_Click(object sender, EventArgs e)
         {
+            Button B = sender as Button;
+
+            Data.Alert = B.Text switch
+            {
+                "Error" => AlertType.Error,
+                "Warning" => AlertType.Warning,
+                "Info" => AlertType.Info,
+                _ => AlertType.Success,
+            };
+
             Notify.Show(Data);
         }
     }
