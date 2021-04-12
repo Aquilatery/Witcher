@@ -10,7 +10,7 @@
 [![NuGet](https://img.shields.io/nuget/dt/Witcher)](https://www.nuget.org/api/v2/package/Witcher)
 
 # Welcome to Witcher
-...
+Witcher is a Notification Management library. It provides convenience with the various types of notifications it offers.
 
 ## Contributors
 
