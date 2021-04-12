@@ -1,8 +1,9 @@
 ﻿#region Imports
 
+using System.Collections.Generic;
+using Witcher.Enum;
 using Witcher.Struct;
 using static Taskbar.Enum.Enums;
-using Witcher.Enum;
 
 #endregion
 
@@ -22,6 +23,11 @@ namespace Witcher.Value
         /// <summary>
         /// 
         /// </summary>
+        internal static int Active = 0;
+
+        /// <summary>
+        /// 
+        /// </summary>
         internal static int Max = 5;
 
         /// <summary>
@@ -30,9 +36,15 @@ namespace Witcher.Value
         internal static Structs.Data Data = new()
         {
             Location = EdgeLocationType.BotRight,
+            Type = Enums.NotifyType.Standard,
             Thema = Enums.ThemaType.Dark,
             Text = "Witcher"
         };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        internal static List<Structs.Data> Datas = new();
         #endregion
     }
 }

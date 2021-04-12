@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using static Taskbar.Enum.Enums;
 using static Witcher.Enum.Enums;
 using static Witcher.Struct.Structs;
+using static Witcher.Witcher;
 using static Witcher.Witcher.Property;
 
 #endregion
@@ -16,6 +17,7 @@ namespace Witcher_CR
         private static Data Data = new()
         {
             Location = EdgeLocationType.TopRight,
+            Type = NotifyType.Standard,
             Thema = ThemaType.Dark,
             Text = "Witcher_CR"
         };
@@ -24,6 +26,7 @@ namespace Witcher_CR
         {
             InitializeComponent();
             comboBox1.SelectedIndex = 5;
+            comboBox2.SelectedIndex = 0;
         }
 
         private void MaskedTextBox1_TextChanged(object sender, EventArgs e)
@@ -70,6 +73,16 @@ namespace Witcher_CR
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Data.Location = (EdgeLocationType)comboBox1.SelectedIndex;
+        }
+
+        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Data.Type = (NotifyType)comboBox2.SelectedIndex;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Notify.Show(Data);
         }
     }
 }

@@ -75,6 +75,7 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Notify\Standard\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 

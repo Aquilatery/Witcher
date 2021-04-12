@@ -1,8 +1,8 @@
 ﻿#region Imports
 
 using System.Runtime.InteropServices;
-using static Taskbar.Enum.Enums;
 using Witcher.Enum;
+using static Taskbar.Enum.Enums;
 
 #endregion
 
@@ -21,6 +21,7 @@ namespace Witcher.Struct
         public struct Data
         {
             public EdgeLocationType Location;
+            public Enums.NotifyType Type;
             public Enums.ThemaType Thema;
             public string Text;
         }

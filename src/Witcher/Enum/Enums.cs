@@ -43,6 +43,14 @@
             /// </summary>
             Info
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public enum NotifyType
+        {
+            Standard
+        }
         #endregion
     }
 }
