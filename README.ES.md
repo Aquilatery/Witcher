@@ -60,3 +60,13 @@ Paso 1：Agregue una referencia a Witcher o busque Witcher en el NuGet;
 ```Install-Package Witcher```
 
 Paso 2：Disfruta de las gestiones
+
+## Demos
+
+### Witcher CR
+
+[![WitcherCRCatcher](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/CR.png)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_CR "WitcherCRCatcher")
+
+#### Gösterim
+
+[![WitcherCRShow](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/CR.gif)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_CR "WitcherCRShow")

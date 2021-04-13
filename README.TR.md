@@ -60,3 +60,13 @@ Adım 1：Referans olarak Witcher'i ekleyin veya NuGet üzerinden Witcher'i arat
 ```Install-Package Witcher```
 
 Adım 2：Yönetmelerin tadını çıkarın
+
+## Demolar
+
+### Witcher CR
+
+[![WitcherCRCatcher](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/CR.png)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_CR "WitcherCRCatcher")
+
+#### Gösterim
+
+[![WitcherCRShow](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/CR.gif)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_CR "WitcherCRShow")
