@@ -14,7 +14,7 @@ using Witcher.Value;
 //     Website: www.Soferity.com
 //     Created: 12.Apr.2021
 //     Changed: 13.Apr.2021
-//     Version: 1.0.0.1
+//     Version: 1.0.0.2
 //
 // |---------DO-NOT-REMOVE---------|
 
