@@ -49,7 +49,8 @@
         /// </summary>
         public enum NotifyType
         {
-            Standard
+            Standard,
+            Test
         }
 
         internal enum StateType

@@ -1,8 +1,16 @@
 ﻿#region Imports
 
+using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Windows;
 using System.Windows.Forms;
+using System.Windows.Forms.Integration;
+using System.Windows.Interop;
+using Witcher.Enum;
 using Witcher.Notify.Manager;
 using Witcher.Notify.Standard;
+using Witcher.Notify.Test;
 using Witcher.Struct;
 using Witcher.Value;
 
@@ -81,24 +89,99 @@ namespace Witcher
                 M.Show();
             }
 
-            public static void Clear()
+            /// <summary>
+            /// 
+            /// </summary>
+            public static void ClearActive()
             {
                 try
                 {
-                    Values.Datas.Clear();
-
-                    foreach (Form OpenForm in Application.OpenForms)
+                    if (Property.ActiveOpen > 0)
                     {
-                        if (OpenForm.Text.StartsWith(Values.StandardForm))
+                        ClearNotify(Enums.NotifyType.Standard);
+                        ClearNotify(Enums.NotifyType.Test);
+                    }
+                }
+                catch
+                {
+                    ClearActive();
+                }
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public static void ClearDeactive()
+            {
+                try
+                {
+                    if (Property.DeactiveOpen > 0)
+                    {
+                        Values.Datas.Clear();
+                    }
+                }
+                catch
+                {
+                    ClearDeactive();
+                }
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public static void ClearNotify(Enums.NotifyType Type)
+            {
+                try
+                {
+                    if (Property.ActiveOpen > 0)
+                    {
+                        switch (Type)
                         {
-                            OpenForm.Close();
-                            OpenForm.Dispose();
+                            case Enums.NotifyType.Standard:
+                                foreach (Form Form in System.Windows.Forms.Application.OpenForms)
+                                {
+                                    if (Form.Text.StartsWith(Values.StandardForm))
+                                    {
+                                        Form.Close();
+                                        Form.Dispose();
+                                    }
+                                }
+                                break;
+                            case Enums.NotifyType.Test:
+                                foreach (Window Window in System.Windows.Application.Current.Windows)
+                                {
+                                    if (Window.Title.StartsWith(Values.StandardForm))
+                                    {
+                                        Window.Close();
+                                    }
+                                }
+                                break;
                         }
                     }
                 }
                 catch
                 {
-                    Clear();
+                    ClearNotify(Type);
+                }
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public static void ClearAll()
+            {
+                try
+                {
+                    if (Property.TotalOpen > 0)
+                    {
+                        ClearDeactive();
+                        ClearNotify(Enums.NotifyType.Standard);
+                        ClearNotify(Enums.NotifyType.Test);
+                    }
+                }
+                catch
+                {
+                    ClearAll();
                 }
             }
 
@@ -108,21 +191,38 @@ namespace Witcher
             /// <param name="Data"></param>
             public static void Show(Structs.Data Data)
             {
-                if (Property.ActiveOpen <= 0 || (Property.ActiveOpen < Property.MaxOpen && Values.Type == Data.Type && Values.Location == Data.Location))
+                if (Data.Font != null && Data.Time >= Values.Time)
                 {
-                    Values.Type = Data.Type;
-                    Values.Location = Data.Location;
-
-                    switch (Data.Type)
+                    if (Property.ActiveOpen <= 0 || (Property.ActiveOpen < Property.MaxOpen && Values.Type == Data.Type && Values.Location == Data.Location))
                     {
-                        default:
-                            Show(new WitcherStandard(Data));
-                            break;
+                        Values.Type = Data.Type;
+                        Values.Location = Data.Location;
+
+                        switch (Data.Type)
+                        {
+                            case Enums.NotifyType.Standard:
+                                Show(new WitcherStandard(Data));
+                                break;
+                            case Enums.NotifyType.Test:
+                                Show(new WIDGET(Data));
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Values.Datas.Add(Data);
                     }
                 }
                 else
                 {
-                    Values.Datas.Add(Data);
+                    if (Data.Font == null)
+                    {
+                        throw new Exception("The font cannot be empty!");
+                    }
+                    else
+                    {
+                        throw new Exception($"Time must be greater than or equal to {Values.Time}!");
+                    }
                 }
             }
 
@@ -133,6 +233,16 @@ namespace Witcher
             private static void Show(Form Form)
             {
                 Form.Show();
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="Window"></param>
+            private static void Show(Window Window)
+            {
+                ElementHost.EnableModelessKeyboardInterop(Window);
+                Window.Show();
             }
         }
 

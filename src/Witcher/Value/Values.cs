@@ -13,7 +13,7 @@ namespace Witcher.Value
     /// <summary>
     /// 
     /// </summary>
-    public class Values
+    internal class Values
     {
         #region Values
         /// <summary>
@@ -25,6 +25,11 @@ namespace Witcher.Value
         /// 
         /// </summary>
         internal static int Max = 5;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        internal static int Time = 100;
 
         /// <summary>
         /// 

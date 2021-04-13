@@ -138,9 +138,15 @@ namespace Witcher_CR
             Notify.Show(Data);
         }
 
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            Data.Type = NotifyType.Test;
+            Notify.Show(Data);
+        }
+
         private void Button5_Click(object sender, EventArgs e)
         {
-            Notify.Clear();
+            Notify.ClearAll();
         }
 
         private void Status_Tick(object sender, EventArgs e)

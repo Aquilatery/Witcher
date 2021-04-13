@@ -55,12 +55,13 @@ namespace Witcher.Notify.Manager
             this.ControlBox = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = global::Witcher.Properties.Resources.ICO;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "WitcherManagement";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Witcher Management";
-            this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.White;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Management_FormClosing);
             this.ResumeLayout(false);
