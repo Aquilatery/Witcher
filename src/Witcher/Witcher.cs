@@ -1,12 +1,9 @@
 ﻿#region Imports
 
 using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Forms.Integration;
-using System.Windows.Interop;
 using Witcher.Enum;
 using Witcher.Notify.Manager;
 using Witcher.Notify.Standard;
@@ -147,15 +144,15 @@ namespace Witcher
                                     }
                                 }
                                 break;
-                            //case Enums.NotifyType.Test:
-                            //    foreach (Window Window in System.Windows.Application.Current.Windows)
-                            //    {
-                            //        if (Window.Title.StartsWith(Values.StandardForm))
-                            //        {
-                            //            Window.Close();
-                            //        }
-                            //    }
-                            //    break;
+                                //case Enums.NotifyType.Test:
+                                //    foreach (Window Window in System.Windows.Application.Current.Windows)
+                                //    {
+                                //        if (Window.Title.StartsWith(Values.StandardForm))
+                                //        {
+                                //            Window.Close();
+                                //        }
+                                //    }
+                                //    break;
                         }
                     }
                 }

@@ -1,12 +1,21 @@
-﻿<Window x:Class="Witcher.Notify.Standard.WitcherStandardWPF"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Witcher.Notify.Standard"
-        mc:Ignorable="d"
-        Title="WPF" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+﻿<Window
+    x:Class="Witcher.Notify.Standard.WitcherStandardWPF"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Name="WitcherStandardWPF"
+    Title="Witcher Standard WPF"
+    Height="60" Width="400"
+    WindowStartupLocation="Manual"
+    ResizeMode="NoResize" WindowStyle="None"
+    AllowsTransparency="True" Background="#FF262626"
+    Icon="/Witcher;component/Resources/ICO.ico"
+    ShowInTaskbar="False" Topmost="True">
+    <Border>
+        <StackPanel Width="26" Height="60" Background="Crimson" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Image Name="CLOSE" Width="26" Height="16" Source="/Witcher;component/Resources/Notify/Standard/Multiply.png" RenderOptions.BitmapScalingMode="Fant" Stretch="Uniform" Cursor="Hand" MouseEnter="CLOSE_MouseEnter" MouseLeave="CLOSE_MouseLeave"/>
+        </StackPanel>
+    </Border>
 </Window>

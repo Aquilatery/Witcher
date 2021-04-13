@@ -69,7 +69,7 @@ namespace Witcher.Notify.Standard
             BAR.BackColor = LEFT.BackColor;
         }
 
-        private void WF_Load(object sender, EventArgs e)
+        private void StandardWF_Load(object sender, EventArgs e)
         {
             Location = SingleLocation(Local.Location, Width, Height, (ActiveOpen * Height) + Local.Distance);
 
@@ -219,14 +219,14 @@ namespace Witcher.Notify.Standard
                     }
                     else
                     {
-                        Standard_FormClosed(sender, e);
+                        StandardWF_FormClosed(sender, e);
                         Dispose();
                     }
                     break;
             }
         }
 
-        private void Standard_LocationChanged(object sender, EventArgs e)
+        private void StandardWF_LocationChanged(object sender, EventArgs e)
         {
             if (General.Enabled && Stage == StateType.Close)
             {
@@ -235,7 +235,7 @@ namespace Witcher.Notify.Standard
             }
         }
 
-        private void Standard_FormClosed(object sender, EventArgs e)
+        private void StandardWF_FormClosed(object sender, EventArgs e)
         {
             ActiveOpen--;
         }

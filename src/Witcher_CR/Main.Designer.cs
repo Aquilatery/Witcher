@@ -256,9 +256,9 @@
             // button5
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(153, 98);
+            this.button5.Location = new System.Drawing.Point(187, 126);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(41, 23);
             this.button5.TabIndex = 13;
             this.button5.TabStop = false;
             this.button5.Text = "Clear";
@@ -278,9 +278,9 @@
             // button6
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Location = new System.Drawing.Point(126, 126);
+            this.button6.Location = new System.Drawing.Point(108, 126);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(102, 23);
+            this.button6.Size = new System.Drawing.Size(73, 23);
             this.button6.TabIndex = 15;
             this.button6.TabStop = false;
             this.button6.Text = "Select Font";
@@ -308,7 +308,7 @@
             "Windows Presentation Foundation"});
             this.comboBox3.Location = new System.Drawing.Point(12, 99);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(90, 21);
+            this.comboBox3.Size = new System.Drawing.Size(216, 21);
             this.comboBox3.TabIndex = 17;
             this.comboBox3.TabStop = false;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.ComboBox3_SelectedIndexChanged);

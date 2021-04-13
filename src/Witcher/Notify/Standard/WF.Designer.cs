@@ -131,9 +131,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Witcher Standard WF";
             this.TopMost = true;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Standard_FormClosed);
-            this.Load += new System.EventHandler(this.WF_Load);
-            this.LocationChanged += new System.EventHandler(this.Standard_LocationChanged);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StandardWF_FormClosed);
+            this.Load += new System.EventHandler(this.StandardWF_Load);
+            this.LocationChanged += new System.EventHandler(this.StandardWF_LocationChanged);
             this.LEFT.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CLOSE)).EndInit();
             this.PANEL.ResumeLayout(false);

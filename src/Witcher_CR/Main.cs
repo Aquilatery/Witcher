@@ -35,6 +35,7 @@ namespace Witcher_CR
             InitializeComponent();
             comboBox1.SelectedIndex = 5;
             comboBox2.SelectedIndex = 0;
+            comboBox3.SelectedIndex = 0;
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
