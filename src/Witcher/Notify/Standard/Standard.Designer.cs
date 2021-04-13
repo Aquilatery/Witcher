@@ -32,7 +32,7 @@
             this.LEFT = new System.Windows.Forms.Panel();
             this.CLOSE = new System.Windows.Forms.PictureBox();
             this.TEXT = new System.Windows.Forms.Label();
-            this.BAR = new ReaLTaiizor.Controls.MetroProgressBar();
+            this.BAR = new System.Windows.Forms.Panel();
             this.General = new System.Windows.Forms.Timer(this.components);
             this.LEFT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CLOSE)).BeginInit();
@@ -83,30 +83,17 @@
             // 
             // BAR
             // 
-            this.BAR.BackColor = System.Drawing.Color.Transparent;
-            this.BAR.BackgroundColor = System.Drawing.Color.Transparent;
-            this.BAR.BorderColor = System.Drawing.Color.Transparent;
-            this.BAR.DisabledBackColor = System.Drawing.Color.Transparent;
-            this.BAR.DisabledBorderColor = System.Drawing.Color.Transparent;
-            this.BAR.DisabledProgressColor = System.Drawing.Color.Transparent;
+            this.BAR.BackColor = System.Drawing.Color.Crimson;
             this.BAR.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BAR.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BAR.ForeColor = System.Drawing.Color.White;
-            this.BAR.IsDerivedStyle = false;
             this.BAR.Location = new System.Drawing.Point(26, 58);
             this.BAR.Margin = new System.Windows.Forms.Padding(0);
-            this.BAR.Maximum = 100;
-            this.BAR.Minimum = 0;
+            this.BAR.MaximumSize = new System.Drawing.Size(1, 2);
             this.BAR.Name = "BAR";
-            this.BAR.Orientation = ReaLTaiizor.Enum.Metro.ProgressOrientation.Horizontal;
-            this.BAR.ProgressColor = System.Drawing.Color.Crimson;
-            this.BAR.Size = new System.Drawing.Size(374, 2);
-            this.BAR.Style = ReaLTaiizor.Enum.Metro.Style.Custom;
-            this.BAR.StyleManager = null;
+            this.BAR.Size = new System.Drawing.Size(1, 2);
             this.BAR.TabIndex = 8;
-            this.BAR.ThemeAuthor = "Taiizor";
-            this.BAR.ThemeName = "MetroLight";
-            this.BAR.Value = 0;
+            this.BAR.Visible = false;
             // 
             // General
             // 
@@ -147,7 +134,7 @@
         private System.Windows.Forms.Panel LEFT;
         private System.Windows.Forms.PictureBox CLOSE;
         private System.Windows.Forms.Label TEXT;
-        private ReaLTaiizor.Controls.MetroProgressBar BAR;
+        private System.Windows.Forms.Panel BAR;
         private System.Windows.Forms.Timer General;
     }
 }

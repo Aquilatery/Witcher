@@ -24,7 +24,7 @@ namespace Witcher.Notify.Standard
         private Structs.Data Local = Values.Data;
         private StateType Stage = StateType.Show;
 
-        private int Time = 0;
+        private double Value = 0;
 
         public WitcherStandard(Structs.Data Data)
         {
@@ -66,7 +66,7 @@ namespace Witcher.Notify.Standard
                     break;
             }
 
-            BAR.ProgressColor = LEFT.BackColor;
+            BAR.BackColor = LEFT.BackColor;
         }
 
         private void Standard_Load(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace Witcher.Notify.Standard
             {
                 Location = new Point(Location.X, Location.Y + (ActiveOpen * Height));
             }
-            else if (Local.Location == EdgeLocationType.FullCenter)
+            else
             {
                 Location = new Point(Location.X, Location.Y - (ActiveOpen * Height));
                 BAR.Dock = DockStyle.Top;
@@ -124,14 +124,14 @@ namespace Witcher.Notify.Standard
 
         private void CLOSE_MouseEnter(object sender, EventArgs e)
         {
-            CLOSE.Size = new(CLOSE.Width + 4, CLOSE.Height + 4);
-            CLOSE.Location = new(CLOSE.Location.X - 2, CLOSE.Location.Y - 2);
+            CLOSE.Size = new(CLOSE.Width + 2, CLOSE.Height + 2);
+            CLOSE.Location = new(CLOSE.Location.X - 1, CLOSE.Location.Y - 1);
         }
 
         private void CLOSE_MouseLeave(object sender, EventArgs e)
         {
-            CLOSE.Size = new(CLOSE.Width - 4, CLOSE.Height - 4);
-            CLOSE.Location = new(CLOSE.Location.X + 2, CLOSE.Location.Y + 2);
+            CLOSE.Size = new(CLOSE.Width - 2, CLOSE.Height - 2);
+            CLOSE.Location = new(CLOSE.Location.X + 1, CLOSE.Location.Y + 1);
         }
 
         private void CLOSE_Click(object sender, EventArgs e)
@@ -176,22 +176,23 @@ namespace Witcher.Notify.Standard
                 case StateType.Close:
                     if (Text == Values.StandardForm + "0")
                     {
-                        if (Time <= Local.Time)
+                        if (BAR.Visible)
                         {
-                            Time += General.Interval;
-                            int Value = 100 / (Local.Time / General.Interval) + BAR.Value;
-                            if (BAR.Maximum > Value)
+                            Value += TEXT.Width / (Local.Time / General.Interval);
+
+                            if (TEXT.Width > Convert.ToInt32(Value))
                             {
-                                BAR.Value = Value;
+                                BAR.MaximumSize = new(Convert.ToInt32(Value), BAR.MaximumSize.Height);
                             }
                             else
                             {
-                                BAR.Value = BAR.Maximum;
+                                BAR.MaximumSize = new(TEXT.Width, BAR.MaximumSize.Height);
+                                CLOSE_Click(sender, e);
                             }
                         }
                         else
                         {
-                            CLOSE_Click(sender, e);
+                            BAR.Visible = true;
                         }
                     }
                     break;

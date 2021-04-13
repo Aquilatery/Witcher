@@ -54,7 +54,6 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
       <Version>1.1.0-beta-20204-02</Version>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="ReaLTaiizor" Version="3.7.8.3" />
     <PackageReference Include="Taskbar" Version="1.0.0.4" />
   </ItemGroup>
 
