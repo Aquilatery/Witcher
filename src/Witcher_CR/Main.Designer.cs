@@ -47,6 +47,9 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Status = new System.Windows.Forms.Timer(this.components);
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,11 +206,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 99);
+            this.textBox1.Location = new System.Drawing.Point(12, 181);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
+            this.textBox1.Size = new System.Drawing.Size(216, 20);
             this.textBox1.TabIndex = 11;
-            this.textBox1.Text = "Witcher_CR Test Notify!";
+            this.textBox1.Text = "My Name Is Soferity Witcher Sweetheart!";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
@@ -217,9 +220,11 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 133);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 231);
             this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.ShowItemToolTips = true;
             this.statusStrip1.Size = new System.Drawing.Size(240, 22);
+            this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -246,11 +251,48 @@
             this.Status.Enabled = true;
             this.Status.Tick += new System.EventHandler(this.Status_Tick);
             // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Location = new System.Drawing.Point(153, 98);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 13;
+            this.button5.TabStop = false;
+            this.button5.Text = "Clear";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(12, 155);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(216, 20);
+            this.textBox2.TabIndex = 14;
+            this.textBox2.Text = "Soferity Witcher";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
+            // 
+            // button6
+            // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Location = new System.Drawing.Point(12, 126);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(216, 23);
+            this.button6.TabIndex = 15;
+            this.button6.TabStop = false;
+            this.button6.Text = "Select Font";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(240, 155);
+            this.ClientSize = new System.Drawing.Size(240, 253);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.maskedTextBox3);
@@ -298,5 +340,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.Timer Status;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button6;
     }
 }

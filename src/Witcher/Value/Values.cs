@@ -29,7 +29,17 @@ namespace Witcher.Value
         /// <summary>
         /// 
         /// </summary>
-        internal static string Form = "WNM";
+        internal static string StandardForm = "WNM";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        internal static Enums.NotifyType Type;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        internal static EdgeLocationType Location;
 
         /// <summary>
         /// 
@@ -41,8 +51,10 @@ namespace Witcher.Value
             Alert = Enums.AlertType.Success,
             Theme = Enums.ThemaType.Dark,
             Distance = 32,
+            Title = "Witcher Test Title",
             Text = "Witcher Test Notify!",
             Font = new Font("Raleway SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162),
+            Top = true,
             Time = 5000
         };
 

@@ -81,20 +81,42 @@ namespace Witcher
                 M.Show();
             }
 
+            public static void Clear()
+            {
+                try
+                {
+                    Values.Datas.Clear();
+
+                    foreach (Form OpenForm in Application.OpenForms)
+                    {
+                        if (OpenForm.Text.StartsWith(Values.StandardForm))
+                        {
+                            OpenForm.Close();
+                            OpenForm.Dispose();
+                        }
+                    }
+                }
+                catch
+                {
+                    Clear();
+                }
+            }
+
             /// <summary>
             /// 
             /// </summary>
             /// <param name="Data"></param>
             public static void Show(Structs.Data Data)
             {
-                Values.Data.Location = Data.Location;
-
-                if (Property.ActiveOpen < Property.MaxOpen)
+                if (Property.ActiveOpen <= 0 || (Property.ActiveOpen < Property.MaxOpen && Values.Type == Data.Type && Values.Location == Data.Location))
                 {
+                    Values.Type = Data.Type;
+                    Values.Location = Data.Location;
+
                     switch (Data.Type)
                     {
                         default:
-                            Show(new NYB(Data));
+                            Show(new WitcherStandard(Data));
                             break;
                     }
                 }

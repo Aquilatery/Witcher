@@ -26,8 +26,10 @@ namespace Witcher.Struct
             public Enums.AlertType Alert;
             public Enums.ThemaType Theme;
             public int Distance;
+            public string Title;
             public string Text;
             public Font Font;
+            public bool Top;
             public int Time;
         }
         #endregion

@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Imports
+
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Witcher.Struct;
@@ -8,24 +10,33 @@ using static Taskbar.Taskbar.Advanced;
 using static Witcher.Enum.Enums;
 using static Witcher.Witcher.Property;
 
+#endregion
+
 namespace Witcher.Notify.Standard
 {
-    public partial class NYB : Form
+    #region Standard
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public partial class WitcherStandard : Form
     {
         private Structs.Data Local = Values.Data;
         private StateType Stage = StateType.Show;
 
         private int Time = 0;
 
-        public NYB(Structs.Data Data)
+        public WitcherStandard(Structs.Data Data)
         {
             InitializeComponent();
 
-            Text = Values.Form;
+            Text = Values.StandardForm;
 
             Local = Data;
 
-            if (Data.Theme == ThemaType.Dark)
+            TopMost = Local.Top;
+
+            if (Local.Theme == ThemaType.Dark)
             {
                 BackColor = Color.FromArgb(38, 38, 38);
                 TEXT.ForeColor = Color.Gainsboro;
@@ -36,10 +47,10 @@ namespace Witcher.Notify.Standard
                 TEXT.ForeColor = Color.FromArgb(38, 38, 38);
             }
 
-            TEXT.Text = Data.Text;
-            TEXT.Font = Data.Font;
+            TEXT.Text = Local.Text;
+            TEXT.Font = Local.Font;
 
-            switch (Data.Alert)
+            switch (Local.Alert)
             {
                 case AlertType.Success:
                     LEFT.BackColor = Color.SeaGreen;
@@ -58,33 +69,57 @@ namespace Witcher.Notify.Standard
             BAR.ProgressColor = LEFT.BackColor;
         }
 
-        private void NYB_Load(object sender, EventArgs e)
+        private void Standard_Load(object sender, EventArgs e)
         {
             Location = SingleLocation(Local.Location, Width, Height, (ActiveOpen * Height) + Local.Distance);
 
             if (Local.Location == EdgeLocationType.BotRight)
             {
-                LEFT.Dock = DockStyle.Right;
-                Location = new Point(Location.X + (ActiveOpen * Height), Location.Y + Local.Distance);
+                Location = new Point(Location.X + (ActiveOpen * Height), Location.Y - Local.Distance);
+            }
+            else if (Local.Location == EdgeLocationType.BotCenter)
+            {
+                Location = new Point(Location.X, Location.Y - Local.Distance);
             }
             else if (Local.Location == EdgeLocationType.BotLeft)
             {
-                Location = new Point(Location.X - (ActiveOpen * Height), Location.Y + Local.Distance);
+                Location = new Point(Location.X - (ActiveOpen * Height), Location.Y - Local.Distance);
             }
             else if (Local.Location == EdgeLocationType.TopRight)
             {
-                LEFT.Dock = DockStyle.Right;
-                Location = new Point(Location.X + (ActiveOpen * Height), Location.Y - Local.Distance);
+                Location = new Point(Location.X + (ActiveOpen * Height), Location.Y + Local.Distance);
                 BAR.Dock = DockStyle.Top;
             }
-            else
+            else if (Local.Location == EdgeLocationType.TopCenter)
             {
-                Location = new Point(Location.X - (ActiveOpen * Height), Location.Y - Local.Distance);
+                Location = new Point(Location.X, Location.Y + Local.Distance);
+                BAR.Dock = DockStyle.Top;
+            }
+            else if (Local.Location == EdgeLocationType.TopLeft)
+            {
+                Location = new Point(Location.X - (ActiveOpen * Height), Location.Y + Local.Distance);
+                BAR.Dock = DockStyle.Top;
+            }
+            else if (Local.Location == EdgeLocationType.LeftCenter)
+            {
+                Location = new Point(Location.X - (ActiveOpen * Height), Location.Y - (ActiveOpen * Height));
+                BAR.Dock = DockStyle.Top;
+            }
+            else if (Local.Location == EdgeLocationType.RightCenter)
+            {
+                Location = new Point(Location.X + (ActiveOpen * Height), Location.Y + (ActiveOpen * Height));
+            }
+            else if (Local.Location == EdgeLocationType.CalcCenter)
+            {
+                Location = new Point(Location.X, Location.Y + (ActiveOpen * Height));
+            }
+            else if (Local.Location == EdgeLocationType.FullCenter)
+            {
+                Location = new Point(Location.X, Location.Y - (ActiveOpen * Height));
                 BAR.Dock = DockStyle.Top;
             }
 
-            Text += ActiveOpen;
-            ActiveOpen++;
+            Text += ActiveOpen++;
         }
 
         private void CLOSE_MouseEnter(object sender, EventArgs e)
@@ -123,13 +158,13 @@ namespace Witcher.Notify.Standard
                     if (Local.Distance > 0)
                     {
                         Local.Distance -= 2;
-                        if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.BotLeft)
+                        if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.BotCenter || Local.Location == EdgeLocationType.BotLeft || Local.Location == EdgeLocationType.LeftCenter || Local.Location == EdgeLocationType.FullCenter)
                         {
-                            Location = new Point(Location.X, Location.Y - 2);
+                            Location = new Point(Location.X, Location.Y + 2);
                         }
                         else
                         {
-                            Location = new Point(Location.X, Location.Y + 2);
+                            Location = new Point(Location.X, Location.Y - 2);
                         }
                     }
                     else
@@ -138,7 +173,7 @@ namespace Witcher.Notify.Standard
                     }
                     break;
                 case StateType.Close:
-                    if (Text == Values.Form + "0")
+                    if (Text == Values.StandardForm + "0")
                     {
                         if (Time <= Local.Time)
                         {
@@ -166,14 +201,14 @@ namespace Witcher.Notify.Standard
                     }
                     else
                     {
-                        NYB_FormClosed(sender, e);
+                        Standard_FormClosed(sender, e);
                         Dispose();
                     }
                     break;
             }
         }
 
-        private void NYB_LocationChanged(object sender, EventArgs e)
+        private void Standard_LocationChanged(object sender, EventArgs e)
         {
             if (General.Enabled && Stage == StateType.Close)
             {
@@ -182,9 +217,11 @@ namespace Witcher.Notify.Standard
             }
         }
 
-        private void NYB_FormClosed(object sender, EventArgs e)
+        private void Standard_FormClosed(object sender, EventArgs e)
         {
             ActiveOpen--;
         }
     }
+
+    #endregion
 }

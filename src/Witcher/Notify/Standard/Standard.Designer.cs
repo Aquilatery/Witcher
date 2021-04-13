@@ -1,6 +1,6 @@
 ﻿namespace Witcher.Notify.Standard
 {
-    partial class NYB
+    partial class WitcherStandard
     {
         /// <summary>
         /// Required designer variable.
@@ -114,7 +114,7 @@
             this.General.Interval = 25;
             this.General.Tick += new System.EventHandler(this.General_Tick);
             // 
-            // NYB
+            // WitcherStandard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,15 +128,15 @@
             this.Icon = global::Witcher.Properties.Resources.ICO;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "NYB";
+            this.Name = "WitcherStandard";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "NYB";
+            this.Text = "Witcher Standard";
             this.TopMost = true;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NYB_FormClosed);
-            this.Load += new System.EventHandler(this.NYB_Load);
-            this.LocationChanged += new System.EventHandler(this.NYB_LocationChanged);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Standard_FormClosed);
+            this.Load += new System.EventHandler(this.Standard_Load);
+            this.LocationChanged += new System.EventHandler(this.Standard_LocationChanged);
             this.LEFT.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CLOSE)).EndInit();
             this.ResumeLayout(false);

@@ -22,8 +22,10 @@ namespace Witcher_CR
             Alert = AlertType.Success,
             Theme = ThemaType.Dark,
             Distance = 32,
-            Text = "Witcher_CR Test Notify!",
+            Title = "Soferity Witcher",
+            Text = "My Name Is Soferity Witcher Sweetheart!",
             Font = new Font("Raleway SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162),
+            Top = true,
             Time = 5000
         };
 
@@ -38,11 +40,23 @@ namespace Witcher_CR
         {
             if (string.IsNullOrEmpty(textBox1.Text))
             {
-                Data.Text = "Witcher_CR Test Notify!";
+                Data.Text = "My Name Is Soferity Witcher Sweetheart!";
             }
             else
             {
                 Data.Text = textBox1.Text;
+            }
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                Data.Title = "Soferity Witcher";
+            }
+            else
+            {
+                Data.Title = textBox2.Text;
             }
         }
 
@@ -124,11 +138,30 @@ namespace Witcher_CR
             Notify.Show(Data);
         }
 
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            Notify.Clear();
+        }
+
         private void Status_Tick(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "Active: " + ActiveOpen;
             toolStripStatusLabel2.Text = "Deactive: " + DeactiveOpen;
             toolStripStatusLabel3.Text = "Total: " + TotalOpen;
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            FontDialog FD = new();
+
+            FD.Font = new Font("Raleway SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            FD.MaxSize = 40;
+            FD.MinSize = 4;
+
+            if (FD.ShowDialog() == DialogResult.OK)
+            {
+                Data.Font = FD.Font;
+            }
         }
     }
 }

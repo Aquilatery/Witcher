@@ -30,7 +30,6 @@ namespace Witcher.Notify.Manager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WitcherManagement));
             this.Control = new System.Windows.Forms.Timer(this.components);
             this.Notification = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
@@ -61,6 +60,7 @@ namespace Witcher.Notify.Manager
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Witcher Management";
+            this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.White;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Management_FormClosing);
             this.ResumeLayout(false);
