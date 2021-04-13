@@ -220,7 +220,7 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 231);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 214);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.ShowItemToolTips = true;
             this.statusStrip1.Size = new System.Drawing.Size(240, 22);
@@ -289,7 +289,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(240, 253);
+            this.ClientSize = new System.Drawing.Size(240, 236);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button5);

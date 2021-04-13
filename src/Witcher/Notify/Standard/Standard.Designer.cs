@@ -111,7 +111,7 @@
             // General
             // 
             this.General.Enabled = true;
-            this.General.Interval = 25;
+            this.General.Interval = 50;
             this.General.Tick += new System.EventHandler(this.General_Tick);
             // 
             // WitcherStandard

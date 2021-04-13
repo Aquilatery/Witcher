@@ -150,7 +150,7 @@ namespace Witcher.Notify.Standard
                     }
                     else
                     {
-                        General.Interval = 50;
+                        General.Interval = 10;
                         Stage = StateType.Start;
                     }
                     break;
@@ -169,6 +169,7 @@ namespace Witcher.Notify.Standard
                     }
                     else
                     {
+                        General.Interval = 50;
                         Stage = StateType.Close;
                     }
                     break;
