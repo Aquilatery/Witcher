@@ -67,6 +67,6 @@ Step 2：Enjoy manages
 
 [![WitcherCRCatcher](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/CR.png)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_CR "WitcherCRCatcher")
 
-#### Gösterim
+#### Show
 
 [![WitcherCRShow](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/CR.gif)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_CR "WitcherCRShow")
