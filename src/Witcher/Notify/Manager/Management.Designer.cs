@@ -63,7 +63,6 @@ namespace Witcher.Notify.Manager
             this.Text = "Witcher Management";
             this.TransparencyKey = System.Drawing.Color.White;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Management_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Management_FormClosed);
             this.ResumeLayout(false);
 
         }

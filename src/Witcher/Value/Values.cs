@@ -29,6 +29,11 @@ namespace Witcher.Value
         /// <summary>
         /// 
         /// </summary>
+        internal static string Form = "WNM";
+
+        /// <summary>
+        /// 
+        /// </summary>
         internal static Structs.Data Data = new()
         {
             Location = EdgeLocationType.BotRight,

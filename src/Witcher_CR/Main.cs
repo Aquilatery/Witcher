@@ -123,5 +123,12 @@ namespace Witcher_CR
 
             Notify.Show(Data);
         }
+
+        private void Status_Tick(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Active: " + ActiveOpen;
+            toolStripStatusLabel2.Text = "Deactive: " + DeactiveOpen;
+            toolStripStatusLabel3.Text = "Total: " + TotalOpen;
+        }
     }
 }

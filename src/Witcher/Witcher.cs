@@ -37,11 +37,22 @@ namespace Witcher
             /// <summary>
             /// 
             /// </summary>
-            internal static int ActiveOpen
+            public static int ActiveOpen
             {
                 get => Values.Active;
-                set => Values.Active = value;
+                internal set => Values.Active = value;
             }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public static int DeactiveOpen => Values.Datas.Count;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public static int TotalOpen => ActiveOpen + DeactiveOpen;
+
             /// <summary>
             /// 
             /// </summary>

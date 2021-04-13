@@ -21,6 +21,8 @@ namespace Witcher.Notify.Standard
         {
             InitializeComponent();
 
+            Text = Values.Form;
+
             Local = Data;
 
             if (Data.Theme == ThemaType.Dark)
@@ -53,7 +55,7 @@ namespace Witcher.Notify.Standard
                     break;
             }
 
-            //BAR.ProgressColor = LEFT.BackColor;
+            BAR.ProgressColor = LEFT.BackColor;
         }
 
         private void NYB_Load(object sender, EventArgs e)
@@ -62,6 +64,7 @@ namespace Witcher.Notify.Standard
 
             if (Local.Location == EdgeLocationType.BotRight)
             {
+                LEFT.Dock = DockStyle.Right;
                 Location = new Point(Location.X + (ActiveOpen * Height), Location.Y + Local.Distance);
             }
             else if (Local.Location == EdgeLocationType.BotLeft)
@@ -70,6 +73,7 @@ namespace Witcher.Notify.Standard
             }
             else if (Local.Location == EdgeLocationType.TopRight)
             {
+                LEFT.Dock = DockStyle.Right;
                 Location = new Point(Location.X + (ActiveOpen * Height), Location.Y - Local.Distance);
                 BAR.Dock = DockStyle.Top;
             }
@@ -111,6 +115,7 @@ namespace Witcher.Notify.Standard
                     }
                     else
                     {
+                        General.Interval = 50;
                         Stage = StateType.Start;
                     }
                     break;
@@ -129,12 +134,11 @@ namespace Witcher.Notify.Standard
                     }
                     else
                     {
-                        General.Interval = 50;
                         Stage = StateType.Close;
                     }
                     break;
                 case StateType.Close:
-                    if (Text == "NYS0")
+                    if (Text == Values.Form + "0")
                     {
                         if (Time <= Local.Time)
                         {
