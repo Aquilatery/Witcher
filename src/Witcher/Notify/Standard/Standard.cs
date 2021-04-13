@@ -76,6 +76,7 @@ namespace Witcher.Notify.Standard
             if (Local.Location == EdgeLocationType.BotRight)
             {
                 Location = new Point(Location.X + (ActiveOpen * Height), Location.Y - Local.Distance);
+                LEFT.Dock = DockStyle.Right;
             }
             else if (Local.Location == EdgeLocationType.BotCenter)
             {
@@ -88,26 +89,28 @@ namespace Witcher.Notify.Standard
             else if (Local.Location == EdgeLocationType.TopRight)
             {
                 Location = new Point(Location.X + (ActiveOpen * Height), Location.Y + Local.Distance);
-                BAR.Dock = DockStyle.Top;
+                PANEL.Dock = DockStyle.Top;
+                LEFT.Dock = DockStyle.Right;
             }
             else if (Local.Location == EdgeLocationType.TopCenter)
             {
                 Location = new Point(Location.X, Location.Y + Local.Distance);
-                BAR.Dock = DockStyle.Top;
+                PANEL.Dock = DockStyle.Top;
             }
             else if (Local.Location == EdgeLocationType.TopLeft)
             {
                 Location = new Point(Location.X - (ActiveOpen * Height), Location.Y + Local.Distance);
-                BAR.Dock = DockStyle.Top;
+                PANEL.Dock = DockStyle.Top;
             }
             else if (Local.Location == EdgeLocationType.LeftCenter)
             {
                 Location = new Point(Location.X - (ActiveOpen * Height), Location.Y - (ActiveOpen * Height));
-                BAR.Dock = DockStyle.Top;
+                PANEL.Dock = DockStyle.Top;
             }
             else if (Local.Location == EdgeLocationType.RightCenter)
             {
                 Location = new Point(Location.X + (ActiveOpen * Height), Location.Y + (ActiveOpen * Height));
+                LEFT.Dock = DockStyle.Right;
             }
             else if (Local.Location == EdgeLocationType.CalcCenter)
             {
@@ -116,7 +119,8 @@ namespace Witcher.Notify.Standard
             else
             {
                 Location = new Point(Location.X, Location.Y - (ActiveOpen * Height));
-                BAR.Dock = DockStyle.Top;
+                PANEL.Dock = DockStyle.Top;
+                LEFT.Dock = DockStyle.Right;
             }
 
             Text += ActiveOpen++;
@@ -176,23 +180,35 @@ namespace Witcher.Notify.Standard
                 case StateType.Close:
                     if (Text == Values.StandardForm + "0")
                     {
-                        if (BAR.Visible)
+                        if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.TopRight || Local.Location == EdgeLocationType.RightCenter || Local.Location == EdgeLocationType.FullCenter)
                         {
-                            Value += TEXT.Width / (Local.Time / General.Interval);
+                            Value += PANEL.Width / (Local.Time / General.Interval);
 
-                            if (TEXT.Width > Convert.ToInt32(Value))
+                            if (PANEL.Width > Convert.ToInt32(Value))
                             {
-                                BAR.MaximumSize = new(Convert.ToInt32(Value), BAR.MaximumSize.Height);
+                                BAR.Location = new(PANEL.Width - Convert.ToInt32(Value), 0);
+                                BAR.Width = Convert.ToInt32(Value);
                             }
                             else
                             {
-                                BAR.MaximumSize = new(TEXT.Width, BAR.MaximumSize.Height);
+                                BAR.Location = new(0, 0);
+                                BAR.Width = PANEL.Width;
                                 CLOSE_Click(sender, e);
                             }
                         }
                         else
                         {
-                            BAR.Visible = true;
+                            Value += PANEL.Width / (Local.Time / General.Interval);
+
+                            if (PANEL.Width > Convert.ToInt32(Value))
+                            {
+                                BAR.Width = Convert.ToInt32(Value);
+                            }
+                            else
+                            {
+                                BAR.Width = PANEL.Width;
+                                CLOSE_Click(sender, e);
+                            }
                         }
                     }
                     break;

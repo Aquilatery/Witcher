@@ -34,8 +34,10 @@
             this.TEXT = new System.Windows.Forms.Label();
             this.BAR = new System.Windows.Forms.Panel();
             this.General = new System.Windows.Forms.Timer(this.components);
+            this.PANEL = new System.Windows.Forms.Panel();
             this.LEFT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CLOSE)).BeginInit();
+            this.PANEL.SuspendLayout();
             this.SuspendLayout();
             // 
             // LEFT
@@ -83,23 +85,31 @@
             // 
             // BAR
             // 
+            this.BAR.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BAR.BackColor = System.Drawing.Color.Crimson;
-            this.BAR.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BAR.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BAR.ForeColor = System.Drawing.Color.White;
-            this.BAR.Location = new System.Drawing.Point(26, 58);
+            this.BAR.Location = new System.Drawing.Point(0, 0);
             this.BAR.Margin = new System.Windows.Forms.Padding(0);
-            this.BAR.MaximumSize = new System.Drawing.Size(1, 2);
             this.BAR.Name = "BAR";
-            this.BAR.Size = new System.Drawing.Size(1, 2);
+            this.BAR.Size = new System.Drawing.Size(0, 2);
             this.BAR.TabIndex = 8;
-            this.BAR.Visible = false;
             // 
             // General
             // 
             this.General.Enabled = true;
             this.General.Interval = 50;
             this.General.Tick += new System.EventHandler(this.General_Tick);
+            // 
+            // PANEL
+            // 
+            this.PANEL.BackColor = System.Drawing.Color.Transparent;
+            this.PANEL.Controls.Add(this.BAR);
+            this.PANEL.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PANEL.Location = new System.Drawing.Point(26, 58);
+            this.PANEL.Name = "PANEL";
+            this.PANEL.Size = new System.Drawing.Size(374, 2);
+            this.PANEL.TabIndex = 9;
             // 
             // WitcherStandard
             // 
@@ -108,7 +118,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(400, 60);
             this.ControlBox = false;
-            this.Controls.Add(this.BAR);
+            this.Controls.Add(this.PANEL);
             this.Controls.Add(this.TEXT);
             this.Controls.Add(this.LEFT);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -126,6 +136,7 @@
             this.LocationChanged += new System.EventHandler(this.Standard_LocationChanged);
             this.LEFT.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CLOSE)).EndInit();
+            this.PANEL.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -136,5 +147,6 @@
         private System.Windows.Forms.Label TEXT;
         private System.Windows.Forms.Panel BAR;
         private System.Windows.Forms.Timer General;
+        private System.Windows.Forms.Panel PANEL;
     }
 }
