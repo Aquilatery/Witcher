@@ -25,6 +25,9 @@ namespace Witcher.Struct
             [DefaultValue(EdgeLocationType.BotRight)]
             public EdgeLocationType Location;
 
+            [DefaultValue(Enums.SystemType.WindowsForms)]
+            public Enums.SystemType System;
+
             [DefaultValue(Enums.NotifyType.Standard)]
             public Enums.NotifyType Type;
 

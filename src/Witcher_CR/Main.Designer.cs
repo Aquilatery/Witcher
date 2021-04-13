@@ -51,6 +51,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,7 +185,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Standard"});
-            this.comboBox2.Location = new System.Drawing.Point(12, 99);
+            this.comboBox2.Location = new System.Drawing.Point(12, 126);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(90, 21);
             this.comboBox2.TabIndex = 9;
@@ -277,9 +278,9 @@
             // button6
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Location = new System.Drawing.Point(12, 126);
+            this.button6.Location = new System.Drawing.Point(126, 126);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(216, 23);
+            this.button6.Size = new System.Drawing.Size(102, 23);
             this.button6.TabIndex = 15;
             this.button6.TabStop = false;
             this.button6.Text = "Select Font";
@@ -298,11 +299,26 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Windows Forms",
+            "Windows Presentation Foundation"});
+            this.comboBox3.Location = new System.Drawing.Point(12, 99);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(90, 21);
+            this.comboBox3.TabIndex = 17;
+            this.comboBox3.TabStop = false;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.ComboBox3_SelectedIndexChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(240, 271);
+            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.textBox2);
@@ -310,7 +326,6 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button4);
@@ -320,6 +335,7 @@
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.comboBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -358,5 +374,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

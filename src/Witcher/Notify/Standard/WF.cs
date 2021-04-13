@@ -14,19 +14,19 @@ using static Witcher.Witcher.Property;
 
 namespace Witcher.Notify.Standard
 {
-    #region Standard
+    #region WitcherStandardWF
 
     /// <summary>
     /// 
     /// </summary>
-    public partial class WitcherStandard : Form
+    public partial class WitcherStandardWF : Form
     {
         private Structs.Data Local = Values.Data;
         private StateType Stage = StateType.Show;
 
         private double Value = 0;
 
-        public WitcherStandard(Structs.Data Data)
+        public WitcherStandardWF(Structs.Data Data)
         {
             InitializeComponent();
 
@@ -69,7 +69,7 @@ namespace Witcher.Notify.Standard
             BAR.BackColor = LEFT.BackColor;
         }
 
-        private void Standard_Load(object sender, EventArgs e)
+        private void WF_Load(object sender, EventArgs e)
         {
             Location = SingleLocation(Local.Location, Width, Height, (ActiveOpen * Height) + Local.Distance);
 

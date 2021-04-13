@@ -18,6 +18,7 @@ namespace Witcher_CR
         private static Data Data = new()
         {
             Location = EdgeLocationType.TopRight,
+            System = SystemType.WindowsForms,
             Type = NotifyType.Standard,
             Alert = AlertType.Success,
             Theme = ThemaType.Dark,
@@ -116,6 +117,11 @@ namespace Witcher_CR
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Data.Location = (EdgeLocationType)comboBox1.SelectedIndex;
+        }
+
+        private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Data.System = (SystemType)comboBox3.SelectedIndex;
         }
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)

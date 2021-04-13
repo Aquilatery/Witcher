@@ -147,15 +147,15 @@ namespace Witcher
                                     }
                                 }
                                 break;
-                            case Enums.NotifyType.Test:
-                                foreach (Window Window in System.Windows.Application.Current.Windows)
-                                {
-                                    if (Window.Title.StartsWith(Values.StandardForm))
-                                    {
-                                        Window.Close();
-                                    }
-                                }
-                                break;
+                            //case Enums.NotifyType.Test:
+                            //    foreach (Window Window in System.Windows.Application.Current.Windows)
+                            //    {
+                            //        if (Window.Title.StartsWith(Values.StandardForm))
+                            //        {
+                            //            Window.Close();
+                            //        }
+                            //    }
+                            //    break;
                         }
                     }
                 }
@@ -201,7 +201,15 @@ namespace Witcher
                         switch (Data.Type)
                         {
                             case Enums.NotifyType.Standard:
-                                Show(new WitcherStandard(Data));
+                                switch (Data.System)
+                                {
+                                    case Enums.SystemType.WindowsForms:
+                                        Show(new WitcherStandardWF(Data));
+                                        break;
+                                    case Enums.SystemType.WindowsPresentationFoundation:
+                                        Show(new WitcherStandardWPF(Data));
+                                        break;
+                                }
                                 break;
                             case Enums.NotifyType.Test:
                                 Show(new WIDGET(Data));

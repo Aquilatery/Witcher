@@ -1,6 +1,6 @@
 ﻿namespace Witcher.Notify.Standard
 {
-    partial class WitcherStandard
+    partial class WitcherStandardWF
     {
         /// <summary>
         /// Required designer variable.
@@ -111,7 +111,7 @@
             this.PANEL.Size = new System.Drawing.Size(374, 2);
             this.PANEL.TabIndex = 9;
             // 
-            // WitcherStandard
+            // WitcherStandardWF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -125,14 +125,14 @@
             this.Icon = global::Witcher.Properties.Resources.ICO;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "WitcherStandard";
+            this.Name = "WitcherStandardWF";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Witcher Standard";
+            this.Text = "Witcher Standard WF";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Standard_FormClosed);
-            this.Load += new System.EventHandler(this.Standard_Load);
+            this.Load += new System.EventHandler(this.WF_Load);
             this.LocationChanged += new System.EventHandler(this.Standard_LocationChanged);
             this.LEFT.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CLOSE)).EndInit();

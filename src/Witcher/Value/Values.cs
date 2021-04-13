@@ -52,6 +52,7 @@ namespace Witcher.Value
         internal static Structs.Data Data = new()
         {
             Location = EdgeLocationType.BotRight,
+            System = Enums.SystemType.WindowsForms,
             Type = Enums.NotifyType.Standard,
             Alert = Enums.AlertType.Success,
             Theme = Enums.ThemaType.Dark,
