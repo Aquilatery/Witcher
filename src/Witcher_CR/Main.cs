@@ -22,7 +22,7 @@ namespace Witcher_CR
             System = SystemType.WindowsForms,
             Type = NotifyType.Standard,
             Alert = AlertType.Success,
-            Theme = ThemaType.Dark,
+            Theme = ThemeType.Dark,
             Distance = 32,
             Title = "Soferity Witcher",
             Text = "My Name Is Soferity Witcher Sweetheart!",
@@ -114,11 +114,15 @@ namespace Witcher_CR
             {
                 if (RB.Text == "Dark")
                 {
-                    Data.Theme = ThemaType.Dark;
+                    Data.Theme = ThemeType.Dark;
+                }
+                else if (RB.Text == "Light")
+                {
+                    Data.Theme = ThemeType.Light;
                 }
                 else
                 {
-                    Data.Theme = ThemaType.Light;
+                    Data.Theme = ThemeType.Custom
                 }
             }
         }

@@ -12,7 +12,7 @@
     AllowsTransparency="True" Background="#FF262626"
     Icon="/Witcher;component/Resources/ICO.ico"
     ShowInTaskbar="False" Topmost="True" Opacity="0">
-    <DockPanel>
+    <DockPanel Name="DOCK">
         <StackPanel Name="LEFT" Background="Crimson" Orientation="Horizontal" DockPanel.Dock="Left">
             <Image Name="CLOSE" Width="26" Height="16" Source="/Witcher;component/Resources/Notify/Standard/Multiply.png" RenderOptions.BitmapScalingMode="Fant" Stretch="Uniform" Cursor="Hand" MouseEnter="CLOSE_MouseEnter" MouseLeave="CLOSE_MouseLeave" MouseLeftButtonUp="CLOSE_MouseLeftButtonUp"/>
         </StackPanel>

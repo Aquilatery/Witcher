@@ -62,7 +62,7 @@ namespace Witcher.Value
             System = Enums.SystemType.WindowsForms,
             Type = Enums.NotifyType.Standard,
             Alert = Enums.AlertType.Success,
-            Theme = Enums.ThemaType.Dark,
+            Theme = Enums.ThemeType.Dark,
             Distance = 32,
             Title = "Witcher Test Title",
             Text = "Witcher Test Notify!",
@@ -78,6 +78,14 @@ namespace Witcher.Value
             Top = true,
             Time = 5000
         };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Structs.CustomTheme CustomTheme = new()
+        {
+
+        }
 
         /// <summary>
         /// 

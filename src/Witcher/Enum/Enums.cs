@@ -9,7 +9,7 @@
         /// <summary>
         /// 
         /// </summary>
-        public enum ThemaType
+        public enum ThemeType
         {
             /// <summary>
             /// 
@@ -18,7 +18,11 @@
             /// <summary>
             /// 
             /// </summary>
-            Light
+            Light,
+            /// <summary>
+            /// 
+            /// </summary>
+            Custom
         }
 
         /// <summary>

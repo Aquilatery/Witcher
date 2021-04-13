@@ -36,7 +36,7 @@ namespace Witcher.Notify.Standard
 
             TopMost = Local.Top;
 
-            if (Local.Theme == ThemaType.Dark)
+            if (Local.Theme == ThemeType.Dark)
             {
                 BackColor = Color.FromArgb(38, 38, 38);
                 TEXT.ForeColor = Color.Gainsboro;
@@ -148,7 +148,7 @@ namespace Witcher.Notify.Standard
             switch (Stage)
             {
                 case StateType.Show:
-                    if (Convert.ToDouble(Opacity) < 0.8)
+                    if (Opacity < 0.8)
                     {
                         Opacity += 0.1;
                     }
@@ -219,6 +219,7 @@ namespace Witcher.Notify.Standard
                     }
                     else
                     {
+                        General.Stop();
                         StandardWF_FormClosed(sender, e);
                         Dispose();
                     }

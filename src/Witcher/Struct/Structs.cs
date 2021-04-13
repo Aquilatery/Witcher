@@ -26,7 +26,7 @@ namespace Witcher.Struct
             public Enums.SystemType System;
             public Enums.NotifyType Type;
             public Enums.AlertType Alert;
-            public Enums.ThemaType Theme;
+            public Enums.ThemeType Theme;
             public int Distance;
             public string Title;
             public string Text;
@@ -47,6 +47,18 @@ namespace Witcher.Struct
             public FontStretch Stretch;
             public System.Windows.FontStyle Style;
             public FontWeight Weight;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct CustomTheme
+        {
+            public Color Back;
+            public Color Text;
+            public Color Left;
+            public Color Bar;
         }
         #endregion
     }

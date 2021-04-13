@@ -51,6 +51,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton2.Location = new System.Drawing.Point(96, 44);
+            this.radioButton2.Location = new System.Drawing.Point(96, 38);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(48, 17);
             this.radioButton2.TabIndex = 1;
@@ -83,7 +84,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.BeepOnError = true;
-            this.maskedTextBox1.Location = new System.Drawing.Point(126, 73);
+            this.maskedTextBox1.Location = new System.Drawing.Point(126, 86);
             this.maskedTextBox1.Mask = "0";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(21, 20);
@@ -157,7 +158,7 @@
             "Right Center",
             "Calc Center",
             "Full Center"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 72);
+            this.comboBox1.Location = new System.Drawing.Point(12, 85);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(90, 21);
             this.comboBox1.TabIndex = 7;
@@ -167,7 +168,7 @@
             // maskedTextBox2
             // 
             this.maskedTextBox2.BeepOnError = true;
-            this.maskedTextBox2.Location = new System.Drawing.Point(180, 73);
+            this.maskedTextBox2.Location = new System.Drawing.Point(180, 86);
             this.maskedTextBox2.Mask = "0000";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(48, 20);
@@ -184,7 +185,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Standard"});
-            this.comboBox2.Location = new System.Drawing.Point(12, 99);
+            this.comboBox2.Location = new System.Drawing.Point(12, 112);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(90, 21);
             this.comboBox2.TabIndex = 9;
@@ -194,7 +195,7 @@
             // maskedTextBox3
             // 
             this.maskedTextBox3.BeepOnError = true;
-            this.maskedTextBox3.Location = new System.Drawing.Point(153, 73);
+            this.maskedTextBox3.Location = new System.Drawing.Point(153, 86);
             this.maskedTextBox3.Mask = "00";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(21, 20);
@@ -207,7 +208,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 154);
+            this.textBox1.Location = new System.Drawing.Point(12, 167);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(216, 20);
             this.textBox1.TabIndex = 11;
@@ -221,7 +222,7 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 213);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 237);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.ShowItemToolTips = true;
             this.statusStrip1.Size = new System.Drawing.Size(240, 22);
@@ -255,7 +256,7 @@
             // button5
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(187, 99);
+            this.button5.Location = new System.Drawing.Point(187, 112);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(41, 23);
             this.button5.TabIndex = 13;
@@ -266,7 +267,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 128);
+            this.textBox2.Location = new System.Drawing.Point(12, 141);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(216, 20);
             this.textBox2.TabIndex = 14;
@@ -277,7 +278,7 @@
             // button6
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Location = new System.Drawing.Point(108, 99);
+            this.button6.Location = new System.Drawing.Point(108, 112);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(73, 23);
             this.button6.TabIndex = 15;
@@ -289,7 +290,7 @@
             // button7
             // 
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Location = new System.Drawing.Point(12, 180);
+            this.button7.Location = new System.Drawing.Point(12, 193);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(216, 23);
             this.button7.TabIndex = 16;
@@ -298,11 +299,25 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton3.Location = new System.Drawing.Point(96, 61);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(60, 17);
+            this.radioButton3.TabIndex = 17;
+            this.radioButton3.Text = "Custom";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.Thema_CheckedChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(240, 235);
+            this.ClientSize = new System.Drawing.Size(240, 259);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.textBox2);
@@ -312,7 +327,6 @@
             this.Controls.Add(this.maskedTextBox3);
             this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -358,5 +372,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.RadioButton radioButton3;
     }
 }

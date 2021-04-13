@@ -18,7 +18,7 @@ using Witcher.Value;
 //     Creator: Taiizor
 //     Website: www.Soferity.com
 //     Created: 12.Apr.2021
-//     Changed: 13.Apr.2021
+//     Changed: 14.Apr.2021
 //     Version: 1.0.0.2
 //
 // |---------DO-NOT-REMOVE---------|
@@ -67,6 +67,13 @@ namespace Witcher
                 set => Values.Max = value;
             }
 
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="ST"></param>
+            /// <param name="WF"></param>
+            /// <param name="WPF"></param>
+            /// <returns></returns>
             internal static bool FontControl(Enums.SystemType ST, Font WF, Structs.FontWPF WPF)
             {
                 if (ST == Enums.SystemType.WindowsForms)
