@@ -1,6 +1,7 @@
 ﻿#region Imports
 
 using System.Collections.Generic;
+using System.Drawing;
 using Witcher.Enum;
 using Witcher.Struct;
 using static Taskbar.Enum.Enums;
@@ -34,7 +35,9 @@ namespace Witcher.Value
             Type = Enums.NotifyType.Standard,
             Alert = Enums.AlertType.Success,
             Theme = Enums.ThemaType.Dark,
-            Text = "Witcher",
+            Distance = 32,
+            Text = "Witcher Test Notify!",
+            Font = new Font("Raleway SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162),
             Time = 5000
         };
 

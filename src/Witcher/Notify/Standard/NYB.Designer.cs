@@ -92,6 +92,7 @@
             // 
             // TEXT
             // 
+            this.TEXT.AutoEllipsis = true;
             this.TEXT.BackColor = System.Drawing.Color.Transparent;
             this.TEXT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TEXT.Font = new System.Drawing.Font("Raleway SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -101,7 +102,7 @@
             this.TEXT.Name = "TEXT";
             this.TEXT.Size = new System.Drawing.Size(374, 60);
             this.TEXT.TabIndex = 7;
-            this.TEXT.Text = "Benim Adım Soferity Witcher Pro Tatlım!";
+            this.TEXT.Text = "My Name Is Soferity Witcher Pro Sweetheart!";
             this.TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BAR

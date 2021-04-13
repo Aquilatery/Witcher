@@ -1,6 +1,7 @@
 ﻿#region Imports
 
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using static Taskbar.Enum.Enums;
 using static Witcher.Enum.Enums;
@@ -20,7 +21,9 @@ namespace Witcher_CR
             Type = NotifyType.Standard,
             Alert = AlertType.Success,
             Theme = ThemaType.Dark,
+            Distance = 32,
             Text = "Witcher_CR Test Notify!",
+            Font = new Font("Raleway SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162),
             Time = 5000
         };
 
@@ -29,6 +32,18 @@ namespace Witcher_CR
             InitializeComponent();
             comboBox1.SelectedIndex = 5;
             comboBox2.SelectedIndex = 0;
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                Data.Text = "Witcher_CR Test Notify!";
+            }
+            else
+            {
+                Data.Text = textBox1.Text;
+            }
         }
 
         private void MaskedTextBox1_TextChanged(object sender, EventArgs e)
@@ -52,6 +67,18 @@ namespace Witcher_CR
             else
             {
                 Data.Time = Convert.ToInt32(maskedTextBox2.Text);
+            }
+        }
+
+        private void MaskedTextBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(maskedTextBox3.Text) || string.IsNullOrWhiteSpace(maskedTextBox3.Text))
+            {
+                Data.Distance = 32;
+            }
+            else
+            {
+                Data.Distance = Convert.ToInt32(maskedTextBox3.Text);
             }
         }
 

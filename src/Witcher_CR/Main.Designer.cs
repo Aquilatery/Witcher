@@ -39,6 +39,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // radioButton1
@@ -70,10 +72,10 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.BeepOnError = true;
-            this.maskedTextBox1.Location = new System.Drawing.Point(126, 72);
+            this.maskedTextBox1.Location = new System.Drawing.Point(126, 73);
             this.maskedTextBox1.Mask = "0";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(48, 20);
+            this.maskedTextBox1.Size = new System.Drawing.Size(21, 20);
             this.maskedTextBox1.TabIndex = 2;
             this.maskedTextBox1.TabStop = false;
             this.maskedTextBox1.Text = "5";
@@ -178,11 +180,37 @@
             this.comboBox2.TabStop = false;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
             // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.BeepOnError = true;
+            this.maskedTextBox3.Location = new System.Drawing.Point(153, 73);
+            this.maskedTextBox3.Mask = "00";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(21, 20);
+            this.maskedTextBox3.TabIndex = 10;
+            this.maskedTextBox3.TabStop = false;
+            this.maskedTextBox3.Text = "32";
+            this.maskedTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maskedTextBox3.ValidatingType = typeof(int);
+            this.maskedTextBox3.TextChanged += new System.EventHandler(this.MaskedTextBox3_TextChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(108, 99);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(120, 20);
+            this.textBox1.TabIndex = 11;
+            this.textBox1.Text = "Witcher_CR Test Notify!";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(240, 136);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.maskedTextBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.comboBox1);
@@ -218,5 +246,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

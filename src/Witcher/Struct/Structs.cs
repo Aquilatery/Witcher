@@ -1,5 +1,6 @@
 ﻿#region Imports
 
+using System.Drawing;
 using System.Runtime.InteropServices;
 using Witcher.Enum;
 using static Taskbar.Enum.Enums;
@@ -24,7 +25,9 @@ namespace Witcher.Struct
             public Enums.NotifyType Type;
             public Enums.AlertType Alert;
             public Enums.ThemaType Theme;
+            public int Distance;
             public string Text;
+            public Font Font;
             public int Time;
         }
         #endregion

@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Witcher.Struct;
+using Witcher.Value;
 using static Taskbar.Enum.Enums;
 using static Taskbar.Taskbar.Advanced;
 using static Witcher.Enum.Enums;
@@ -11,17 +12,14 @@ namespace Witcher.Notify.Standard
 {
     public partial class NYB : Form
     {
-        private readonly int Time1;
-        private int Time2 = 0;
-        private int Count = 32;
-        private int Distance = 2;
-        private readonly EdgeLocationType Type = EdgeLocationType.BotRight;
+        private Structs.Data Local = Values.Data;
+
+        private int Time = 0;
 
         public NYB(Structs.Data Data)
         {
             InitializeComponent();
-            Type = Data.Location;
-            Time1 = Data.Time;
+            Local = Data;
             if (Data.Theme == ThemaType.Dark)
             {
                 BackColor = Color.FromArgb(38, 38, 38);
@@ -33,6 +31,7 @@ namespace Witcher.Notify.Standard
                 TEXT.ForeColor = Color.FromArgb(38, 38, 38);
             }
             TEXT.Text = Data.Text;
+            TEXT.Font = Data.Font;
             switch (Data.Alert)
             {
                 case AlertType.Success:
@@ -53,24 +52,24 @@ namespace Witcher.Notify.Standard
 
         private void NYB_Load(object sender, EventArgs e)
         {
-            Location = SingleLocation(Type, Width, Height, (ActiveOpen * Height) + Count);
+            Location = SingleLocation(Local.Location, Width, Height, (ActiveOpen * Height) + Local.Distance);
 
-            if (Type == EdgeLocationType.BotRight)
+            if (Local.Location == EdgeLocationType.BotRight)
             {
-                Location = new Point(Location.X + (ActiveOpen * Height) + Distance, Location.Y + Count);
+                Location = new Point(Location.X + (ActiveOpen * Height), Location.Y + Local.Distance);
             }
-            else if (Type == EdgeLocationType.BotLeft)
+            else if (Local.Location == EdgeLocationType.BotLeft)
             {
-                Location = new Point(Location.X - (ActiveOpen * Height), Location.Y + Count);
+                Location = new Point(Location.X - (ActiveOpen * Height), Location.Y + Local.Distance);
             }
-            else if (Type == EdgeLocationType.TopRight)
+            else if (Local.Location == EdgeLocationType.TopRight)
             {
-                Location = new Point(Location.X + (ActiveOpen * Height), Location.Y - Count);
+                Location = new Point(Location.X + (ActiveOpen * Height), Location.Y - Local.Distance);
                 BAR.Dock = DockStyle.Top;
             }
             else
             {
-                Location = new Point(Location.X - (ActiveOpen * Height), Location.Y - Count);
+                Location = new Point(Location.X - (ActiveOpen * Height), Location.Y - Local.Distance);
                 BAR.Dock = DockStyle.Top;
             }
 
@@ -100,10 +99,10 @@ namespace Witcher.Notify.Standard
         {
             if (Text == "NYS0")
             {
-                if (Time2 <= Time1)
+                if (Time <= Local.Time)
                 {
-                    Time2 += CloseForm.Interval;
-                    int Value = (100 / (Time1 / CloseForm.Interval)) + BAR.Value;
+                    Time += CloseForm.Interval;
+                    int Value = (100 / (Local.Time / CloseForm.Interval)) + BAR.Value;
                     if (BAR.Maximum > Value)
                     {
                         BAR.Value = Value;
@@ -122,10 +121,10 @@ namespace Witcher.Notify.Standard
 
         private void StartForm_Tick(object sender, EventArgs e)
         {
-            if (Count > 0)
+            if (Local.Distance > 0)
             {
-                Count -= 2;
-                if (Type == EdgeLocationType.BotRight || Type == EdgeLocationType.BotLeft)
+                Local.Distance -= 2;
+                if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.BotLeft)
                 {
                     Location = new Point(Location.X, Location.Y - 2);
                 }
