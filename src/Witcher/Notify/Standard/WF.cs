@@ -48,7 +48,7 @@ namespace Witcher.Notify.Standard
             }
 
             TEXT.Text = Local.Text;
-            TEXT.Font = Local.Font;
+            TEXT.Font = Local.FontWF;
 
             switch (Local.Alert)
             {

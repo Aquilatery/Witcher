@@ -1,8 +1,8 @@
 ﻿#region Imports
 
-using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Windows;
 using Witcher.Enum;
 using static Taskbar.Enum.Enums;
 
@@ -22,38 +22,31 @@ namespace Witcher.Struct
         [StructLayout(LayoutKind.Sequential)]
         public struct Data
         {
-            [DefaultValue(EdgeLocationType.BotRight)]
             public EdgeLocationType Location;
-
-            [DefaultValue(Enums.SystemType.WindowsForms)]
             public Enums.SystemType System;
-
-            [DefaultValue(Enums.NotifyType.Standard)]
             public Enums.NotifyType Type;
-
-            [DefaultValue(Enums.AlertType.Success)]
             public Enums.AlertType Alert;
-
-            [DefaultValue(Enums.ThemaType.Dark)]
             public Enums.ThemaType Theme;
-
-            [DefaultValue(32)]
             public int Distance;
-
-            [DefaultValue("Witcher Test Title")]
             public string Title;
-
-            [DefaultValue("Witcher Test Notify!")]
             public string Text;
-
-            [DefaultValue(typeof(Font), "Raleway SemiBold, 12pt, Bold, Point, 162")]
-            public Font Font;
-
-            [DefaultValue(true)]
+            public Font FontWF;
+            public FontWPF FontWPF;
             public bool Top;
-
-            [DefaultValue(5000)]
             public int Time;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct FontWPF
+        {
+            public System.Windows.Media.FontFamily Family;
+            public double Size;
+            public FontStretch Stretch;
+            public System.Windows.FontStyle Style;
+            public FontWeight Weight;
         }
         #endregion
     }

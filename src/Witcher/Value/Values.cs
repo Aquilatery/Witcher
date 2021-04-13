@@ -2,9 +2,11 @@
 
 using System.Collections.Generic;
 using System.Drawing;
+using System.Windows;
 using Witcher.Enum;
 using Witcher.Struct;
 using static Taskbar.Enum.Enums;
+using FontStyle = System.Drawing.FontStyle;
 
 #endregion
 
@@ -44,6 +46,11 @@ namespace Witcher.Value
         /// <summary>
         /// 
         /// </summary>
+        internal static Enums.SystemType System;
+
+        /// <summary>
+        /// 
+        /// </summary>
         internal static EdgeLocationType Location;
 
         /// <summary>
@@ -59,7 +66,15 @@ namespace Witcher.Value
             Distance = 32,
             Title = "Witcher Test Title",
             Text = "Witcher Test Notify!",
-            Font = new Font("Raleway SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162),
+            FontWF = new Font("Raleway SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162),
+            FontWPF = new()
+            {
+                Family = new("Raleway SemiBold"),
+                Size = 12F,
+                Stretch = FontStretches.Normal,
+                Style = FontStyles.Normal,
+                Weight = FontWeights.Bold,
+            },
             Top = true,
             Time = 5000
         };
@@ -68,6 +83,11 @@ namespace Witcher.Value
         /// 
         /// </summary>
         internal static List<Structs.Data> Datas = new();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        internal static List<Window> Windows = new();
         #endregion
     }
 }

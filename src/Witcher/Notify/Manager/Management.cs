@@ -1,8 +1,8 @@
 ﻿#region Imports
 
 using System;
-using System.Drawing;
 using System.Linq;
+using System.Windows;
 using System.Windows.Forms;
 using Witcher.Struct;
 using Witcher.Value;
@@ -26,13 +26,30 @@ namespace Witcher.Notify.Manager
         {
             Control.Stop();
 
-            foreach (Form OpenForm in Application.OpenForms)
+            if (ActiveOpen > 0)
             {
-                if (OpenForm.Text.StartsWith(Values.StandardForm))
+                foreach (Form Form in System.Windows.Forms.Application.OpenForms)
                 {
-                    if (Standard_Control(OpenForm))
+                    if (Form.Text.StartsWith(Values.StandardForm))
                     {
-                        break;
+                        if (Standard_Control(Form))
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                if (Values.Windows.Any())
+                {
+                    foreach (Window Window in Values.Windows)
+                    {
+                        if (Window.Title.StartsWith(Values.StandardForm))
+                        {
+                            if (Standard_Control(Window))
+                            {
+                                break;
+                            }
+                        }
                     }
                 }
             }
@@ -40,15 +57,15 @@ namespace Witcher.Notify.Manager
             Control.Start();
         }
 
-        private static bool Standard_Control(Form OpenForm)
+        private static bool Standard_Control(Form Form)
         {
-            int ID1 = Convert.ToInt32(OpenForm.Text.Replace(Values.StandardForm, ""));
+            int ID1 = Convert.ToInt32(Form.Text.Replace(Values.StandardForm, ""));
 
             if (ID1 >= 1)
             {
                 bool State = true;
 
-                foreach (Form CheckForm in Application.OpenForms)
+                foreach (Form CheckForm in System.Windows.Forms.Application.OpenForms)
                 {
                     if (CheckForm.Text.StartsWith(Values.StandardForm))
                     {
@@ -65,14 +82,54 @@ namespace Witcher.Notify.Manager
                 {
                     if (Values.Location == EdgeLocationType.BotRight || Values.Location == EdgeLocationType.BotCenter || Values.Location == EdgeLocationType.BotLeft || Values.Location == EdgeLocationType.LeftCenter || Values.Location == EdgeLocationType.FullCenter)
                     {
-                        OpenForm.Location = new Point(OpenForm.Location.X, OpenForm.Location.Y + OpenForm.Height);
+                        Form.Location = new System.Drawing.Point(Form.Location.X, Form.Location.Y + Form.Height);
                     }
                     else
                     {
-                        OpenForm.Location = new Point(OpenForm.Location.X, OpenForm.Location.Y - OpenForm.Height);
+                        Form.Location = new System.Drawing.Point(Form.Location.X, Form.Location.Y - Form.Height);
                     }
 
-                    OpenForm.Text = Values.StandardForm + (ID1 - 1);
+                    Form.Text = Values.StandardForm + (ID1 - 1);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static bool Standard_Control(Window Window)
+        {
+            int ID1 = Convert.ToInt32(Window.Title.Replace(Values.StandardForm, ""));
+
+            if (ID1 >= 1)
+            {
+                bool State = true;
+
+                foreach (Window CheckWindow in Values.Windows)
+                {
+                    if (CheckWindow.Title.StartsWith(Values.StandardForm))
+                    {
+                        int ID2 = ID1 - 1;
+                        if (CheckWindow.Title == Values.StandardForm + ID2)
+                        {
+                            State = false;
+                            break;
+                        }
+                    }
+                }
+
+                if (State)
+                {
+                    if (Values.Location == EdgeLocationType.BotRight || Values.Location == EdgeLocationType.BotCenter || Values.Location == EdgeLocationType.BotLeft || Values.Location == EdgeLocationType.LeftCenter || Values.Location == EdgeLocationType.FullCenter)
+                    {
+                        Window.Top += Window.Height;
+                    }
+                    else
+                    {
+                        Window.Top -= Window.Height;
+                    }
+
+                    Window.Title = Values.StandardForm + (ID1 - 1);
                     return true;
                 }
             }

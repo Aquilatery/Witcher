@@ -1,9 +1,9 @@
 ﻿#region Imports
 
 using System;
-using System.Drawing;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Threading;
 using Witcher.Struct;
 using Witcher.Value;
@@ -35,6 +35,7 @@ namespace Witcher.Notify.Standard
             LocationChanged += StandardWF_LocationChanged;
             Closed += StandardWF_FormClosed;
             Loaded += StandardWPF_Loaded;
+            Opacity = 0;
 
             InitializeComponent();
 
@@ -45,6 +46,42 @@ namespace Witcher.Notify.Standard
             General.Tick += General_Tick;
 
             Topmost = Local.Top;
+
+            if (Local.Theme == ThemaType.Dark)
+            {
+                Background = new SolidColorBrush(Color.FromRgb(38, 38, 38));
+                TEXT.Foreground = Brushes.Gainsboro;
+            }
+            else
+            {
+                Background = Brushes.Gainsboro;
+                TEXT.Foreground = new SolidColorBrush(Color.FromRgb(38, 38, 38));
+            }
+
+            TEXT.Content = Local.Text;
+            TEXT.FontFamily = Local.FontWPF.Family;
+            TEXT.FontSize = Local.FontWPF.Size;
+            TEXT.FontStretch = Local.FontWPF.Stretch;
+            TEXT.FontStyle = Local.FontWPF.Style;
+            TEXT.FontWeight = Local.FontWPF.Weight;
+
+            switch (Local.Alert)
+            {
+                case AlertType.Success:
+                    LEFT.Background = Brushes.SeaGreen;
+                    break;
+                case AlertType.Warning:
+                    LEFT.Background = new SolidColorBrush(Color.FromRgb(255, 128, 0));
+                    break;
+                case AlertType.Error:
+                    LEFT.Background = Brushes.Crimson;
+                    break;
+                case AlertType.Info:
+                    LEFT.Background = Brushes.Gray;
+                    break;
+            }
+
+            BAR.Background = LEFT.Background;
         }
 
         private void StandardWPF_Loaded(object sender, RoutedEventArgs e)
@@ -66,7 +103,7 @@ namespace Witcher.Notify.Standard
             CLOSE.Height -= 2;
         }
 
-        private void CLOSE_Click(object sender, EventArgs e)
+        private void CLOSE_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Stage = StateType.Finish;
         }
@@ -108,35 +145,16 @@ namespace Witcher.Notify.Standard
                 case StateType.Close:
                     if (Title == Values.StandardForm + "0")
                     {
-                        if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.TopRight || Local.Location == EdgeLocationType.RightCenter || Local.Location == EdgeLocationType.FullCenter)
-                        {
-                            Value += PANEL.Width / (Local.Time / General.Interval.Ticks);
+                        Value += PANEL.Width / (Local.Time / General.Interval.Ticks);
 
-                            if (PANEL.Width > Convert.ToInt32(Value))
-                            {
-                                BAR.Location = new(PANEL.Width - Convert.ToInt32(Value), 0);
-                                BAR.Width = Convert.ToInt32(Value);
-                            }
-                            else
-                            {
-                                BAR.Location = new(0, 0);
-                                BAR.Width = PANEL.Width;
-                                CLOSE_Click(sender, e);
-                            }
+                        if (PANEL.Width > Value)
+                        {
+                            BAR.Width = Value;
                         }
                         else
                         {
-                            Value += PANEL.Width / (Local.Time / General.Interval.Ticks);
-
-                            if (PANEL.Width > Convert.ToInt32(Value))
-                            {
-                                BAR.Width = Convert.ToInt32(Value);
-                            }
-                            else
-                            {
-                                BAR.Width = PANEL.Width;
-                                CLOSE_Click(sender, e);
-                            }
+                            BAR.Width = PANEL.Width;
+                            CLOSE_MouseLeftButtonUp(null, null);
                         }
                     }
                     break;

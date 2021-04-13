@@ -5,17 +5,24 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Name="WitcherStandardWPF"
-    Title="Witcher Standard WPF"
     Height="60" Width="400"
+    Title="Witcher Standard WPF"
     WindowStartupLocation="Manual"
     ResizeMode="NoResize" WindowStyle="None"
     AllowsTransparency="True" Background="#FF262626"
     Icon="/Witcher;component/Resources/ICO.ico"
-    ShowInTaskbar="False" Topmost="True">
-    <Border>
-        <StackPanel Width="26" Height="60" Background="Crimson" Orientation="Horizontal" HorizontalAlignment="Left">
-            <Image Name="CLOSE" Width="26" Height="16" Source="/Witcher;component/Resources/Notify/Standard/Multiply.png" RenderOptions.BitmapScalingMode="Fant" Stretch="Uniform" Cursor="Hand" MouseEnter="CLOSE_MouseEnter" MouseLeave="CLOSE_MouseLeave"/>
+    ShowInTaskbar="False" Topmost="True" Opacity="0">
+    <DockPanel>
+        <StackPanel Name="LEFT" Background="Crimson" Orientation="Horizontal" DockPanel.Dock="Left">
+            <Image Name="CLOSE" Width="26" Height="16" Source="/Witcher;component/Resources/Notify/Standard/Multiply.png" RenderOptions.BitmapScalingMode="Fant" Stretch="Uniform" Cursor="Hand" MouseEnter="CLOSE_MouseEnter" MouseLeave="CLOSE_MouseLeave" MouseLeftButtonUp="CLOSE_MouseLeftButtonUp"/>
         </StackPanel>
-    </Border>
+        <DockPanel HorizontalAlignment="Stretch">
+            <Label Name="TEXT" Height="58" Foreground="Gainsboro" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" DockPanel.Dock="Top" FontFamily="Raleway SemiBold" FontSize="12">
+                <AccessText Text="My Name Is Soferity Witcher Sweetheart!" TextTrimming="CharacterEllipsis" />
+            </Label>
+            <Border Name="PANEL" Background="SeaGreen" DockPanel.Dock="Bottom">
+                <StackPanel Name="BAR" Background="Crimson" HorizontalAlignment="Left"/>
+            </Border>
+        </DockPanel>
+    </DockPanel>
 </Window>
