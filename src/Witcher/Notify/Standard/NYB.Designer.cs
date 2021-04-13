@@ -29,38 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.CloseForm = new System.Windows.Forms.Timer(this.components);
-            this.StartForm = new System.Windows.Forms.Timer(this.components);
-            this.FinishForm = new System.Windows.Forms.Timer(this.components);
-            this.ShowForm = new System.Windows.Forms.Timer(this.components);
             this.LEFT = new System.Windows.Forms.Panel();
             this.CLOSE = new System.Windows.Forms.PictureBox();
             this.TEXT = new System.Windows.Forms.Label();
             this.BAR = new ReaLTaiizor.Controls.MaterialProgressBar();
+            this.General = new System.Windows.Forms.Timer(this.components);
             this.LEFT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CLOSE)).BeginInit();
             this.SuspendLayout();
-            // 
-            // CloseForm
-            // 
-            this.CloseForm.Interval = 50;
-            this.CloseForm.Tick += new System.EventHandler(this.CloseForm_Tick);
-            // 
-            // StartForm
-            // 
-            this.StartForm.Interval = 25;
-            this.StartForm.Tick += new System.EventHandler(this.StartForm_Tick);
-            // 
-            // FinishForm
-            // 
-            this.FinishForm.Interval = 50;
-            this.FinishForm.Tick += new System.EventHandler(this.FinishForm_Tick);
-            // 
-            // ShowForm
-            // 
-            this.ShowForm.Enabled = true;
-            this.ShowForm.Interval = 25;
-            this.ShowForm.Tick += new System.EventHandler(this.ShowForm_Tick);
             // 
             // LEFT
             // 
@@ -102,7 +78,7 @@
             this.TEXT.Name = "TEXT";
             this.TEXT.Size = new System.Drawing.Size(374, 60);
             this.TEXT.TabIndex = 7;
-            this.TEXT.Text = "My Name Is Soferity Witcher Pro Sweetheart!";
+            this.TEXT.Text = "My Name Is Soferity Witcher Sweetheart!";
             this.TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BAR
@@ -115,6 +91,12 @@
             this.BAR.Name = "BAR";
             this.BAR.Size = new System.Drawing.Size(374, 2);
             this.BAR.TabIndex = 8;
+            // 
+            // General
+            // 
+            this.General.Enabled = true;
+            this.General.Interval = 25;
+            this.General.Tick += new System.EventHandler(this.General_Tick);
             // 
             // NYB
             // 
@@ -146,14 +128,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Timer CloseForm;
-        private System.Windows.Forms.Timer StartForm;
-        private System.Windows.Forms.Timer FinishForm;
-        private System.Windows.Forms.Timer ShowForm;
         private System.Windows.Forms.Panel LEFT;
         private System.Windows.Forms.PictureBox CLOSE;
         private System.Windows.Forms.Label TEXT;
         private ReaLTaiizor.Controls.MaterialProgressBar BAR;
+        private System.Windows.Forms.Timer General;
     }
 }

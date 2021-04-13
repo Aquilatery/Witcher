@@ -65,11 +65,11 @@
             /// <summary>
             /// 
             /// </summary>
-            Finish,
+            Close,
             /// <summary>
             /// 
             /// </summary>
-            Close
+            Finish
         }
         #endregion
     }

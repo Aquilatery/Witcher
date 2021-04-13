@@ -13,13 +13,16 @@ namespace Witcher.Notify.Standard
     public partial class NYB : Form
     {
         private Structs.Data Local = Values.Data;
+        private StateType Stage = StateType.Show;
 
         private int Time = 0;
 
         public NYB(Structs.Data Data)
         {
             InitializeComponent();
+
             Local = Data;
+
             if (Data.Theme == ThemaType.Dark)
             {
                 BackColor = Color.FromArgb(38, 38, 38);
@@ -30,8 +33,10 @@ namespace Witcher.Notify.Standard
                 BackColor = Color.Gainsboro;
                 TEXT.ForeColor = Color.FromArgb(38, 38, 38);
             }
+
             TEXT.Text = Data.Text;
             TEXT.Font = Data.Font;
+
             switch (Data.Alert)
             {
                 case AlertType.Success:
@@ -47,6 +52,7 @@ namespace Witcher.Notify.Standard
                     LEFT.BackColor = Color.Gray;
                     break;
             }
+
             //BAR.ProgressColor = LEFT.BackColor;
         }
 
@@ -73,7 +79,6 @@ namespace Witcher.Notify.Standard
                 BAR.Dock = DockStyle.Top;
             }
 
-            StartForm.Enabled = true;
             Text += ActiveOpen;
             ActiveOpen++;
         }
@@ -92,85 +97,84 @@ namespace Witcher.Notify.Standard
 
         private void CLOSE_Click(object sender, EventArgs e)
         {
-            FinishForm.Enabled = true;
+            Stage = StateType.Finish;
         }
 
-        private void CloseForm_Tick(object sender, EventArgs e)
+        private void General_Tick(object sender, EventArgs e)
         {
-            if (Text == "NYS0")
+            switch (Stage)
             {
-                if (Time <= Local.Time)
-                {
-                    Time += CloseForm.Interval;
-                    int Value = (100 / (Local.Time / CloseForm.Interval)) + BAR.Value;
-                    if (BAR.Maximum > Value)
+                case StateType.Show:
+                    if (Convert.ToDouble(Opacity) < 0.8)
                     {
-                        BAR.Value = Value;
+                        Opacity += 0.1;
                     }
                     else
                     {
-                        BAR.Value = BAR.Maximum;
+                        Stage = StateType.Start;
                     }
-                }
-                else
-                {
-                    CLOSE_Click(sender, e);
-                }
-            }
-        }
-
-        private void StartForm_Tick(object sender, EventArgs e)
-        {
-            if (Local.Distance > 0)
-            {
-                Local.Distance -= 2;
-                if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.BotLeft)
-                {
-                    Location = new Point(Location.X, Location.Y - 2);
-                }
-                else
-                {
-                    Location = new Point(Location.X, Location.Y + 2);
-                }
-            }
-            else
-            {
-                CloseForm.Enabled = true;
-                StartForm.Enabled = false;
-            }
-        }
-
-        private void FinishForm_Tick(object sender, EventArgs e)
-        {
-            if (Opacity > 0)
-            {
-                Opacity -= 0.1;
-            }
-            else
-            {
-                NYB_FormClosed(sender, e);
-                Dispose();
-            }
-        }
-
-        private void ShowForm_Tick(object sender, EventArgs e)
-        {
-            if (Convert.ToDouble(Opacity) < 0.8)
-            {
-                Opacity += 0.1;
-            }
-            else
-            {
-                ShowForm.Enabled = false;
+                    break;
+                case StateType.Start:
+                    if (Local.Distance > 0)
+                    {
+                        Local.Distance -= 2;
+                        if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.BotLeft)
+                        {
+                            Location = new Point(Location.X, Location.Y - 2);
+                        }
+                        else
+                        {
+                            Location = new Point(Location.X, Location.Y + 2);
+                        }
+                    }
+                    else
+                    {
+                        General.Interval = 50;
+                        Stage = StateType.Close;
+                    }
+                    break;
+                case StateType.Close:
+                    if (Text == "NYS0")
+                    {
+                        if (Time <= Local.Time)
+                        {
+                            Time += General.Interval;
+                            int Value = 100 / (Local.Time / General.Interval) + BAR.Value;
+                            if (BAR.Maximum > Value)
+                            {
+                                BAR.Value = Value;
+                            }
+                            else
+                            {
+                                BAR.Value = BAR.Maximum;
+                            }
+                        }
+                        else
+                        {
+                            CLOSE_Click(sender, e);
+                        }
+                    }
+                    break;
+                case StateType.Finish:
+                    if (Opacity > 0)
+                    {
+                        Opacity -= 0.1;
+                    }
+                    else
+                    {
+                        NYB_FormClosed(sender, e);
+                        Dispose();
+                    }
+                    break;
             }
         }
 
         private void NYB_LocationChanged(object sender, EventArgs e)
         {
-            if (CloseForm.Enabled)
+            if (General.Enabled && Stage == StateType.Close)
             {
-                CloseForm.Enabled = false;
-                CloseForm.Enabled = true;
+                General.Enabled = false;
+                General.Enabled = true;
             }
         }
 
