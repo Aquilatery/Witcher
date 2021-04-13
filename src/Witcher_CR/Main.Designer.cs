@@ -160,7 +160,7 @@
             this.maskedTextBox2.Size = new System.Drawing.Size(48, 20);
             this.maskedTextBox2.TabIndex = 8;
             this.maskedTextBox2.TabStop = false;
-            this.maskedTextBox2.Text = "3000";
+            this.maskedTextBox2.Text = "5000";
             this.maskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBox2.ValidatingType = typeof(int);
             this.maskedTextBox2.TextChanged += new System.EventHandler(this.MaskedTextBox2_TextChanged);

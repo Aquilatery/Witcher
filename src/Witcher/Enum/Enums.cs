@@ -51,6 +51,26 @@
         {
             Standard
         }
+
+        internal enum StateType
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            Show,
+            /// <summary>
+            /// 
+            /// </summary>
+            Start,
+            /// <summary>
+            /// 
+            /// </summary>
+            Finish,
+            /// <summary>
+            /// 
+            /// </summary>
+            Close
+        }
         #endregion
     }
 }

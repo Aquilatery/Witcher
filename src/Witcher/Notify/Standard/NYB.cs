@@ -14,12 +14,14 @@ namespace Witcher.Notify.Standard
         private readonly int Time1;
         private int Time2 = 0;
         private int Count = 32;
+        private int Distance = 2;
         private readonly EdgeLocationType Type = EdgeLocationType.BotRight;
 
         public NYB(Structs.Data Data)
         {
             InitializeComponent();
             Type = Data.Location;
+            Time1 = Data.Time;
             if (Data.Theme == ThemaType.Dark)
             {
                 BackColor = Color.FromArgb(38, 38, 38);
@@ -46,17 +48,16 @@ namespace Witcher.Notify.Standard
                     LEFT.BackColor = Color.Gray;
                     break;
             }
-            BAR.ProgressColor = LEFT.BackColor;
-            BAR.BorderColor = BackColor;
-            Time1 = Data.Time;
+            //BAR.ProgressColor = LEFT.BackColor;
         }
 
         private void NYB_Load(object sender, EventArgs e)
         {
             Location = SingleLocation(Type, Width, Height, (ActiveOpen * Height) + Count);
+
             if (Type == EdgeLocationType.BotRight)
             {
-                Location = new Point(Location.X + (ActiveOpen * Height), Location.Y + Count);
+                Location = new Point(Location.X + (ActiveOpen * Height) + Distance, Location.Y + Count);
             }
             else if (Type == EdgeLocationType.BotLeft)
             {
@@ -72,9 +73,22 @@ namespace Witcher.Notify.Standard
                 Location = new Point(Location.X - (ActiveOpen * Height), Location.Y - Count);
                 BAR.Dock = DockStyle.Top;
             }
+
             StartForm.Enabled = true;
             Text += ActiveOpen;
             ActiveOpen++;
+        }
+
+        private void CLOSE_MouseEnter(object sender, EventArgs e)
+        {
+            CLOSE.Size = new(CLOSE.Width + 4, CLOSE.Height + 4);
+            CLOSE.Location = new(CLOSE.Location.X - 2, CLOSE.Location.Y - 2);
+        }
+
+        private void CLOSE_MouseLeave(object sender, EventArgs e)
+        {
+            CLOSE.Size = new(CLOSE.Width - 4, CLOSE.Height - 4);
+            CLOSE.Location = new(CLOSE.Location.X + 2, CLOSE.Location.Y + 2);
         }
 
         private void CLOSE_Click(object sender, EventArgs e)
@@ -89,9 +103,10 @@ namespace Witcher.Notify.Standard
                 if (Time2 <= Time1)
                 {
                     Time2 += CloseForm.Interval;
-                    if (BAR.Maximum > BAR.Value + 1)
+                    int Value = (100 / (Time1 / CloseForm.Interval)) + BAR.Value;
+                    if (BAR.Maximum > Value)
                     {
-                        BAR.Value++;
+                        BAR.Value = Value;
                     }
                     else
                     {
