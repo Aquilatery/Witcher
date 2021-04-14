@@ -1,6 +1,4 @@
-﻿using Witcher.Properties;
-
-namespace Witcher.WF.Notify.Standard
+﻿namespace Witcher.WF.Notify.Standard
 {
     partial class WitcherStandardWF
     {
@@ -59,7 +57,7 @@ namespace Witcher.WF.Notify.Standard
             this.CLOSE.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CLOSE.BackColor = System.Drawing.Color.Transparent;
             this.CLOSE.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CLOSE.Image = Resources.Multiply;
+            this.CLOSE.Image = global::Witcher.WF.Properties.Resources.Multiply;
             this.CLOSE.Location = new System.Drawing.Point(0, 22);
             this.CLOSE.Margin = new System.Windows.Forms.Padding(0);
             this.CLOSE.Name = "CLOSE";
@@ -125,7 +123,7 @@ namespace Witcher.WF.Notify.Standard
             this.Controls.Add(this.TEXT);
             this.Controls.Add(this.LEFT);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = Resources.ICO;
+            this.Icon = global::Witcher.WF.Properties.Resources.ICO;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WitcherStandardWF";

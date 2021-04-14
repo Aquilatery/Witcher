@@ -10,18 +10,18 @@
     WindowStartupLocation="Manual"
     ResizeMode="NoResize" WindowStyle="None"
     AllowsTransparency="True" Background="#FF262626"
-    Icon="/Witcher;component/Resources/ICO.ico"
+    Icon="/Witcher.WPF;component/Resources/ICO.ico"
     ShowInTaskbar="False" Topmost="True" Opacity="100"
 >
     <DockPanel Name="DOCK">
         <StackPanel Name="LEFT" Background="Crimson" Orientation="Horizontal" DockPanel.Dock="Left">
-            <Image Name="CLOSE" Width="26" Height="16" Source="/Witcher;component/Resources/Notify/Standard/Multiply.png" RenderOptions.BitmapScalingMode="Fant" Stretch="Uniform" Cursor="Hand" MouseEnter="CLOSE_MouseEnter" MouseLeave="CLOSE_MouseLeave" MouseLeftButtonUp="CLOSE_MouseLeftButtonUp"/>
+            <Image Name="CLOSE" Width="26" Height="16" Source="/Witcher.WPF;component/Resources/Notify/Standard/Multiply.png" RenderOptions.BitmapScalingMode="Fant" Stretch="Uniform" Cursor="Hand" MouseEnter="CLOSE_MouseEnter" MouseLeave="CLOSE_MouseLeave" MouseLeftButtonUp="CLOSE_MouseLeftButtonUp"/>
         </StackPanel>
         <DockPanel HorizontalAlignment="Stretch">
             <Border Name="TOP" DockPanel.Dock="Top" Height="58">
                 <AccessText Name="TEXT" Foreground="Gainsboro" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Raleway SemiBold" FontSize="12" Text="My Name Is Soferity Witcher WPF Sweetheart!" TextTrimming="CharacterEllipsis" TextWrapping="WrapWithOverflow" LineStackingStrategy="BlockLineHeight"/>
             </Border>
-            <Border Name="PANEL" Background="SeaGreen" DockPanel.Dock="Bottom">
+            <Border Name="PANEL" DockPanel.Dock="Bottom">
                 <StackPanel Name="BAR" Background="Crimson" HorizontalAlignment="Left"/>
             </Border>
         </DockPanel>

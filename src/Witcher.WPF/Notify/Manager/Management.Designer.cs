@@ -1,6 +1,4 @@
-﻿using Witcher.Properties;
-
-namespace Witcher.WPF.Notify.Manager
+﻿namespace Witcher.WPF.Notify.Manager
 {
     partial class WitcherManagement
     {
@@ -38,13 +36,13 @@ namespace Witcher.WPF.Notify.Manager
             // Control
             // 
             this.Control.Enabled = true;
-            this.Control.Interval = 50;
+            this.Control.Interval = 25;
             this.Control.Tick += new System.EventHandler(this.Control_Tick);
             // 
             // Notification
             // 
             this.Notification.Enabled = true;
-            this.Notification.Interval = 50;
+            this.Notification.Interval = 25;
             this.Notification.Tick += new System.EventHandler(this.Notification_Tick);
             // 
             // WitcherManagement
@@ -55,7 +53,7 @@ namespace Witcher.WPF.Notify.Manager
             this.ClientSize = new System.Drawing.Size(0, 0);
             this.ControlBox = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = Resources.ICO;
+            this.Icon = global::Witcher.WPF.Properties.Resources.ICO;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WitcherManagement";

@@ -3,10 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Witcher_WPF_CR"
         mc:Ignorable="d"
-        Title="MainWindow" Height="168" Width="240">
-    <Grid>
+        Title="Witcher WPF CR"
+        Height="120" Width="240"
+        WindowStartupLocation="CenterScreen" Topmost="True"
+        ResizeMode="NoResize">
+    <DockPanel VerticalAlignment="Top">
+        <ComboBox Name="Edge" Width="114" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="Top Left"/>
+            <ComboBoxItem Content="Top Center"/>
+            <ComboBoxItem Content="Top Right"/>
+            <ComboBoxItem Content="Bot Left"/>
+            <ComboBoxItem Content="Bot Center"/>
+            <ComboBoxItem Content="Bot Right"/>
+            <ComboBoxItem Content="Left Center"/>
+            <ComboBoxItem Content="Right Center"/>
+            <ComboBoxItem Content="Calc Center"/>
+            <ComboBoxItem Content="Full Center"/>
+        </ComboBox>
         <Button Content="Button" Click="Button_Click"/>
-    </Grid>
+    </DockPanel>
 </Window>

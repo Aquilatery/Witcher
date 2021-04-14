@@ -1,6 +1,7 @@
 ﻿#region Imports
 
 using System.Windows;
+using System.Windows.Controls;
 using Witcher.Enum;
 using Witcher.WPF.Struct;
 using static Taskbar.Enum.Enums;
@@ -37,11 +38,24 @@ namespace Witcher_WPF_CR
         public MainWindow()
         {
             InitializeComponent();
+            Edge.SelectedIndex = 5;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Notify.Show(Data);
+            try
+            {
+                Notify.Show(Data);
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Data.Location = (EdgeLocationType)Edge.SelectedIndex;
         }
     }
 }

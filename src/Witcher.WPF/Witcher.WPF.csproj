@@ -51,6 +51,10 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Notify\Standard\Multiply.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub">
       <Version>1.1.0-beta-20204-02</Version>
       <PrivateAssets>All</PrivateAssets>
@@ -75,6 +79,21 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
   <ItemGroup>
     <Resource Include="Resources\ICO.ico" />
     <Resource Include="Resources\WITCHER.WPF.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

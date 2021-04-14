@@ -26,13 +26,14 @@ namespace Witcher.WF.Notify.Standard
         private Structs.Data Local = Values.Data;
         private StateType Stage = StateType.Show;
 
+		private bool Exit = true;
         private double Value = 0;
 
         public WitcherStandardWF(Structs.Data Data)
         {
             InitializeComponent();
 
-            Text = StandardForm;
+            Text = StandardForm + ActiveOpen;
 
             Local = Data;
 
@@ -134,8 +135,6 @@ namespace Witcher.WF.Notify.Standard
                 PANEL.Dock = DockStyle.Top;
                 LEFT.Dock = DockStyle.Right;
             }
-
-            Text += ActiveOpen++;
         }
 
         private void CLOSE_MouseEnter(object sender, EventArgs e)
@@ -262,7 +261,11 @@ namespace Witcher.WF.Notify.Standard
 
         private void StandardWF_FormClosed(object sender, EventArgs e)
         {
-            ActiveOpen--;
+			if (Exit)
+			{
+                Exit = false;
+                ActiveOpen--;
+			}
         }
     }
 

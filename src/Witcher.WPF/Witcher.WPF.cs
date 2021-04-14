@@ -190,6 +190,8 @@ namespace Witcher.WPF
                         Values.Location = Data.Location;
                         Values.Distance = Data.Distance;
 
+                        Property.ActiveOpen++;
+
                         switch (Data.Type)
                         {
                             case Enums.NotifyType.Standard:
