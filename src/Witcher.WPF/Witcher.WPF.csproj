@@ -14,7 +14,7 @@
     <Title>Witcher WPF</Title>
     <PackageId>Witcher.WPF</PackageId>
     <Authors>Taiizor</Authors>
-    <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) Soferity</Copyright>
+    <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) Soferity LLC</Copyright>
     <Summary>Best with notification management.</Summary>
     <Description>$(Summary)
 .NET Windows WPF Notify Manager - $(PackageId)
@@ -33,7 +33,7 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
     <RepositoryUrl>git://github.com/Soferity/Witcher</RepositoryUrl>
     <PackageDescription>$(Description)</PackageDescription>
     <PackageIcon>WITCHER.WPF.png</PackageIcon>
-    <Company>Soferity</Company>
+    <Company>Soferity LLC</Company>
     <Owners>$(Authors)</Owners>
     <AnalysisLevel>preview</AnalysisLevel>
     <LangVersion>preview</LangVersion>

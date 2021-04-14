@@ -8,9 +8,9 @@ using System.Windows;
 [assembly: AssemblyTitle("Witcher WPF CR")]
 [assembly: AssemblyDescription("Witcher WPF CR v1.0.0.3")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Soferity")]
+[assembly: AssemblyCompany("Soferity LLC")]
 [assembly: AssemblyProduct("Witcher WPF CR")]
-[assembly: AssemblyCopyright("Copyright © 2021 Soferity")]
+[assembly: AssemblyCopyright("Copyright © 2021 Soferity LLC")]
 [assembly: AssemblyTrademark("Witcher")]
 [assembly: AssemblyCulture("")]
 

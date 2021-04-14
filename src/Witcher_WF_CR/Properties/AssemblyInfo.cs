@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Witcher WF CR")]
 [assembly: AssemblyDescription("Witcher WF CR v1.0.0.3")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Soferity")]
+[assembly: AssemblyCompany("Soferity LLC")]
 [assembly: AssemblyProduct("Witcher WF CR")]
-[assembly: AssemblyCopyright("Copyright © 2021 Soferity")]
+[assembly: AssemblyCopyright("Copyright © 2021 Soferity LLC")]
 [assembly: AssemblyTrademark("Witcher")]
 [assembly: AssemblyCulture("")]
 
