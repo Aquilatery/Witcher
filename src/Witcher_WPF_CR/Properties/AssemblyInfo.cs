@@ -6,11 +6,11 @@ using System.Windows;
 // denetlenir. Bütünleştirilmiş kod ile ilişkili bilgileri değiştirmek için
 // bu öznitelik değerlerini değiştirin.
 [assembly: AssemblyTitle("Witcher WPF CR")]
-[assembly: AssemblyDescription("Witcher WPF CR v1.0.0.2")]
+[assembly: AssemblyDescription("Witcher WPF CR v1.0.0.3")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Taiizor")]
+[assembly: AssemblyCompany("Soferity")]
 [assembly: AssemblyProduct("Witcher WPF CR")]
-[assembly: AssemblyCopyright("Copyright © 2021 Taiizor")]
+[assembly: AssemblyCopyright("Copyright © 2021 Soferity")]
 [assembly: AssemblyTrademark("Witcher")]
 [assembly: AssemblyCulture("")]
 
@@ -32,8 +32,8 @@ using System.Windows;
 // Tüm değerleri belirtebilir veya varsayılan Derleme ve Düzeltme Numaralarını kullanmak için
 // aşağıda gösterildiği gibi '*' kullanabilirsiniz:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.2")]
-[assembly: AssemblyFileVersion("1.0.0.2")]
+[assembly: AssemblyVersion("1.0.0.3")]
+[assembly: AssemblyFileVersion("1.0.0.3")]
 
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //where theme specific resource dictionaries are located

@@ -1,19 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!--<TargetFramework>net48</TargetFramework>-->
+    <TargetFramework>net48</TargetFramework>
     <!--<TargetFrameworks>net48;net5.0-windows;net6.0-windows</TargetFrameworks>-->
     <!--<TargetFrameworks>net46;net461;net462;net47;net471;net472;net48;net5.0-windows;net6.0-windows</TargetFrameworks>-->
-    <TargetFrameworks>net46;net461;net462;net47;net471;net472;net48;netcoreapp3.0-windows;netcoreapp3.1-windows;net5.0-windows;net6.0-windows</TargetFrameworks>
+    <!--<TargetFrameworks>net46;net461;net462;net47;net471;net472;net48;netcoreapp3.0-windows;netcoreapp3.1-windows;net5.0-windows;net6.0-windows</TargetFrameworks>-->
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>Resources\ICO.ico</ApplicationIcon>
-    <Version>1.0.0.2</Version>
+    <Version>1.0.0.3</Version>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Title>Witcher WF</Title>
     <PackageId>Witcher.WF</PackageId>
     <Authors>Taiizor</Authors>
-    <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) $(Authors)</Copyright>
+    <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) Soferity</Copyright>
     <Summary>Best with notification management.</Summary>
     <Description>$(Summary)
 .NET Windows WF Notify Manager - $(PackageId)
@@ -21,7 +21,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Major changes have been made.
+    <PackageReleaseNotes>Minor changes have been made.
 Changes are detailed at https://github.com/Soferity/Witcher/releases
     </PackageReleaseNotes>
     <PackageTags>Witcher Taiizor Soferity C# CSharp VBC VB VisualBasic DotNET .NET NET WF WinForm WinForms WindowsForm WindowsForms Notify Notification Manager Windows</PackageTags>
