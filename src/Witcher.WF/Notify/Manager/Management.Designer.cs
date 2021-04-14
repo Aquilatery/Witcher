@@ -1,5 +1,4 @@
-﻿
-namespace Witcher.Notify.Manager
+﻿namespace Witcher.WF.Notify.Manager
 {
     partial class WitcherManagement
     {
@@ -36,11 +35,13 @@ namespace Witcher.Notify.Manager
             // 
             // Control
             // 
+            this.Control.Enabled = true;
             this.Control.Interval = 50;
             this.Control.Tick += new System.EventHandler(this.Control_Tick);
             // 
             // Notification
             // 
+            this.Notification.Enabled = true;
             this.Notification.Interval = 50;
             this.Notification.Tick += new System.EventHandler(this.Notification_Tick);
             // 

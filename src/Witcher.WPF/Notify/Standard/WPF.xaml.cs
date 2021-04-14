@@ -1,11 +1,11 @@
 ﻿#region Imports
 
 using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Threading;
 using Witcher.Helper;
 using Witcher.Struct;
 using Witcher.Value;
@@ -26,21 +26,22 @@ namespace Witcher.Notify.Standard
     /// </summary>
     public partial class WitcherStandardWPF : Window
     {
-        private readonly DispatcherTimer General = new() { Interval = TimeSpan.FromMilliseconds(50), IsEnabled = true };
-
         private Structs.Data Local = Values.Data;
         private StateType Stage = StateType.Show;
 
-        private double Value = 0;
+        private bool Enabled = true;
+        private readonly double Value = 0;
+        private int Time = 50;
 
         public WitcherStandardWPF(Structs.Data Data)
         {
             LocationChanged += StandardWF_LocationChanged;
             Closed += StandardWF_FormClosed;
             Loaded += StandardWPF_Loaded;
-            General.Tick += General_Tick;
 
             InitializeComponent();
+
+            _ = General_Work();
 
             Title = Values.StandardForm;
 
@@ -48,7 +49,7 @@ namespace Witcher.Notify.Standard
 
             Topmost = Local.Top;
 
-            TEXT.Content = Local.Text;
+            TEXT.Text = Local.Text;
             TEXT.FontFamily = Local.FontWPF.Family;
             TEXT.FontSize = Local.FontWPF.Size;
             TEXT.FontStretch = Local.FontWPF.Stretch;
@@ -120,25 +121,25 @@ namespace Witcher.Notify.Standard
             {
                 Left += ActiveOpen * Height;
                 Top += Local.Distance;
-                DockPanel.SetDock(TEXT, Dock.Bottom);
+                DockPanel.SetDock(TOP, Dock.Bottom);
                 DockPanel.SetDock(LEFT, Dock.Right);
             }
             else if (Local.Location == EdgeLocationType.TopCenter)
             {
                 Top += Local.Distance;
-                DockPanel.SetDock(TEXT, Dock.Bottom);
+                DockPanel.SetDock(TOP, Dock.Bottom);
             }
             else if (Local.Location == EdgeLocationType.TopLeft)
             {
                 Left -= ActiveOpen * Height;
                 Top += Local.Distance;
-                DockPanel.SetDock(TEXT, Dock.Bottom);
+                DockPanel.SetDock(TOP, Dock.Bottom);
             }
             else if (Local.Location == EdgeLocationType.LeftCenter)
             {
                 Left -= ActiveOpen * Height;
                 Top -= ActiveOpen * Height;
-                DockPanel.SetDock(TEXT, Dock.Bottom);
+                DockPanel.SetDock(TOP, Dock.Bottom);
             }
             else if (Local.Location == EdgeLocationType.RightCenter)
             {
@@ -153,7 +154,7 @@ namespace Witcher.Notify.Standard
             else
             {
                 Top -= ActiveOpen * Height;
-                DockPanel.SetDock(TEXT, Dock.Bottom);
+                DockPanel.SetDock(TOP, Dock.Bottom);
                 DockPanel.SetDock(LEFT, Dock.Right);
             }
 
@@ -175,7 +176,28 @@ namespace Witcher.Notify.Standard
             Stage = StateType.Finish;
         }
 
-        private void General_Tick(object sender, EventArgs e)
+        private async Task General_Work()
+        {
+            try
+            {
+                if (Enabled)
+                {
+                    _ = General_Tick();
+                    await Task.Delay(Time);
+                    _ = General_Work();
+                }
+            }
+            catch
+            {
+                _ = General_Work();
+            }
+            finally
+            {
+                await Task.CompletedTask;
+            }
+        }
+
+        private Task General_Tick()
         {
             if (Local.Pause && (Stage == StateType.Close || Stage == StateType.Unknown))
             {
@@ -198,7 +220,7 @@ namespace Witcher.Notify.Standard
                     }
                     else
                     {
-                        General.Interval = TimeSpan.FromMilliseconds(10);
+                        Time = 10;
                         Stage = StateType.Start;
                     }
                     break;
@@ -217,24 +239,24 @@ namespace Witcher.Notify.Standard
                     }
                     else
                     {
-                        General.Interval = TimeSpan.FromMilliseconds(50);
+                        Time = 50;
                         Stage = StateType.Close;
                     }
                     break;
                 case StateType.Close:
                     if (Title == Values.StandardForm + "0")
                     {
-                        Value += PANEL.Width / (Local.Time / General.Interval.Milliseconds);
+                        //Value += PANEL.Width / (Local.Time / General.Interval.Milliseconds);
 
-                        if (PANEL.Width > Value)
-                        {
-                            BAR.Width = Value;
-                        }
-                        else
-                        {
-                            BAR.Width = PANEL.Width;
-                            CLOSE_MouseLeftButtonUp(null, null);
-                        }
+                        //if (PANEL.Width > Value)
+                        //{
+                        //    BAR.Width = Value;
+                        //}
+                        //else
+                        //{
+                        //    BAR.Width = PANEL.Width;
+                        //    CLOSE_MouseLeftButtonUp(null, null);
+                        //}
                     }
                     break;
                 case StateType.Finish:
@@ -244,20 +266,22 @@ namespace Witcher.Notify.Standard
                     }
                     else
                     {
-                        General.Stop();
-                        StandardWF_FormClosed(sender, e);
+                        Enabled = false;
+                        StandardWF_FormClosed(null, null);
                         Close();
                     }
                     break;
             }
+
+            return Task.CompletedTask;
         }
 
         private void StandardWF_LocationChanged(object sender, EventArgs e)
         {
-            if (General.IsEnabled && Stage == StateType.Close)
+            if (Enabled && Stage == StateType.Close)
             {
-                General.IsEnabled = false;
-                General.IsEnabled = true;
+                Enabled = false;
+                Enabled = true;
             }
         }
 

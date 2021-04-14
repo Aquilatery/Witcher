@@ -13,12 +13,12 @@
     <NoWarn>CA1416</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Witcher_CR.Program</StartupObject>
+    <StartupObject>Witcher.WF_CR.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\ICO.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Witcher\Witcher.csproj" />
+    <ProjectReference Include="..\Witcher.WF\Witcher.WF.csproj" />
   </ItemGroup>
 </Project>

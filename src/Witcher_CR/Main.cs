@@ -2,39 +2,30 @@
 
 using System;
 using System.Drawing;
-using System.Windows;
 using System.Windows.Forms;
 using static Taskbar.Enum.Enums;
 using static Witcher.Enum.Enums;
-using static Witcher.Struct.Structs;
-using static Witcher.Witcher;
+using static Witcher.WF.Witcher;
+using static Witcher.WF.Struct.Structs;
 using static Witcher.Witcher.Property;
+using static Witcher.WF.Witcher.Property;
 
 #endregion
 
-namespace Witcher_CR
+namespace Witcher.WF_CR
 {
     public partial class Main : Form
     {
         private static Data Data = new()
         {
             Location = EdgeLocationType.TopRight,
-            System = SystemType.WindowsForms,
             Type = NotifyType.Standard,
             Alert = AlertType.Success,
             Theme = ThemeType.Dark,
             Distance = 32,
             Title = "Soferity Witcher",
             Text = "My Name Is Soferity Witcher Sweetheart!",
-            FontWF = new Font("Raleway SemiBold", 12F, System.Drawing.FontStyle.Bold, GraphicsUnit.Point, 162),
-            FontWPF = new()
-            {
-                Family = new("Raleway SemiBold"),
-                Size = 12F,
-                Stretch = FontStretches.Normal,
-                Style = FontStyles.Normal,
-                Weight = FontWeights.Bold,
-            },
+            Font = new Font("Raleway SemiBold", 12F, System.Drawing.FontStyle.Bold, GraphicsUnit.Point, 162),
             Pause = true,
             Top = true,
             Time = 5000
@@ -155,9 +146,6 @@ namespace Witcher_CR
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            Data.System = SystemType.WindowsPresentationFoundation;
-            Data.FontWPF.Family = new System.Windows.Media.FontFamily();
-            Notify.Show(Data);
         }
 
         private void Button5_Click(object sender, EventArgs e)
@@ -176,13 +164,13 @@ namespace Witcher_CR
         {
             FontDialog FD = new();
 
-            FD.Font = new("Raleway SemiBold", 12F, System.Drawing.FontStyle.Bold, GraphicsUnit.Point, 162);
+            FD.Font = new("Raleway SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             FD.MaxSize = 40;
             FD.MinSize = 4;
 
             if (FD.ShowDialog() == DialogResult.OK)
             {
-                Data.FontWF = FD.Font;
+                Data.Font = FD.Font;
             }
         }
 

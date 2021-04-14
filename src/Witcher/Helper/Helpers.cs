@@ -3,7 +3,7 @@
     /// <summary>
     /// 
     /// </summary>
-    internal class Helpers
+    public class Helpers
     {
         #region Helpers
         /// <summary>
@@ -16,7 +16,7 @@
         /// <param name="FW"></param>
         /// <param name="FH"></param>
         /// <returns></returns>
-        internal static bool Contains(int CX, int CY, int FX, int FY, int FW, int FH)
+        public static bool Contains(int CX, int CY, int FX, int FY, int FW, int FH)
         {
             try
             {
@@ -45,7 +45,7 @@
         /// <param name="FW"></param>
         /// <param name="FH"></param>
         /// <returns></returns>
-        internal static bool Contains(int CX, int CY, double FX, double FY, double FW, double FH)
+        public static bool Contains(int CX, int CY, double FX, double FY, double FW, double FH)
         {
             try
             {

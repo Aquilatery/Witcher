@@ -2,16 +2,16 @@
 
 using System;
 using System.Linq;
-using System.Windows;
 using System.Windows.Forms;
-using Witcher.Struct;
-using Witcher.Value;
+using Witcher.WF.Struct;
+using Witcher.WF.Value;
 using static Taskbar.Enum.Enums;
+using static Witcher.WF.Witcher.Property;
 using static Witcher.Witcher.Property;
 
 #endregion
 
-namespace Witcher.Notify.Manager
+namespace Witcher.WF.Notify.Manager
 {
     #region Management
 
@@ -28,27 +28,13 @@ namespace Witcher.Notify.Manager
 
             if (ActiveOpen > 0)
             {
-                foreach (Form Form in System.Windows.Forms.Application.OpenForms)
+                foreach (Form Form in Application.OpenForms)
                 {
-                    if (Form.Text.StartsWith(Values.StandardForm))
+                    if (Form.Text.StartsWith(StandardForm))
                     {
                         if (Standard_Control(Form))
                         {
                             break;
-                        }
-                    }
-                }
-
-                if (Values.Windows.Any())
-                {
-                    foreach (Window Window in Values.Windows)
-                    {
-                        if (Window.Title.StartsWith(Values.StandardForm))
-                        {
-                            if (Standard_Control(Window))
-                            {
-                                break;
-                            }
                         }
                     }
                 }
@@ -59,18 +45,18 @@ namespace Witcher.Notify.Manager
 
         private static bool Standard_Control(Form Form)
         {
-            int ID1 = Convert.ToInt32(Form.Text.Replace(Values.StandardForm, ""));
+            int ID1 = Convert.ToInt32(Form.Text.Replace(StandardForm, ""));
 
             if (ID1 >= 1)
             {
                 bool State = true;
 
-                foreach (Form CheckForm in System.Windows.Forms.Application.OpenForms)
+                foreach (Form CheckForm in Application.OpenForms)
                 {
-                    if (CheckForm.Text.StartsWith(Values.StandardForm))
+                    if (CheckForm.Text.StartsWith(StandardForm))
                     {
                         int ID2 = ID1 - 1;
-                        if (CheckForm.Text == Values.StandardForm + ID2)
+                        if (CheckForm.Text == StandardForm + ID2)
                         {
                             State = false;
                             break;
@@ -89,47 +75,7 @@ namespace Witcher.Notify.Manager
                         Form.Location = new System.Drawing.Point(Form.Location.X, Form.Location.Y - Form.Height);
                     }
 
-                    Form.Text = Values.StandardForm + (ID1 - 1);
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private static bool Standard_Control(Window Window)
-        {
-            int ID1 = Convert.ToInt32(Window.Title.Replace(Values.StandardForm, ""));
-
-            if (ID1 >= 1)
-            {
-                bool State = true;
-
-                foreach (Window CheckWindow in Values.Windows)
-                {
-                    if (CheckWindow.Title.StartsWith(Values.StandardForm))
-                    {
-                        int ID2 = ID1 - 1;
-                        if (CheckWindow.Title == Values.StandardForm + ID2)
-                        {
-                            State = false;
-                            break;
-                        }
-                    }
-                }
-
-                if (State)
-                {
-                    if (Values.Location == EdgeLocationType.BotRight || Values.Location == EdgeLocationType.BotCenter || Values.Location == EdgeLocationType.BotLeft || Values.Location == EdgeLocationType.LeftCenter || Values.Location == EdgeLocationType.FullCenter)
-                    {
-                        Window.Top += Window.Height;
-                    }
-                    else
-                    {
-                        Window.Top -= Window.Height;
-                    }
-
-                    Window.Title = Values.StandardForm + (ID1 - 1);
+                    Form.Text = StandardForm + (ID1 - 1);
                     return true;
                 }
             }

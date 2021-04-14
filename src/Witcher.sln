@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.31025.218
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Witcher", "Witcher\Witcher.csproj", "{29781EE5-4D9A-47BE-8C4A-3D79F69B0948}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Witcher_CR", "Witcher_CR\Witcher_CR.csproj", "{CE3B27D5-4416-4E0D-82D8-5E5C316AE974}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Witcher.WF_CR", "Witcher_CR\Witcher.WF_CR.csproj", "{CE3B27D5-4416-4E0D-82D8-5E5C316AE974}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Witcher.WPF", "Witcher.WPF\Witcher.WPF.csproj", "{2079D7B4-A998-4C78-8674-10E4330A027A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Witcher.WF", "Witcher.WF\Witcher.WF.csproj", "{A844967C-9F1A-4659-8D39-CCF79310FD09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{CE3B27D5-4416-4E0D-82D8-5E5C316AE974}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE3B27D5-4416-4E0D-82D8-5E5C316AE974}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE3B27D5-4416-4E0D-82D8-5E5C316AE974}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2079D7B4-A998-4C78-8674-10E4330A027A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2079D7B4-A998-4C78-8674-10E4330A027A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2079D7B4-A998-4C78-8674-10E4330A027A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2079D7B4-A998-4C78-8674-10E4330A027A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A844967C-9F1A-4659-8D39-CCF79310FD09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A844967C-9F1A-4659-8D39-CCF79310FD09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A844967C-9F1A-4659-8D39-CCF79310FD09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A844967C-9F1A-4659-8D39-CCF79310FD09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

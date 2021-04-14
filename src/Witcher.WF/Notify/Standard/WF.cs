@@ -4,16 +4,17 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Witcher.Helper;
-using Witcher.Struct;
-using Witcher.Value;
+using Witcher.WF.Struct;
+using Witcher.WF.Value;
 using static Taskbar.Enum.Enums;
 using static Taskbar.Taskbar.Advanced;
 using static Witcher.Enum.Enums;
+using static Witcher.WF.Witcher.Property;
 using static Witcher.Witcher.Property;
 
 #endregion
 
-namespace Witcher.Notify.Standard
+namespace Witcher.WF.Notify.Standard
 {
     #region WitcherStandardWF
 
@@ -31,14 +32,14 @@ namespace Witcher.Notify.Standard
         {
             InitializeComponent();
 
-            Text = Values.StandardForm;
+            Text = StandardForm;
 
             Local = Data;
 
             TopMost = Local.Top;
 
             TEXT.Text = Local.Text;
-            TEXT.Font = Local.FontWF;
+            TEXT.Font = Local.Font;
 
             if (Local.Theme == ThemeType.Dark || Local.Theme == ThemeType.Light)
             {
@@ -73,10 +74,10 @@ namespace Witcher.Notify.Standard
             }
             else
             {
-                BackColor = Values.CustomThemeWF.Background;
-                TEXT.ForeColor = Values.CustomThemeWF.Text;
-                LEFT.BackColor = Values.CustomThemeWF.Edge;
-                BAR.BackColor = Values.CustomThemeWF.Bar;
+                BackColor = Values.CustomTheme.Background;
+                TEXT.ForeColor = Values.CustomTheme.Text;
+                LEFT.BackColor = Values.CustomTheme.Edge;
+                BAR.BackColor = Values.CustomTheme.Bar;
             }
         }
 
@@ -201,7 +202,7 @@ namespace Witcher.Notify.Standard
                     }
                     break;
                 case StateType.Close:
-                    if (Text == Values.StandardForm + "0")
+                    if (Text == StandardForm + "0")
                     {
                         if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.TopRight || Local.Location == EdgeLocationType.RightCenter || Local.Location == EdgeLocationType.FullCenter)
                         {

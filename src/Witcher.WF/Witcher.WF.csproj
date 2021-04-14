@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
@@ -6,18 +6,17 @@
     <!--<TargetFrameworks>net40;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48;net5.0-windows;net6.0-windows</TargetFrameworks>-->
     <!--<TargetFrameworks>net40;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48;netcoreapp3.1-windows;net5.0-windows;net6.0-windows</TargetFrameworks>-->
     <UseWindowsForms>true</UseWindowsForms>
-    <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\ICO.ico</ApplicationIcon>
     <Version>1.0.0.2</Version>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Title>Witcher</Title>
-    <PackageId>Witcher</PackageId>
+    <Title>Witcher WF</Title>
+    <PackageId>Witcher.WF</PackageId>
     <Authors>Taiizor</Authors>
     <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) $(Authors)</Copyright>
     <Summary>Best with notification management.</Summary>
     <Description>$(Summary)
-.NET Windows Notify Manager - $(PackageId)
+.NET Windows WF Notify Manager - $(PackageId)
     </Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageLicenseExpression></PackageLicenseExpression>
@@ -25,14 +24,14 @@
     <PackageReleaseNotes>Minor changes have been made.
 Changes are detailed at https://github.com/Soferity/Witcher/releases
     </PackageReleaseNotes>
-    <PackageTags>Witcher Taiizor Soferity C# CSharp VBC VB VisualBasic DotNET .NET NET Notify Notification Manager Windows</PackageTags>
+    <PackageTags>Witcher Taiizor Soferity C# CSharp VBC VB VisualBasic DotNET .NET NET WF WinForm WinForms WindowsForm WindowsForms Notify Notification Manager Windows</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <!--<DocumentationFile>..\$(PackageId)\bin$(OutputPath)\$(Configuration)\$(TargetFramework)\$(PackageId).xml</DocumentationFile>-->
     <PackageProjectUrl>https://github.com/Soferity/Witcher</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/Soferity/Witcher</RepositoryUrl>
     <PackageDescription>$(Description)</PackageDescription>
-    <PackageIcon>WITCHER.png</PackageIcon>
+    <PackageIcon>WITCHER.WF.png</PackageIcon>
     <Company>$(Authors)</Company>
     <Owners>$(Authors)</Owners>
     <AnalysisLevel>preview</AnalysisLevel>
@@ -63,7 +62,7 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <None Include="Resources\WITCHER.png">
+    <None Include="Resources\WITCHER.WF.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
@@ -71,34 +70,15 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
 
   <ItemGroup>
     <Resource Include="Resources\ICO.ico" />
-    <Resource Include="Resources\WITCHER.png" />
+    <Resource Include="Resources\WITCHER.WF.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Notify\Standard\Cancel.png" />
-    <Resource Include="Resources\Notify\Standard\Checkmark.png" />
-    <Resource Include="Resources\Notify\Standard\Error.png" />
-    <Resource Include="Resources\Notify\Standard\ExclamationMarkA.png" />
-    <Resource Include="Resources\Notify\Standard\ExclamationMarkB.png" />
-    <Resource Include="Resources\Notify\Standard\Importance.png" />
-    <Resource Include="Resources\Notify\Standard\Multiply.png" />
-    <Resource Include="Resources\Notify\Standard\Question.png" />
-    <Resource Include="Resources\Notify\Standard\Warning.png" />
+    <Folder Include="Properties\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Witcher\Witcher.csproj" />
   </ItemGroup>
 
 </Project>

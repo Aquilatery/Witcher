@@ -51,27 +51,15 @@
         /// <summary>
         /// 
         /// </summary>
-        public enum SystemType
-        {
-            /// <summary>
-            /// 
-            /// </summary>
-            WindowsForms,
-            /// <summary>
-            /// 
-            /// </summary>
-            WindowsPresentationFoundation
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public enum NotifyType
         {
             Standard
         }
 
-        internal enum StateType
+        /// <summary>
+        /// 
+        /// </summary>
+        public enum StateType
         {
             /// <summary>
             /// 

@@ -1,4 +1,4 @@
-﻿namespace Witcher.Notify.Standard
+﻿namespace Witcher.WF.Notify.Standard
 {
     partial class WitcherStandardWF
     {
