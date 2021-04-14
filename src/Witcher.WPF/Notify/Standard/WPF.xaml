@@ -1,5 +1,5 @@
 ﻿<Window
-    x:Class="Witcher.Notify.Standard.WitcherStandardWPF"
+    x:Class="Witcher.WPF.Notify.Standard.WitcherStandardWPF"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -18,7 +18,7 @@
         </StackPanel>
         <DockPanel HorizontalAlignment="Stretch">
             <Border Name="TOP" DockPanel.Dock="Top" Height="58">
-                <AccessText Name="TEXT" Foreground="Gainsboro" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Raleway SemiBold" FontSize="12" Text="My Name Is Soferity Witcher Sweetheart!" TextTrimming="CharacterEllipsis" TextWrapping="WrapWithOverflow" LineStackingStrategy="BlockLineHeight"/>
+                <AccessText Name="TEXT" Foreground="Gainsboro" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Raleway SemiBold" FontSize="12" Text="My Name Is Soferity Witcher WPF Sweetheart!" TextTrimming="CharacterEllipsis" TextWrapping="WrapWithOverflow" LineStackingStrategy="BlockLineHeight"/>
             </Border>
             <Border Name="PANEL" Background="SeaGreen" DockPanel.Dock="Bottom">
                 <StackPanel Name="BAR" Background="Crimson" HorizontalAlignment="Left"/>

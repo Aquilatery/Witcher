@@ -1,6 +1,6 @@
 ﻿using Witcher.Properties;
 
-namespace Witcher.WF.Notify.Manager
+namespace Witcher.WPF.Notify.Manager
 {
     partial class WitcherManagement
     {

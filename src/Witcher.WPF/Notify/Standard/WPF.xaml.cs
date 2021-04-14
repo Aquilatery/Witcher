@@ -7,17 +7,17 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using Witcher.Helper;
-using Witcher.Struct;
-using Witcher.Value;
+using Witcher.WPF.Struct;
+using Witcher.WPF.Value;
 using static Taskbar.Enum.Enums;
 using static Taskbar.Taskbar.Advanced;
 using static Witcher.Enum.Enums;
 using static Witcher.Witcher.Property;
-using Control = System.Windows.Forms.Control;
+using static Witcher.WPF.Witcher.Property;
 
 #endregion
 
-namespace Witcher.Notify.Standard
+namespace Witcher.WPF.Notify.Standard
 {
     #region WitcherStandardWPF
 
@@ -43,18 +43,18 @@ namespace Witcher.Notify.Standard
 
             _ = General_Work();
 
-            Title = Values.StandardForm;
+            Title = StandardForm;
 
             Local = Data;
 
             Topmost = Local.Top;
 
             TEXT.Text = Local.Text;
-            TEXT.FontFamily = Local.FontWPF.Family;
-            TEXT.FontSize = Local.FontWPF.Size;
-            TEXT.FontStretch = Local.FontWPF.Stretch;
-            TEXT.FontStyle = Local.FontWPF.Style;
-            TEXT.FontWeight = Local.FontWPF.Weight;
+            TEXT.FontFamily = Local.Font.Family;
+            TEXT.FontSize = Local.Font.Size;
+            TEXT.FontStretch = Local.Font.Stretch;
+            TEXT.FontStyle = Local.Font.Style;
+            TEXT.FontWeight = Local.Font.Weight;
 
             if (Local.Theme == ThemeType.Dark || Local.Theme == ThemeType.Light)
             {
@@ -89,10 +89,10 @@ namespace Witcher.Notify.Standard
             }
             else
             {
-                Background = Values.CustomThemeWPF.Background;
-                TEXT.Foreground = Values.CustomThemeWPF.Text;
-                LEFT.Background = Values.CustomThemeWPF.Edge;
-                BAR.Background = Values.CustomThemeWPF.Bar;
+                Background = Values.CustomTheme.Background;
+                TEXT.Foreground = Values.CustomTheme.Text;
+                LEFT.Background = Values.CustomTheme.Edge;
+                BAR.Background = Values.CustomTheme.Bar;
             }
         }
 
@@ -201,7 +201,7 @@ namespace Witcher.Notify.Standard
         {
             if (Local.Pause && (Stage == StateType.Close || Stage == StateType.Unknown))
             {
-                if (Helpers.Contains(Control.MousePosition.X, Control.MousePosition.Y, Left, Top, Width, Height))
+                if (Helpers.Contains((int)Mouse.GetPosition(this).X, (int)Mouse.GetPosition(this).Y, Left, Top, Width, Height))
                 {
                     Stage = StateType.Unknown;
                 }
@@ -244,7 +244,7 @@ namespace Witcher.Notify.Standard
                     }
                     break;
                 case StateType.Close:
-                    if (Title == Values.StandardForm + "0")
+                    if (Title == StandardForm + "0")
                     {
                         //Value += PANEL.Width / (Local.Time / General.Interval.Milliseconds);
 

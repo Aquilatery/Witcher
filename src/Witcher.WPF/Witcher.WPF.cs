@@ -1,15 +1,13 @@
 ﻿#region Imports
 
 using System;
-using System.Drawing;
 using System.Windows;
-using System.Windows.Forms;
-using System.Windows.Forms.Integration;
 using Witcher.Enum;
-using Witcher.Notify.Manager;
-using Witcher.Notify.Standard;
-using Witcher.Struct;
-using Witcher.Value;
+using Witcher.WPF.Notify.Manager;
+using Witcher.WPF.Notify.Standard;
+using Witcher.WPF.Struct;
+using Witcher.WPF.Value;
+using static Witcher.Witcher.Property;
 
 #endregion
 
@@ -61,42 +59,17 @@ namespace Witcher.WPF
             /// <summary>
             /// 
             /// </summary>
-            public static int MaxOpen
-            {
-                get => Values.Max;
-                set => Values.Max = value;
-            }
-
-            /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="ST"></param>
-            /// <param name="WF"></param>
-            /// <param name="WPF"></param>
+            /// <param name="Font"></param>
             /// <returns></returns>
-            internal static bool FontControl(Enums.SystemType ST, Font WF, Structs.FontWPF WPF)
+            internal static bool FontControl(Structs.Font Font)
             {
-                if (ST == Enums.SystemType.WindowsForms)
+                if (Font.Family == null)
                 {
-                    if (WF == null)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        return true;
-                    }
+                    return false;
                 }
                 else
                 {
-                    if (WPF.Family == null)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
         }
@@ -115,8 +88,8 @@ namespace Witcher.WPF
             /// </summary>
             static Notify()
             {
-                WitcherManagement M = new();
-                M.Show();
+                WitcherManagement WM = new();
+                WM.Show();
             }
 
             /// <summary>
@@ -167,12 +140,11 @@ namespace Witcher.WPF
                         switch (Type)
                         {
                             case Enums.NotifyType.Standard:
-                                foreach (Form Form in System.Windows.Forms.Application.OpenForms)
+                                foreach (Window Window in Application.Current.Windows)
                                 {
-                                    if (Form.Text.StartsWith(Values.StandardForm))
+                                    if (Window.Title.StartsWith(StandardForm))
                                     {
-                                        Form.Close();
-                                        Form.Dispose();
+                                        Window.Close();
                                     }
                                 }
                                 break;
@@ -210,26 +182,18 @@ namespace Witcher.WPF
             /// <param name="Data"></param>
             public static void Show(Structs.Data Data)
             {
-                if (Property.FontControl(Data.System, Data.FontWF, Data.FontWPF) && Data.Time >= Values.Time)
+                if (Property.FontControl(Data.Font) && Data.Time >= DefaultTime)
                 {
-                    if (Property.ActiveOpen <= 0 || (Property.ActiveOpen < Property.MaxOpen && Values.Type == Data.Type && Values.System == Data.System && Values.Location == Data.Location))
+                    if (Property.ActiveOpen <= 0 || (Property.ActiveOpen < MaxOpen && Values.Type == Data.Type && Values.Location == Data.Location && Values.Distance == Data.Distance))
                     {
                         Values.Type = Data.Type;
-                        Values.System = Data.System;
                         Values.Location = Data.Location;
+                        Values.Distance = Data.Distance;
 
                         switch (Data.Type)
                         {
                             case Enums.NotifyType.Standard:
-                                switch (Data.System)
-                                {
-                                    case Enums.SystemType.WindowsForms:
-                                        Show(new WitcherStandardWF(Data));
-                                        break;
-                                    case Enums.SystemType.WindowsPresentationFoundation:
-                                        Show(new WitcherStandardWPF(Data));
-                                        break;
-                                }
+                                Show(new WitcherStandardWPF(Data));
                                 break;
                         }
                     }
@@ -240,9 +204,9 @@ namespace Witcher.WPF
                 }
                 else
                 {
-                    if (Data.Time < Values.Time)
+                    if (Data.Time < DefaultTime)
                     {
-                        throw new Exception($"Time must be greater than or equal to {Values.Time}!");
+                        throw new Exception($"Time must be greater than or equal to {DefaultTime}!");
                     }
                     else
                     {
@@ -254,19 +218,9 @@ namespace Witcher.WPF
             /// <summary>
             /// 
             /// </summary>
-            /// <param name="Form"></param>
-            private static void Show(Form Form)
-            {
-                Form.Show();
-            }
-
-            /// <summary>
-            /// 
-            /// </summary>
             /// <param name="Window"></param>
-            private static void Show(Window Window)
+            internal static void Show(Window Window)
             {
-                ElementHost.EnableModelessKeyboardInterop(Window);
                 Window.Show();
             }
         }

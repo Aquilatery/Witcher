@@ -1,4 +1,6 @@
-﻿namespace Witcher.WF.Notify.Standard
+﻿using Witcher.Properties;
+
+namespace Witcher.WF.Notify.Standard
 {
     partial class WitcherStandardWF
     {
@@ -29,6 +31,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WitcherStandardWF));
             this.LEFT = new System.Windows.Forms.Panel();
             this.CLOSE = new System.Windows.Forms.PictureBox();
             this.TEXT = new System.Windows.Forms.Label();
@@ -56,7 +59,7 @@
             this.CLOSE.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CLOSE.BackColor = System.Drawing.Color.Transparent;
             this.CLOSE.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CLOSE.Image = global::Witcher.Properties.Resources.Multiply;
+            this.CLOSE.Image = Resources.Multiply;
             this.CLOSE.Location = new System.Drawing.Point(0, 22);
             this.CLOSE.Margin = new System.Windows.Forms.Padding(0);
             this.CLOSE.Name = "CLOSE";
@@ -80,7 +83,7 @@
             this.TEXT.Name = "TEXT";
             this.TEXT.Size = new System.Drawing.Size(374, 60);
             this.TEXT.TabIndex = 7;
-            this.TEXT.Text = "My Name Is Soferity Witcher Sweetheart!";
+            this.TEXT.Text = "My Name Is Soferity Witcher WF Sweetheart!";
             this.TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BAR
@@ -122,7 +125,7 @@
             this.Controls.Add(this.TEXT);
             this.Controls.Add(this.LEFT);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = global::Witcher.Properties.Resources.ICO;
+            this.Icon = Resources.ICO;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WitcherStandardWF";

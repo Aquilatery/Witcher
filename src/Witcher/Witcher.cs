@@ -42,10 +42,7 @@ namespace Witcher
             /// <summary>
             /// 
             /// </summary>
-            public static int DefaultTime
-            {
-                get => Values.Time;
-            }
+            public static int DefaultTime => Values.Time;
 
             /// <summary>
             /// 

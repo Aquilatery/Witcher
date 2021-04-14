@@ -69,6 +69,14 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Witcher\Witcher.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\ICO.ico" />
     <Resource Include="Resources\WITCHER.WPF.png" />
   </ItemGroup>

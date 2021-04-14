@@ -5,10 +5,10 @@ using System.Drawing;
 using System.Windows.Forms;
 using static Taskbar.Enum.Enums;
 using static Witcher.Enum.Enums;
-using static Witcher.WF.Witcher;
 using static Witcher.WF.Struct.Structs;
-using static Witcher.Witcher.Property;
+using static Witcher.WF.Witcher;
 using static Witcher.WF.Witcher.Property;
+using static Witcher.Witcher.Property;
 
 #endregion
 
@@ -25,7 +25,7 @@ namespace Witcher.WF_CR
             Distance = 32,
             Title = "Soferity Witcher",
             Text = "My Name Is Soferity Witcher Sweetheart!",
-            Font = new Font("Raleway SemiBold", 12F, System.Drawing.FontStyle.Bold, GraphicsUnit.Point, 162),
+            Font = new Font("Raleway SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162),
             Pause = true,
             Top = true,
             Time = 5000
@@ -164,7 +164,7 @@ namespace Witcher.WF_CR
         {
             FontDialog FD = new();
 
-            FD.Font = new("Raleway SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            FD.Font = Data.Font;
             FD.MaxSize = 40;
             FD.MinSize = 4;
 
