@@ -88,7 +88,11 @@
             /// <summary>
             /// 
             /// </summary>
-            Finish
+            Finish,
+            /// <summary>
+            /// 
+            /// </summary>
+            Unknown
         }
         #endregion
     }

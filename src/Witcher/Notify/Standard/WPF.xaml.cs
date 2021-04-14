@@ -6,12 +6,14 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using Witcher.Helper;
 using Witcher.Struct;
 using Witcher.Value;
 using static Taskbar.Enum.Enums;
 using static Taskbar.Taskbar.Advanced;
 using static Witcher.Enum.Enums;
 using static Witcher.Witcher.Property;
+using Control = System.Windows.Forms.Control;
 
 #endregion
 
@@ -46,17 +48,6 @@ namespace Witcher.Notify.Standard
 
             Topmost = Local.Top;
 
-            if (Local.Theme == ThemeType.Dark)
-            {
-                Background = new SolidColorBrush(Color.FromRgb(38, 38, 38));
-                TEXT.Foreground = Brushes.Gainsboro;
-            }
-            else
-            {
-                Background = Brushes.Gainsboro;
-                TEXT.Foreground = new SolidColorBrush(Color.FromRgb(38, 38, 38));
-            }
-
             TEXT.Content = Local.Text;
             TEXT.FontFamily = Local.FontWPF.Family;
             TEXT.FontSize = Local.FontWPF.Size;
@@ -64,23 +55,44 @@ namespace Witcher.Notify.Standard
             TEXT.FontStyle = Local.FontWPF.Style;
             TEXT.FontWeight = Local.FontWPF.Weight;
 
-            switch (Local.Alert)
+            if (Local.Theme == ThemeType.Dark || Local.Theme == ThemeType.Light)
             {
-                case AlertType.Success:
-                    LEFT.Background = Brushes.SeaGreen;
-                    break;
-                case AlertType.Warning:
-                    LEFT.Background = new SolidColorBrush(Color.FromRgb(255, 128, 0));
-                    break;
-                case AlertType.Error:
-                    LEFT.Background = Brushes.Crimson;
-                    break;
-                case AlertType.Info:
-                    LEFT.Background = Brushes.Gray;
-                    break;
-            }
+                if (Local.Theme == ThemeType.Dark)
+                {
+                    Background = new SolidColorBrush(Color.FromRgb(38, 38, 38));
+                    TEXT.Foreground = Brushes.Gainsboro;
+                }
+                else
+                {
+                    Background = Brushes.Gainsboro;
+                    TEXT.Foreground = new SolidColorBrush(Color.FromRgb(38, 38, 38));
+                }
 
-            BAR.Background = LEFT.Background;
+                switch (Local.Alert)
+                {
+                    case AlertType.Success:
+                        LEFT.Background = Brushes.SeaGreen;
+                        break;
+                    case AlertType.Warning:
+                        LEFT.Background = new SolidColorBrush(Color.FromRgb(255, 128, 0));
+                        break;
+                    case AlertType.Error:
+                        LEFT.Background = Brushes.Crimson;
+                        break;
+                    case AlertType.Info:
+                        LEFT.Background = Brushes.Gray;
+                        break;
+                }
+
+                BAR.Background = LEFT.Background;
+            }
+            else
+            {
+                Background = Values.CustomThemeWPF.Background;
+                TEXT.Foreground = Values.CustomThemeWPF.Text;
+                LEFT.Background = Values.CustomThemeWPF.Edge;
+                BAR.Background = Values.CustomThemeWPF.Bar;
+            }
         }
 
         private void StandardWPF_Loaded(object sender, RoutedEventArgs e)
@@ -165,6 +177,18 @@ namespace Witcher.Notify.Standard
 
         private void General_Tick(object sender, EventArgs e)
         {
+            if (Local.Pause && (Stage == StateType.Close || Stage == StateType.Unknown))
+            {
+                if (Helpers.Contains(Control.MousePosition.X, Control.MousePosition.Y, Left, Top, Width, Height))
+                {
+                    Stage = StateType.Unknown;
+                }
+                else
+                {
+                    Stage = StateType.Close;
+                }
+            }
+
             switch (Stage)
             {
                 case StateType.Show:

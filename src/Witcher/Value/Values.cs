@@ -7,6 +7,7 @@ using Witcher.Enum;
 using Witcher.Struct;
 using static Taskbar.Enum.Enums;
 using FontStyle = System.Drawing.FontStyle;
+using Brushes = System.Windows.Media.Brushes;
 
 #endregion
 
@@ -75,6 +76,7 @@ namespace Witcher.Value
                 Style = FontStyles.Normal,
                 Weight = FontWeights.Bold,
             },
+            Pause = true,
             Top = true,
             Time = 5000
         };
@@ -82,10 +84,26 @@ namespace Witcher.Value
         /// <summary>
         /// 
         /// </summary>
-        public static Structs.CustomTheme CustomTheme = new()
+        public static Structs.CustomThemeWF CustomThemeWF = new()
         {
+            Background = Color.Black,
+            Title = Color.Black,
+            Text = Color.Black,
+            Edge = Color.Black,
+            Bar = Color.Black,
+        };
 
-        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Structs.CustomThemeWPF CustomThemeWPF = new()
+        {
+            Background = Brushes.Black,
+            Title = Brushes.Black,
+            Text = Brushes.Black,
+            Edge = Brushes.Black,
+            Bar = Brushes.Black,
+        };
 
         /// <summary>
         /// 

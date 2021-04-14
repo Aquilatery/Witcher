@@ -3,6 +3,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Witcher.Helper;
 using Witcher.Struct;
 using Witcher.Value;
 using static Taskbar.Enum.Enums;
@@ -36,37 +37,47 @@ namespace Witcher.Notify.Standard
 
             TopMost = Local.Top;
 
-            if (Local.Theme == ThemeType.Dark)
-            {
-                BackColor = Color.FromArgb(38, 38, 38);
-                TEXT.ForeColor = Color.Gainsboro;
-            }
-            else
-            {
-                BackColor = Color.Gainsboro;
-                TEXT.ForeColor = Color.FromArgb(38, 38, 38);
-            }
-
             TEXT.Text = Local.Text;
             TEXT.Font = Local.FontWF;
 
-            switch (Local.Alert)
+            if (Local.Theme == ThemeType.Dark || Local.Theme == ThemeType.Light)
             {
-                case AlertType.Success:
-                    LEFT.BackColor = Color.SeaGreen;
-                    break;
-                case AlertType.Warning:
-                    LEFT.BackColor = Color.FromArgb(255, 128, 0);
-                    break;
-                case AlertType.Error:
-                    LEFT.BackColor = Color.Crimson;
-                    break;
-                case AlertType.Info:
-                    LEFT.BackColor = Color.Gray;
-                    break;
-            }
+                if (Local.Theme == ThemeType.Dark)
+                {
+                    BackColor = Color.FromArgb(38, 38, 38);
+                    TEXT.ForeColor = Color.Gainsboro;
+                }
+                else
+                {
+                    BackColor = Color.Gainsboro;
+                    TEXT.ForeColor = Color.FromArgb(38, 38, 38);
+                }
 
-            BAR.BackColor = LEFT.BackColor;
+                switch (Local.Alert)
+                {
+                    case AlertType.Success:
+                        LEFT.BackColor = Color.SeaGreen;
+                        break;
+                    case AlertType.Warning:
+                        LEFT.BackColor = Color.FromArgb(255, 128, 0);
+                        break;
+                    case AlertType.Error:
+                        LEFT.BackColor = Color.Crimson;
+                        break;
+                    case AlertType.Info:
+                        LEFT.BackColor = Color.Gray;
+                        break;
+                }
+
+                BAR.BackColor = LEFT.BackColor;
+            }
+            else
+            {
+                BackColor = Values.CustomThemeWF.Background;
+                TEXT.ForeColor = Values.CustomThemeWF.Text;
+                LEFT.BackColor = Values.CustomThemeWF.Edge;
+                BAR.BackColor = Values.CustomThemeWF.Bar;
+            }
         }
 
         private void StandardWF_Load(object sender, EventArgs e)
@@ -145,6 +156,18 @@ namespace Witcher.Notify.Standard
 
         private void General_Tick(object sender, EventArgs e)
         {
+            if (Local.Pause && (Stage == StateType.Close || Stage == StateType.Unknown))
+            {
+                if (Helpers.Contains(MousePosition.X, MousePosition.Y, Location.X, Location.Y, Width, Height))
+                {
+                    Stage = StateType.Unknown;
+                }
+                else
+                {
+                    Stage = StateType.Close;
+                }
+            }
+
             switch (Stage)
             {
                 case StateType.Show:

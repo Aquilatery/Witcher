@@ -52,6 +52,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton2.Location = new System.Drawing.Point(96, 38);
+            this.radioButton2.Location = new System.Drawing.Point(150, 15);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(48, 17);
             this.radioButton2.TabIndex = 1;
@@ -84,7 +85,7 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.BeepOnError = true;
-            this.maskedTextBox1.Location = new System.Drawing.Point(126, 86);
+            this.maskedTextBox1.Location = new System.Drawing.Point(158, 42);
             this.maskedTextBox1.Mask = "0";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(21, 20);
@@ -122,7 +123,7 @@
             // button3
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(153, 12);
+            this.button3.Location = new System.Drawing.Point(12, 70);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 5;
@@ -134,7 +135,7 @@
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(153, 41);
+            this.button4.Location = new System.Drawing.Point(12, 99);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 6;
@@ -158,7 +159,7 @@
             "Right Center",
             "Calc Center",
             "Full Center"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 85);
+            this.comboBox1.Location = new System.Drawing.Point(169, 71);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(90, 21);
             this.comboBox1.TabIndex = 7;
@@ -168,7 +169,7 @@
             // maskedTextBox2
             // 
             this.maskedTextBox2.BeepOnError = true;
-            this.maskedTextBox2.Location = new System.Drawing.Point(180, 86);
+            this.maskedTextBox2.Location = new System.Drawing.Point(211, 42);
             this.maskedTextBox2.Mask = "0000";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(48, 20);
@@ -185,7 +186,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Standard"});
-            this.comboBox2.Location = new System.Drawing.Point(12, 112);
+            this.comboBox2.Location = new System.Drawing.Point(169, 100);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(90, 21);
             this.comboBox2.TabIndex = 9;
@@ -195,7 +196,7 @@
             // maskedTextBox3
             // 
             this.maskedTextBox3.BeepOnError = true;
-            this.maskedTextBox3.Location = new System.Drawing.Point(153, 86);
+            this.maskedTextBox3.Location = new System.Drawing.Point(185, 42);
             this.maskedTextBox3.Mask = "00";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(21, 20);
@@ -208,9 +209,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 167);
+            this.textBox1.Location = new System.Drawing.Point(12, 183);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 20);
+            this.textBox1.Size = new System.Drawing.Size(247, 20);
             this.textBox1.TabIndex = 11;
             this.textBox1.Text = "My Name Is Soferity Witcher Sweetheart!";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -222,10 +223,10 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 237);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 242);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.ShowItemToolTips = true;
-            this.statusStrip1.Size = new System.Drawing.Size(240, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(271, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
@@ -256,9 +257,9 @@
             // button5
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(187, 112);
+            this.button5.Location = new System.Drawing.Point(101, 99);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(41, 23);
+            this.button5.Size = new System.Drawing.Size(55, 23);
             this.button5.TabIndex = 13;
             this.button5.TabStop = false;
             this.button5.Text = "Clear";
@@ -267,9 +268,9 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 141);
+            this.textBox2.Location = new System.Drawing.Point(12, 157);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 20);
+            this.textBox2.Size = new System.Drawing.Size(247, 20);
             this.textBox2.TabIndex = 14;
             this.textBox2.Text = "Soferity Witcher";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -278,9 +279,9 @@
             // button6
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Location = new System.Drawing.Point(108, 112);
+            this.button6.Location = new System.Drawing.Point(12, 128);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(73, 23);
+            this.button6.Size = new System.Drawing.Size(247, 23);
             this.button6.TabIndex = 15;
             this.button6.TabStop = false;
             this.button6.Text = "Select Font";
@@ -290,9 +291,9 @@
             // button7
             // 
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Location = new System.Drawing.Point(12, 193);
+            this.button7.Location = new System.Drawing.Point(12, 209);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(216, 23);
+            this.button7.Size = new System.Drawing.Size(247, 23);
             this.button7.TabIndex = 16;
             this.button7.TabStop = false;
             this.button7.Text = "Test Notify";
@@ -303,7 +304,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton3.Location = new System.Drawing.Point(96, 61);
+            this.radioButton3.Location = new System.Drawing.Point(204, 15);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(60, 17);
             this.radioButton3.TabIndex = 17;
@@ -311,11 +312,25 @@
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.Thema_CheckedChanged);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(96, 44);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(56, 17);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "Pause";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(240, 259);
+            this.ClientSize = new System.Drawing.Size(271, 264);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.button7);
@@ -373,5 +388,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

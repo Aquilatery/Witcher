@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using Witcher.Enum;
 using static Taskbar.Enum.Enums;
+using Brush = System.Windows.Media.Brush;
 
 #endregion
 
@@ -32,6 +33,7 @@ namespace Witcher.Struct
             public string Text;
             public Font FontWF;
             public FontWPF FontWPF;
+            public bool Pause;
             public bool Top;
             public int Time;
         }
@@ -53,12 +55,26 @@ namespace Witcher.Struct
         /// 
         /// </summary>
         [StructLayout(LayoutKind.Sequential)]
-        public struct CustomTheme
+        public struct CustomThemeWF
         {
-            public Color Back;
+            public Color Background;
+            public Color Title;
             public Color Text;
-            public Color Left;
+            public Color Edge;
             public Color Bar;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct CustomThemeWPF
+        {
+            public Brush Background;
+            public Brush Title;
+            public Brush Text;
+            public Brush Edge;
+            public Brush Bar;
         }
         #endregion
     }

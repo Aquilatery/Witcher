@@ -35,6 +35,7 @@ namespace Witcher_CR
                 Style = FontStyles.Normal,
                 Weight = FontWeights.Bold,
             },
+            Pause = true,
             Top = true,
             Time = 5000
         };
@@ -122,7 +123,7 @@ namespace Witcher_CR
                 }
                 else
                 {
-                    Data.Theme = ThemeType.Custom
+                    Data.Theme = ThemeType.Custom;
                 }
             }
         }
@@ -183,6 +184,11 @@ namespace Witcher_CR
             {
                 Data.FontWF = FD.Font;
             }
+        }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Data.Pause = checkBox1.Checked;
         }
     }
 }
