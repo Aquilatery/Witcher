@@ -20,8 +20,8 @@ namespace Witcher_WPF_CR
             Alert = Enums.AlertType.Success,
             Theme = Enums.ThemeType.Dark,
             Distance = 32,
-            Title = "Witcher Test Title",
-            Text = "Witcher Test Notify!",
+            Title = "Soferity Witcher WPF",
+            Text = "My Name Is Soferity Witcher WPF Sweetheart!",
             Font = new()
             {
                 Family = new("Raleway SemiBold"),

@@ -23,8 +23,8 @@ namespace Witcher_WF_CR
             Alert = AlertType.Success,
             Theme = ThemeType.Dark,
             Distance = 32,
-            Title = "Soferity Witcher",
-            Text = "My Name Is Soferity Witcher Sweetheart!",
+            Title = "Soferity Witcher WF",
+            Text = "My Name Is Soferity Witcher WF Sweetheart!",
             Font = new Font("Raleway SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162),
             Pause = true,
             Top = true,
@@ -42,7 +42,7 @@ namespace Witcher_WF_CR
         {
             if (string.IsNullOrEmpty(textBox1.Text))
             {
-                Data.Text = "My Name Is Soferity Witcher Sweetheart!";
+                Data.Text = "My Name Is Soferity Witcher WF Sweetheart!";
             }
             else
             {
@@ -54,7 +54,7 @@ namespace Witcher_WF_CR
         {
             if (string.IsNullOrEmpty(textBox2.Text))
             {
-                Data.Title = "Soferity Witcher";
+                Data.Title = "Soferity Witcher WF";
             }
             else
             {

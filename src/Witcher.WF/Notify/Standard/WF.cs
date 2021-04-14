@@ -26,7 +26,7 @@ namespace Witcher.WF.Notify.Standard
         private Structs.Data Local = Values.Data;
         private StateType Stage = StateType.Show;
 
-		private bool Exit = true;
+        private bool Exit = true;
         private double Value = 0;
 
         public WitcherStandardWF(Structs.Data Data)
@@ -261,11 +261,11 @@ namespace Witcher.WF.Notify.Standard
 
         private void StandardWF_FormClosed(object sender, EventArgs e)
         {
-			if (Exit)
-			{
+            if (Exit)
+            {
                 Exit = false;
                 ActiveOpen--;
-			}
+            }
         }
     }
 

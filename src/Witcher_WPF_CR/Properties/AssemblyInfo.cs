@@ -1,36 +1,36 @@
-using System.Windows;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Windows;
 
-// Bir bütünleştirilmiş koda ilişkin Genel Bilgiler aşağıdaki öznitelikler kümesiyle
-// denetlenir. Bütünleştirilmiş kod ile ilişkili bilgileri değiştirmek için
-// bu öznitelik değerlerini değiştirin.
+// Bir bÃ¼tÃ¼nleÅŸtirilmiÅŸ koda iliÅŸkin Genel Bilgiler aÅŸaÄŸÄ±daki Ã¶znitelikler kÃ¼mesiyle
+// denetlenir. BÃ¼tÃ¼nleÅŸtirilmiÅŸ kod ile iliÅŸkili bilgileri deÄŸiÅŸtirmek iÃ§in
+// bu Ã¶znitelik deÄŸerlerini deÄŸiÅŸtirin.
 [assembly: AssemblyTitle("Witcher WPF CR")]
 [assembly: AssemblyDescription("Witcher WPF CR v1.0.0.2")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Taiizor")]
 [assembly: AssemblyProduct("Witcher WPF CR")]
-[assembly: AssemblyCopyright("Copyright © 2021 Taiizor")]
+[assembly: AssemblyCopyright("Copyright Â© 2021 Taiizor")]
 [assembly: AssemblyTrademark("Witcher")]
 [assembly: AssemblyCulture("")]
 
-// ComVisible özniteliğinin false olarak ayarlanması bu bütünleştirilmiş koddaki türleri
-// COM bileşenleri için görünmez yapar. Bu bütünleştirilmiş koddaki bir türe
-// erişmeniz gerekirse ComVisible özniteliğini o türde true olarak ayarlayın.
+// ComVisible Ã¶zniteliÄŸinin false olarak ayarlanmasÄ± bu bÃ¼tÃ¼nleÅŸtirilmiÅŸ koddaki tÃ¼rleri
+// COM bileÅŸenleri iÃ§in gÃ¶rÃ¼nmez yapar. Bu bÃ¼tÃ¼nleÅŸtirilmiÅŸ koddaki bir tÃ¼re
+// eriÅŸmeniz gerekirse ComVisible Ã¶zniteliÄŸini o tÃ¼rde true olarak ayarlayÄ±n.
 [assembly: ComVisible(false)]
 
-// Bu proje COM'un kullanımına sunulursa, aşağıdaki GUID tür kitaplığının kimliği içindir
+// Bu proje COM'un kullanÄ±mÄ±na sunulursa, aÅŸaÄŸÄ±daki GUID tÃ¼r kitaplÄ±ÄŸÄ±nÄ±n kimliÄŸi iÃ§indir
 [assembly: Guid("7ff56fe1-296c-470d-8d9e-e5e702f82261")]
 
-// Bir derlemenin sürüm bilgileri aşağıdaki dört değerden oluşur:
+// Bir derlemenin sÃ¼rÃ¼m bilgileri aÅŸaÄŸÄ±daki dÃ¶rt deÄŸerden oluÅŸur:
 //
-//      Ana Sürüm
-//      İkincil Sürüm 
-//      Yapı Numarası
-//      Düzeltme
+//      Ana SÃ¼rÃ¼m
+//      Ä°kincil SÃ¼rÃ¼m 
+//      YapÄ± NumarasÄ±
+//      DÃ¼zeltme
 //
-// Tüm değerleri belirtebilir veya varsayılan Derleme ve Düzeltme Numaralarını kullanmak için
-// aşağıda gösterildiği gibi '*' kullanabilirsiniz:
+// TÃ¼m deÄŸerleri belirtebilir veya varsayÄ±lan Derleme ve DÃ¼zeltme NumaralarÄ±nÄ± kullanmak iÃ§in
+// aÅŸaÄŸÄ±da gÃ¶sterildiÄŸi gibi '*' kullanabilirsiniz:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.2")]
 [assembly: AssemblyFileVersion("1.0.0.2")]
