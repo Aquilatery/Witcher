@@ -31,7 +31,7 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
     <RepositoryUrl>git://github.com/Soferity/Witcher</RepositoryUrl>
     <PackageDescription>$(Description)</PackageDescription>
     <PackageIcon>WITCHER.png</PackageIcon>
-    <Company>$(Authors)</Company>
+    <Company>Soferity</Company>
     <Owners>$(Authors)</Owners>
     <AnalysisLevel>preview</AnalysisLevel>
     <LangVersion>preview</LangVersion>
