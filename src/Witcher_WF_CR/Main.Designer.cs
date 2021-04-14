@@ -1,4 +1,4 @@
-﻿namespace Witcher.WF_CR
+﻿namespace Witcher_WF_CR
 {
     partial class Main
     {

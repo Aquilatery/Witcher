@@ -1,23 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <!--<TargetFramework>net48</TargetFramework>-->
+    <TargetFramework>net48</TargetFramework>
     <!--<TargetFrameworks>net48;net5.0-windows;net6.0-windows</TargetFrameworks>-->
-    <TargetFrameworks>net48;netcoreapp3.1-windows;net5.0-windows;net6.0-windows</TargetFrameworks>
+    <!--<TargetFrameworks>net48;netcoreapp3.1-windows;net5.0-windows;net6.0-windows</TargetFrameworks>-->
     <OutputType>WinExe</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
     <AnalysisLevel>preview</AnalysisLevel>
     <LangVersion>preview</LangVersion>
     <NeutralLanguage>en</NeutralLanguage>
     <NoWarn>CA1416</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Witcher.WF_CR.Program</StartupObject>
+    <StartupObject>Witcher_WPF_CR.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\ICO.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Witcher.WF\Witcher.WF.csproj" />
+    <ProjectReference Include="..\Witcher.WPF\Witcher.WPF.csproj" />
   </ItemGroup>
 </Project>

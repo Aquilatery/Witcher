@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Witcher.WPF_CR
+namespace Witcher_WPF_CR
 {
     /// <summary>
     /// Interaction logic for App.xaml

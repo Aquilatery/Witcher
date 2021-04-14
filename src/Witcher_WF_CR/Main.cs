@@ -12,7 +12,7 @@ using static Witcher.Witcher.Property;
 
 #endregion
 
-namespace Witcher.WF_CR
+namespace Witcher_WF_CR
 {
     public partial class Main : Form
     {

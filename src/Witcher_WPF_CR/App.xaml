@@ -1,7 +1,7 @@
-﻿<Application x:Class="Witcher.WPF_CR.App"
+﻿<Application x:Class="Witcher_WPF_CR.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Witcher.WPF_CR"
+             xmlns:local="clr-namespace:Witcher_WPF_CR"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 

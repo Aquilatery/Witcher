@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Witcher.WF_CR
+namespace Witcher_WF_CR
 {
     internal static class Program
     {

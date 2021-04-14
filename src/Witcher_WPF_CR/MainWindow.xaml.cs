@@ -8,7 +8,7 @@ using static Witcher.WPF.Witcher;
 
 #endregion
 
-namespace Witcher.WPF_CR
+namespace Witcher_WPF_CR
 {
     public partial class MainWindow : Window
     {

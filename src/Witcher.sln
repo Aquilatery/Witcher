@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31025.218
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Witcher", "Witcher\Witcher.csproj", "{29781EE5-4D9A-47BE-8C4A-3D79F69B0948}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Witcher.WF_CR", "Witcher.WF_CR\Witcher.WF_CR.csproj", "{CE3B27D5-4416-4E0D-82D8-5E5C316AE974}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Witcher_WF_CR", "Witcher_WF_CR\Witcher_WF_CR.csproj", "{CE3B27D5-4416-4E0D-82D8-5E5C316AE974}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Witcher.WPF", "Witcher.WPF\Witcher.WPF.csproj", "{2079D7B4-A998-4C78-8674-10E4330A027A}"
 EndProject
@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WF", "WF", "{F19BB245-AE13-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{188D1AD9-1AAE-43CE-886F-E366C61FBEDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Witcher.WPF_CR", "Witcher.WPF_CR\Witcher.WPF_CR.csproj", "{06647B67-C720-4DB1-92E9-DE559F4AD0A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Witcher_WPF_CR", "Witcher_WPF_CR\Witcher_WPF_CR.csproj", "{06647B67-C720-4DB1-92E9-DE559F4AD0A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

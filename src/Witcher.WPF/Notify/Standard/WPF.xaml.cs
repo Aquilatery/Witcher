@@ -14,6 +14,7 @@ using static Taskbar.Taskbar.Advanced;
 using static Witcher.Enum.Enums;
 using static Witcher.Witcher.Property;
 using static Witcher.WPF.Witcher.Property;
+using Control = System.Windows.Forms.Control;
 
 #endregion
 
@@ -201,7 +202,7 @@ namespace Witcher.WPF.Notify.Standard
         {
             if (Local.Pause && (Stage == StateType.Close || Stage == StateType.Unknown))
             {
-                if (Helpers.Contains((int)Mouse.GetPosition(this).X, (int)Mouse.GetPosition(this).Y, Left, Top, Width, Height))
+                if (Helpers.Contains(Control.MousePosition.X, Control.MousePosition.Y, Left, Top, Width, Height))
                 {
                     Stage = StateType.Unknown;
                 }
