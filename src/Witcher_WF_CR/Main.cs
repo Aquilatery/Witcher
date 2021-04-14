@@ -178,5 +178,10 @@ namespace Witcher_WF_CR
         {
             Data.Pause = checkBox1.Checked;
         }
+
+        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            Data.Top = checkBox2.Checked;
+        }
     }
 }

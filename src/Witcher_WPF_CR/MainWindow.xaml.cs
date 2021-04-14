@@ -25,7 +25,7 @@ namespace Witcher_WPF_CR
             Font = new()
             {
                 Family = new("Raleway SemiBold"),
-                Size = 12F,
+                Size = 18F,
                 Stretch = FontStretches.Normal,
                 Style = FontStyles.Normal,
                 Weight = FontWeights.Bold,

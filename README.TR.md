@@ -63,10 +63,18 @@ Adım 2：Yönetmelerin tadını çıkarın
 
 ## Demolar
 
-### Witcher CR
+### Witcher WF CR
 
-[![WitcherCRCatcher](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/CR.png)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_CR "WitcherCRCatcher")
+[![WitcherWFCR](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/Witcher_WF_CR.png)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_WF_CR "WitcherWFCR")
 
 #### Gösterim
 
-[![WitcherCRShow](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/CR.gif)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_CR "WitcherCRShow")
+[![WitcherWFCRShow](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/Witcher_WF_CR.gif)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_WF_CR "WitcherWFCRShow")
+
+### Witcher WPF CR
+
+[![WitcherWPFCR](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/Witcher_WPF_CR.png)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_WPF_CR "WitcherWPFCR")
+
+#### Gösterim
+
+[![WitcherWPFCRShow](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/Witcher_WPF_CR.gif)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_WPF_CR "WitcherWPFCRShow")
