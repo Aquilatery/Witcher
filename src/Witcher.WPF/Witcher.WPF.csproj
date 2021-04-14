@@ -51,10 +51,6 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Notify\Standard\Multiply.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub">
       <Version>1.1.0-beta-20204-02</Version>
       <PrivateAssets>All</PrivateAssets>
@@ -79,6 +75,18 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
   <ItemGroup>
     <Resource Include="Resources\ICO.ico" />
     <Resource Include="Resources\WITCHER.WPF.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Notify\Standard\Cancel.png" />
+    <Resource Include="Resources\Notify\Standard\Checkmark.png" />
+    <Resource Include="Resources\Notify\Standard\Error.png" />
+    <Resource Include="Resources\Notify\Standard\ExclamationMarkA.png" />
+    <Resource Include="Resources\Notify\Standard\ExclamationMarkB.png" />
+    <Resource Include="Resources\Notify\Standard\Importance.png" />
+    <Resource Include="Resources\Notify\Standard\Multiply.png" />
+    <Resource Include="Resources\Notify\Standard\Question.png" />
+    <Resource Include="Resources\Notify\Standard\Warning.png" />
   </ItemGroup>
 
   <ItemGroup>

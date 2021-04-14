@@ -37,65 +37,65 @@ namespace Witcher.WPF.Notify.Standard
 
         public WitcherStandardWPF(Structs.Data Data)
         {
-            //LocationChanged += StandardWF_LocationChanged;
-            //Closed += StandardWF_FormClosed;
-            //Loaded += StandardWPF_Loaded;
+            LocationChanged += StandardWF_LocationChanged;
+            Closed += StandardWF_FormClosed;
+            Loaded += StandardWPF_Loaded;
 
             InitializeComponent();
 
-            //Title = StandardForm + ActiveOpen;
+            Title = StandardForm + ActiveOpen;
 
-            //_ = General_Work();
+            Local = Data;
 
-            //Local = Data;
+            Topmost = Local.Top;
 
-            //Topmost = Local.Top;
+            TEXT.Text = Local.Text;
+            TEXT.FontFamily = Local.Font.Family;
+            TEXT.FontSize = Local.Font.Size;
+            TEXT.FontStretch = Local.Font.Stretch;
+            TEXT.FontStyle = Local.Font.Style;
+            TEXT.FontWeight = Local.Font.Weight;
 
-            //TEXT.Text = Local.Text;
-            //TEXT.FontFamily = Local.Font.Family;
-            //TEXT.FontSize = Local.Font.Size;
-            //TEXT.FontStretch = Local.Font.Stretch;
-            //TEXT.FontStyle = Local.Font.Style;
-            //TEXT.FontWeight = Local.Font.Weight;
+            if (Local.Theme == ThemeType.Dark || Local.Theme == ThemeType.Light)
+            {
+                if (Local.Theme == ThemeType.Dark)
+                {
+                    Background = new SolidColorBrush(Color.FromRgb(38, 38, 38));
+                    TEXT.Foreground = Brushes.Gainsboro;
+                }
+                else
+                {
+                    Background = Brushes.Gainsboro;
+                    TEXT.Foreground = new SolidColorBrush(Color.FromRgb(38, 38, 38));
+                }
 
-            //if (Local.Theme == ThemeType.Dark || Local.Theme == ThemeType.Light)
-            //{
-            //    if (Local.Theme == ThemeType.Dark)
-            //    {
-            //        Background = new SolidColorBrush(Color.FromRgb(38, 38, 38));
-            //        TEXT.Foreground = Brushes.Gainsboro;
-            //    }
-            //    else
-            //    {
-            //        Background = Brushes.Gainsboro;
-            //        TEXT.Foreground = new SolidColorBrush(Color.FromRgb(38, 38, 38));
-            //    }
+                switch (Local.Alert)
+                {
+                    case AlertType.Success:
+                        LEFT.Background = Brushes.SeaGreen;
+                        break;
+                    case AlertType.Warning:
+                        LEFT.Background = new SolidColorBrush(Color.FromRgb(255, 128, 0));
+                        break;
+                    case AlertType.Error:
+                        LEFT.Background = Brushes.Crimson;
+                        break;
+                    case AlertType.Info:
+                        LEFT.Background = Brushes.Gray;
+                        break;
+                }
 
-            //    switch (Local.Alert)
-            //    {
-            //        case AlertType.Success:
-            //            LEFT.Background = Brushes.SeaGreen;
-            //            break;
-            //        case AlertType.Warning:
-            //            LEFT.Background = new SolidColorBrush(Color.FromRgb(255, 128, 0));
-            //            break;
-            //        case AlertType.Error:
-            //            LEFT.Background = Brushes.Crimson;
-            //            break;
-            //        case AlertType.Info:
-            //            LEFT.Background = Brushes.Gray;
-            //            break;
-            //    }
+                BAR.Background = LEFT.Background;
+            }
+            else
+            {
+                Background = Values.CustomTheme.Background;
+                TEXT.Foreground = Values.CustomTheme.Text;
+                LEFT.Background = Values.CustomTheme.Edge;
+                BAR.Background = Values.CustomTheme.Bar;
+            }
 
-            //    BAR.Background = LEFT.Background;
-            //}
-            //else
-            //{
-            //    Background = Values.CustomTheme.Background;
-            //    TEXT.Foreground = Values.CustomTheme.Text;
-            //    LEFT.Background = Values.CustomTheme.Edge;
-            //    BAR.Background = Values.CustomTheme.Bar;
-            //}
+            _ = General_Work();
         }
 
         private void StandardWPF_Loaded(object sender, RoutedEventArgs e)
@@ -250,9 +250,9 @@ namespace Witcher.WPF.Notify.Standard
                 case StateType.Close:
                     if (Title == StandardForm + "0")
                     {
-                        Value += PANEL.Width / (Local.Time / Time);
+                        Value += PANEL.ActualWidth / (Local.Time / Time);
 
-                        if (PANEL.Width > Value)
+                        if (PANEL.ActualWidth > Value)
                         {
                             BAR.Width = Value;
                         }
