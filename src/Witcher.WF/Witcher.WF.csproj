@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <!--<TargetFramework>net48</TargetFramework>-->
     <!--<TargetFrameworks>net48;net5.0-windows;net6.0-windows</TargetFrameworks>-->
     <!--<TargetFrameworks>net40;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48;net5.0-windows;net6.0-windows</TargetFrameworks>-->
-    <!--<TargetFrameworks>net40;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48;netcoreapp3.1-windows;net5.0-windows;net6.0-windows</TargetFrameworks>-->
+    <TargetFrameworks>net40;net45;net451;net452;net46;net461;net462;net47;net471;net472;net48;netcoreapp3.1-windows;net5.0-windows;net6.0-windows</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>Resources\ICO.ico</ApplicationIcon>
     <Version>1.0.0.2</Version>
@@ -54,7 +54,6 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
       <Version>1.1.0-beta-20204-02</Version>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Taskbar" Version="1.0.0.4" />
   </ItemGroup>
 
   <ItemGroup>

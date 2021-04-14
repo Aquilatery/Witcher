@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // Bir bütünleştirilmiş koda ilişkin Genel Bilgiler aşağıdaki öznitelikler kümesiyle
 // denetlenir. Bütünleştirilmiş kod ile ilişkili bilgileri değiştirmek için
 // bu öznitelik değerlerini değiştirin.
-[assembly: AssemblyTitle("Witcher CR")]
-[assembly: AssemblyDescription("Witcher CR v1.0.0.2")]
+[assembly: AssemblyTitle("Witcher WF CR")]
+[assembly: AssemblyDescription("Witcher WF CR v1.0.0.2")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Taiizor")]
-[assembly: AssemblyProduct("Witcher CR")]
+[assembly: AssemblyProduct("Witcher WF CR")]
 [assembly: AssemblyCopyright("Copyright © 2021 Taiizor")]
 [assembly: AssemblyTrademark("Witcher")]
 [assembly: AssemblyCulture("")]
