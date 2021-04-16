@@ -53,7 +53,8 @@
         /// </summary>
         public enum NotifyType
         {
-            Standard
+            Standard,
+            Beautiful
         }
 
         /// <summary>

@@ -3,6 +3,7 @@
 using System;
 using System.Windows;
 using Witcher.Enum;
+using Witcher.Message;
 using Witcher.WPF.Notify.Manager;
 using Witcher.WPF.Notify.Standard;
 using Witcher.WPF.Struct;
@@ -206,11 +207,11 @@ namespace Witcher.WPF
                 {
                     if (Data.Time < DefaultTime)
                     {
-                        throw new Exception($"Time must be greater than or equal to {DefaultTime}!");
+                        throw new Exception(Messages.SmallerTime);
                     }
                     else
                     {
-                        throw new Exception("The font cannot be empty!");
+                        throw new Exception(Messages.EmptyFont);
                     }
                 }
             }
