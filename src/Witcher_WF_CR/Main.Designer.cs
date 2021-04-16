@@ -53,6 +53,9 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,7 +162,7 @@
             "Right Center",
             "Calc Center",
             "Full Center"});
-            this.comboBox1.Location = new System.Drawing.Point(169, 71);
+            this.comboBox1.Location = new System.Drawing.Point(169, 100);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(90, 21);
             this.comboBox1.TabIndex = 7;
@@ -187,7 +190,7 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Standard",
             "Beautiful"});
-            this.comboBox2.Location = new System.Drawing.Point(169, 100);
+            this.comboBox2.Location = new System.Drawing.Point(169, 129);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(90, 21);
             this.comboBox2.TabIndex = 9;
@@ -214,6 +217,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(247, 20);
             this.textBox1.TabIndex = 11;
+            this.textBox1.TabStop = false;
             this.textBox1.Text = "My Name Is Soferity Witcher WF Sweetheart!";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
@@ -258,7 +262,7 @@
             // button5
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(101, 99);
+            this.button5.Location = new System.Drawing.Point(89, 128);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(55, 23);
             this.button5.TabIndex = 13;
@@ -273,6 +277,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(247, 20);
             this.textBox2.TabIndex = 14;
+            this.textBox2.TabStop = false;
             this.textBox2.Text = "Soferity Witcher WF";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
@@ -282,7 +287,7 @@
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Location = new System.Drawing.Point(12, 128);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(247, 23);
+            this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 15;
             this.button6.TabStop = false;
             this.button6.Text = "Select Font";
@@ -310,6 +315,7 @@
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(56, 17);
             this.checkBox1.TabIndex = 18;
+            this.checkBox1.TabStop = false;
             this.checkBox1.Text = "Pause";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
@@ -323,15 +329,61 @@
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(68, 17);
             this.checkBox2.TabIndex = 19;
+            this.checkBox2.TabStop = false;
             this.checkBox2.Text = "TopMost";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Checked = true;
+            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox3.Location = new System.Drawing.Point(96, 102);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(52, 17);
+            this.checkBox3.TabIndex = 20;
+            this.checkBox3.TabStop = false;
+            this.checkBox3.Text = "Close";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.CheckBox3_CheckedChanged);
+            // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.BeepOnError = true;
+            this.maskedTextBox4.Location = new System.Drawing.Point(238, 71);
+            this.maskedTextBox4.Mask = "00";
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(21, 20);
+            this.maskedTextBox4.TabIndex = 21;
+            this.maskedTextBox4.TabStop = false;
+            this.maskedTextBox4.Text = "60";
+            this.maskedTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maskedTextBox4.ValidatingType = typeof(int);
+            this.maskedTextBox4.TextChanged += new System.EventHandler(this.MaskedTextBox4_TextChanged);
+            // 
+            // maskedTextBox5
+            // 
+            this.maskedTextBox5.BeepOnError = true;
+            this.maskedTextBox5.Location = new System.Drawing.Point(184, 71);
+            this.maskedTextBox5.Mask = "000";
+            this.maskedTextBox5.Name = "maskedTextBox5";
+            this.maskedTextBox5.Size = new System.Drawing.Size(48, 20);
+            this.maskedTextBox5.TabIndex = 22;
+            this.maskedTextBox5.TabStop = false;
+            this.maskedTextBox5.Text = "400";
+            this.maskedTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maskedTextBox5.ValidatingType = typeof(int);
+            this.maskedTextBox5.TextChanged += new System.EventHandler(this.MaskedTextBox5_TextChanged);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(271, 237);
+            this.Controls.Add(this.maskedTextBox5);
+            this.Controls.Add(this.maskedTextBox4);
+            this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button4);
@@ -391,5 +443,8 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
     }
 }

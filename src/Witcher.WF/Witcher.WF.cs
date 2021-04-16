@@ -175,6 +175,9 @@ namespace Witcher.WF
                             case Enums.NotifyType.Standard:
                                 Show(new WitcherStandardWF(Data));
                                 break;
+                            case Enums.NotifyType.Beautiful:
+                                //Show(new WitcherBeautifulWF(Data));
+                                break;
                         }
                     }
                     else

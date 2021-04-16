@@ -11,7 +11,7 @@ using static Witcher.WPF.Witcher;
 
 namespace Witcher_WPF_CR
 {
-    public partial class MainWindow : Window
+    public partial class Main : Window
     {
         private static Structs.Data Data = new()
         {
@@ -25,17 +25,19 @@ namespace Witcher_WPF_CR
             Font = new()
             {
                 Family = new("Raleway SemiBold"),
-                Size = 18F,
+                Size = 16F,
                 Stretch = FontStretches.Normal,
                 Style = FontStyles.Normal,
                 Weight = FontWeights.Bold,
             },
+            Size = new() { Width = 400, Height = 60 },
             Pause = true,
+            Close = false,
             Top = true,
             Time = 5000
         };
 
-        public MainWindow()
+        public Main()
         {
             InitializeComponent();
             Edge.SelectedIndex = 5;

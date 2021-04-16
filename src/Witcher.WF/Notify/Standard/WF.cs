@@ -27,7 +27,7 @@ namespace Witcher.WF.Notify.Standard
         private StateType Stage = StateType.Show;
 
         private bool Exit = true;
-        private double Value = 0;
+        private double Value;
 
         public WitcherStandardWF(Structs.Data Data)
         {
@@ -41,6 +41,11 @@ namespace Witcher.WF.Notify.Standard
 
             TEXT.Text = Local.Text;
             TEXT.Font = Local.Font;
+
+            Width = Local.Size.Width;
+            Height = Local.Size.Height;
+
+            PANEL.Visible = Local.Close;
 
             if (Local.Theme == ThemeType.Dark || Local.Theme == ThemeType.Light)
             {
@@ -203,34 +208,37 @@ namespace Witcher.WF.Notify.Standard
                 case StateType.Close:
                     if (Text == NotifyName + "0")
                     {
-                        if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.TopRight || Local.Location == EdgeLocationType.RightCenter || Local.Location == EdgeLocationType.FullCenter)
+                        if (Local.Close)
                         {
-                            Value += PANEL.Width / (Local.Time / General.Interval);
-
-                            if (PANEL.Width > Convert.ToInt32(Value))
+                            if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.TopRight || Local.Location == EdgeLocationType.RightCenter || Local.Location == EdgeLocationType.FullCenter)
                             {
-                                BAR.Location = new(PANEL.Width - Convert.ToInt32(Value), 0);
-                                BAR.Width = Convert.ToInt32(Value);
+                                Value += PANEL.Width / (Local.Time / General.Interval);
+
+                                if (PANEL.Width > Convert.ToInt32(Value))
+                                {
+                                    BAR.Location = new(PANEL.Width - Convert.ToInt32(Value), 0);
+                                    BAR.Width = Convert.ToInt32(Value);
+                                }
+                                else
+                                {
+                                    BAR.Location = new(0, 0);
+                                    BAR.Width = PANEL.Width;
+                                    CLOSE_Click(sender, e);
+                                }
                             }
                             else
                             {
-                                BAR.Location = new(0, 0);
-                                BAR.Width = PANEL.Width;
-                                CLOSE_Click(sender, e);
-                            }
-                        }
-                        else
-                        {
-                            Value += PANEL.Width / (Local.Time / General.Interval);
+                                Value += PANEL.Width / (Local.Time / General.Interval);
 
-                            if (PANEL.Width > Convert.ToInt32(Value))
-                            {
-                                BAR.Width = Convert.ToInt32(Value);
-                            }
-                            else
-                            {
-                                BAR.Width = PANEL.Width;
-                                CLOSE_Click(sender, e);
+                                if (PANEL.Width > Convert.ToInt32(Value))
+                                {
+                                    BAR.Width = Convert.ToInt32(Value);
+                                }
+                                else
+                                {
+                                    BAR.Width = PANEL.Width;
+                                    CLOSE_Click(sender, e);
+                                }
                             }
                         }
                     }

@@ -26,7 +26,9 @@ namespace Witcher_WF_CR
             Title = "Soferity Witcher WF",
             Text = "My Name Is Soferity Witcher WF Sweetheart!",
             Font = new Font("Raleway SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162),
+            Size = new() { Width = 400, Height = 60 },
             Pause = true,
+            Close = true,
             Top = true,
             Time = 5000
         };
@@ -95,6 +97,30 @@ namespace Witcher_WF_CR
             else
             {
                 Data.Distance = Convert.ToInt32(maskedTextBox3.Text);
+            }
+        }
+
+        private void MaskedTextBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(maskedTextBox4.Text) || string.IsNullOrWhiteSpace(maskedTextBox4.Text))
+            {
+                Data.Size.Height = 60;
+            }
+            else
+            {
+                Data.Size.Height = Convert.ToInt32(maskedTextBox4.Text);
+            }
+        }
+
+        private void MaskedTextBox5_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(maskedTextBox5.Text) || string.IsNullOrWhiteSpace(maskedTextBox5.Text))
+            {
+                Data.Size.Width = 400;
+            }
+            else
+            {
+                Data.Size.Width = Convert.ToInt32(maskedTextBox5.Text);
             }
         }
 
@@ -182,6 +208,11 @@ namespace Witcher_WF_CR
         private void CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
             Data.Top = checkBox2.Checked;
+        }
+
+        private void CheckBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            Data.Close = checkBox3.Checked;
         }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WitcherStandardWF));
             this.LEFT = new System.Windows.Forms.Panel();
             this.CLOSE = new System.Windows.Forms.PictureBox();
             this.TEXT = new System.Windows.Forms.Label();
@@ -79,7 +78,7 @@
             this.TEXT.Location = new System.Drawing.Point(26, 0);
             this.TEXT.Margin = new System.Windows.Forms.Padding(0);
             this.TEXT.Name = "TEXT";
-            this.TEXT.Size = new System.Drawing.Size(374, 60);
+            this.TEXT.Size = new System.Drawing.Size(374, 58);
             this.TEXT.TabIndex = 7;
             this.TEXT.Text = "My Name Is Soferity Witcher WF Sweetheart!";
             this.TEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -119,13 +118,14 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(400, 60);
             this.ControlBox = false;
-            this.Controls.Add(this.PANEL);
             this.Controls.Add(this.TEXT);
+            this.Controls.Add(this.PANEL);
             this.Controls.Add(this.LEFT);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = global::Witcher.WF.Properties.Resources.ICO;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(200, 40);
             this.Name = "WitcherStandardWF";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;

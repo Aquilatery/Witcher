@@ -29,9 +29,21 @@ namespace Witcher.WF.Struct
             public string Title;
             public string Text;
             public Font Font;
+            public Size Size;
             public bool Pause;
+            public bool Close;
             public bool Top;
             public int Time;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [StructLayout(LayoutKind.Sequential)]
+        public struct Size
+        {
+            public int Width;
+            public int Height;
         }
 
         /// <summary>

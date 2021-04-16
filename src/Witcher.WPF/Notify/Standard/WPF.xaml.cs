@@ -32,7 +32,7 @@ namespace Witcher.WPF.Notify.Standard
 
         private bool Exit = true;
         private bool Enabled = true;
-        private double Value = 0;
+        private double Value;
         private int Time = 50;
 
         public WitcherStandardWPF(Structs.Data Data)
@@ -55,6 +55,15 @@ namespace Witcher.WPF.Notify.Standard
             TEXT.FontStretch = Local.Font.Stretch;
             TEXT.FontStyle = Local.Font.Style;
             TEXT.FontWeight = Local.Font.Weight;
+
+            Width = Local.Size.Width;
+            Height = Local.Size.Height;
+
+            if (!Local.Close)
+            {
+                TOP.Height += 2;
+                PANEL.Visibility = Visibility.Hidden;
+            }
 
             if (Local.Theme == ThemeType.Dark || Local.Theme == ThemeType.Light)
             {
@@ -250,16 +259,19 @@ namespace Witcher.WPF.Notify.Standard
                 case StateType.Close:
                     if (Title == NotifyName + "0")
                     {
-                        Value += PANEL.ActualWidth / (Local.Time / Time);
+                        if (Local.Close)
+                        {
+                            Value += PANEL.ActualWidth / (Local.Time / Time);
 
-                        if (PANEL.ActualWidth > Value)
-                        {
-                            BAR.Width = Value;
-                        }
-                        else
-                        {
-                            BAR.Width = PANEL.Width;
-                            CLOSE_MouseLeftButtonUp(null, null);
+                            if (PANEL.ActualWidth > Value)
+                            {
+                                BAR.Width = Value;
+                            }
+                            else
+                            {
+                                BAR.Width = PANEL.Width;
+                                CLOSE_MouseLeftButtonUp(null, null);
+                            }
                         }
                     }
                     break;

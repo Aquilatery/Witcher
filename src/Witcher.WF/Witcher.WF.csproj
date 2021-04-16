@@ -91,4 +91,8 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Notify\Beautiful\" />
+  </ItemGroup>
+
 </Project>
