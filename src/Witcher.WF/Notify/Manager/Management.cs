@@ -30,9 +30,9 @@ namespace Witcher.WF.Notify.Manager
             {
                 foreach (Form Form in Application.OpenForms)
                 {
-                    if (Form.Text.StartsWith(StandardForm))
+                    if (Form.Text.StartsWith(NotifyName))
                     {
-                        if (Standard_Control(Form))
+                        if (Notify_Control(Form))
                         {
                             break;
                         }
@@ -43,20 +43,19 @@ namespace Witcher.WF.Notify.Manager
             Control.Start();
         }
 
-        private static bool Standard_Control(Form Form)
+        private static bool Notify_Control(Form Form)
         {
-            int ID1 = Convert.ToInt32(Form.Text.Replace(StandardForm, ""));
+            int ID = Convert.ToInt32(Form.Text.Replace(NotifyName, ""));
 
-            if (ID1 >= 1)
+            if (ID >= 1)
             {
                 bool State = true;
 
                 foreach (Form CheckForm in Application.OpenForms)
                 {
-                    if (CheckForm.Text.StartsWith(StandardForm))
+                    if (CheckForm.Text.StartsWith(NotifyName))
                     {
-                        int ID2 = ID1 - 1;
-                        if (CheckForm.Text == StandardForm + ID2)
+                        if (CheckForm.Text == NotifyName + (ID - 1))
                         {
                             State = false;
                             break;
@@ -75,7 +74,7 @@ namespace Witcher.WF.Notify.Manager
                         Form.Location = new System.Drawing.Point(Form.Location.X, Form.Location.Y - Form.Height);
                     }
 
-                    Form.Text = StandardForm + (ID1 - 1);
+                    Form.Text = NotifyName + (ID - 1);
                     return true;
                 }
             }
@@ -87,21 +86,14 @@ namespace Witcher.WF.Notify.Manager
         {
             Notification.Stop();
 
-            try
+            if (Values.Datas.Any() && ActiveOpen < MaxOpen)
             {
-                if (Values.Datas.Any() && ActiveOpen < MaxOpen)
+                foreach (Structs.Data Data in Values.Datas)
                 {
-                    foreach (Structs.Data Data in Values.Datas)
-                    {
-                        Witcher.Notify.Show(Data);
-                        Values.Datas.Remove(Data);
-                        break;
-                    }
+                    Witcher.Notify.Show(Data);
+                    Values.Datas.Remove(Data);
+                    break;
                 }
-            }
-            catch
-            {
-                //throw;
             }
 
             Notification.Start();

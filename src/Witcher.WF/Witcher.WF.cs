@@ -85,7 +85,7 @@ namespace Witcher.WF
                 {
                     if (Property.ActiveOpen > 0)
                     {
-                        ClearNotify(Enums.NotifyType.Standard);
+                        ClearNotify();
                     }
                 }
                 catch
@@ -115,30 +115,25 @@ namespace Witcher.WF
             /// <summary>
             /// 
             /// </summary>
-            public static void ClearNotify(Enums.NotifyType Type)
+            public static void ClearNotify()
             {
                 try
                 {
                     if (Property.ActiveOpen > 0)
                     {
-                        switch (Type)
+                        foreach (Form Form in Application.OpenForms)
                         {
-                            case Enums.NotifyType.Standard:
-                                foreach (Form Form in Application.OpenForms)
-                                {
-                                    if (Form.Text.StartsWith(StandardForm))
-                                    {
-                                        Form.Close();
-                                        Form.Dispose();
-                                    }
-                                }
-                                break;
+                            if (Form.Text.StartsWith(NotifyName))
+                            {
+                                Form.Close();
+                                Form.Dispose();
+                            }
                         }
                     }
                 }
                 catch
                 {
-                    ClearNotify(Type);
+                    ClearNotify();
                 }
             }
 
@@ -152,7 +147,7 @@ namespace Witcher.WF
                     if (Property.TotalOpen > 0)
                     {
                         ClearDeactive();
-                        ClearNotify(Enums.NotifyType.Standard);
+                        ClearNotify();
                     }
                 }
                 catch

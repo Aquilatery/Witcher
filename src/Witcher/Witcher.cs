@@ -47,10 +47,10 @@ namespace Witcher
             /// <summary>
             /// 
             /// </summary>
-            public static string StandardForm
+            public static string NotifyName
             {
-                get => Values.StandardForm;
-                internal set => Values.StandardForm = value;
+                get => Values.NotifyName;
+                internal set => Values.NotifyName = value;
             }
         }
 

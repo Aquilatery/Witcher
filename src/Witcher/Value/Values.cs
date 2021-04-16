@@ -19,7 +19,7 @@
         /// <summary>
         /// 
         /// </summary>
-        internal static string StandardForm = "WNM";
+        internal static string NotifyName = "SWN";
         #endregion
     }
 }

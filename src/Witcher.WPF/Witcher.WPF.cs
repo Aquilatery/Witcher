@@ -102,7 +102,7 @@ namespace Witcher.WPF
                 {
                     if (Property.ActiveOpen > 0)
                     {
-                        ClearNotify(Enums.NotifyType.Standard);
+                        ClearNotify();
                     }
                 }
                 catch
@@ -132,29 +132,24 @@ namespace Witcher.WPF
             /// <summary>
             /// 
             /// </summary>
-            public static void ClearNotify(Enums.NotifyType Type)
+            public static void ClearNotify()
             {
                 try
                 {
                     if (Property.ActiveOpen > 0)
                     {
-                        switch (Type)
+                        foreach (Window Window in Application.Current.Windows)
                         {
-                            case Enums.NotifyType.Standard:
-                                foreach (Window Window in Application.Current.Windows)
-                                {
-                                    if (Window.Title.StartsWith(StandardForm))
-                                    {
-                                        Window.Close();
-                                    }
-                                }
-                                break;
+                            if (Window.Title.StartsWith(NotifyName))
+                            {
+                                Window.Close();
+                            }
                         }
                     }
                 }
                 catch
                 {
-                    ClearNotify(Type);
+                    ClearNotify();
                 }
             }
 
@@ -168,7 +163,7 @@ namespace Witcher.WPF
                     if (Property.TotalOpen > 0)
                     {
                         ClearDeactive();
-                        ClearNotify(Enums.NotifyType.Standard);
+                        ClearNotify();
                     }
                 }
                 catch

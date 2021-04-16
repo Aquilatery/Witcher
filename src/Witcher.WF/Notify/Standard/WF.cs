@@ -33,7 +33,7 @@ namespace Witcher.WF.Notify.Standard
         {
             InitializeComponent();
 
-            Text = StandardForm + ActiveOpen;
+            Text = NotifyName + ActiveOpen;
 
             Local = Data;
 
@@ -201,7 +201,7 @@ namespace Witcher.WF.Notify.Standard
                     }
                     break;
                 case StateType.Close:
-                    if (Text == StandardForm + "0")
+                    if (Text == NotifyName + "0")
                     {
                         if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.TopRight || Local.Location == EdgeLocationType.RightCenter || Local.Location == EdgeLocationType.FullCenter)
                         {

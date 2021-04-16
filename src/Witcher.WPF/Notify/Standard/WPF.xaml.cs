@@ -43,7 +43,7 @@ namespace Witcher.WPF.Notify.Standard
 
             InitializeComponent();
 
-            Title = StandardForm + ActiveOpen;
+            Title = NotifyName + ActiveOpen;
 
             Local = Data;
 
@@ -248,7 +248,7 @@ namespace Witcher.WPF.Notify.Standard
                     }
                     break;
                 case StateType.Close:
-                    if (Title == StandardForm + "0")
+                    if (Title == NotifyName + "0")
                     {
                         Value += PANEL.ActualWidth / (Local.Time / Time);
 

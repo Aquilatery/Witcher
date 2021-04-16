@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WF", "WF", "{F19BB245-AE13-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{188D1AD9-1AAE-43CE-886F-E366C61FBEDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Witcher_WPF_CR", "Witcher_WPF_CR\Witcher_WPF_CR.csproj", "{06647B67-C720-4DB1-92E9-DE559F4AD0A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Witcher_WPF_CR", "Witcher_WPF_CR\Witcher_WPF_CR.csproj", "{06647B67-C720-4DB1-92E9-DE559F4AD0A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
