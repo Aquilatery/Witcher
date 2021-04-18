@@ -3,7 +3,6 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Witcher.Helper;
 using Witcher.WF.Struct;
 using Witcher.WF.Value;
 using static Taskbar.Enum.Enums;
@@ -24,10 +23,10 @@ namespace Witcher.WF.Notify.Beautiful
     public partial class WitcherBeautifulWF : Form
     {
         private Structs.Data Local = Values.Data;
-        private StateType Stage = StateType.Show;
+        private readonly StateType Stage = StateType.Show;
 
         private bool Exit = true;
-        private double Value;
+        private readonly double Value;
 
         public WitcherBeautifulWF(Structs.Data Data)
         {
@@ -38,6 +37,9 @@ namespace Witcher.WF.Notify.Beautiful
             Local = Data;
 
             TopMost = Local.Top;
+
+            TITLE.Text = Local.Title;
+            TITLE.Font = Local.Font;
 
             TEXT.Text = Local.Text;
             TEXT.Font = Local.Font;

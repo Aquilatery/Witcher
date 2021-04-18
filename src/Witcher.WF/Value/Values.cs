@@ -39,6 +39,11 @@ namespace Witcher.WF.Value
         /// <summary>
         /// 
         /// </summary>
+        internal static Structs.Size Size;
+
+        /// <summary>
+        /// 
+        /// </summary>
         internal static Structs.Data Data = new()
         {
             Location = EdgeLocationType.BotRight,

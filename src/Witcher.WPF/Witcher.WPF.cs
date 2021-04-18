@@ -180,11 +180,12 @@ namespace Witcher.WPF
             {
                 if (Property.FontControl(Data.Font) && Data.Time >= DefaultTime)
                 {
-                    if (Property.ActiveOpen <= 0 || (Property.ActiveOpen < MaxOpen && Values.Type == Data.Type && Values.Location == Data.Location && Values.Distance == Data.Distance))
+                    if (Property.ActiveOpen <= 0 || (Property.ActiveOpen < MaxOpen && Values.Type == Data.Type && Values.Location == Data.Location && Values.Distance == Data.Distance && Values.Size.Width == Data.Size.Width && Values.Size.Height == Data.Size.Height))
                     {
                         Values.Type = Data.Type;
                         Values.Location = Data.Location;
                         Values.Distance = Data.Distance;
+                        Values.Size = Data.Size;
 
                         switch (Data.Type)
                         {
