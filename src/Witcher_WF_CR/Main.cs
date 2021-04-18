@@ -153,6 +153,17 @@ namespace Witcher_WF_CR
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             Data.Type = (NotifyType)comboBox2.SelectedIndex;
+            
+            if (Data.Type == NotifyType.Standard)
+            {
+                maskedTextBox5.Text = "400";
+                maskedTextBox4.Text = "60";
+            }
+            else if (Data.Type == NotifyType.Beautiful)
+            {
+                maskedTextBox5.Text = "450";
+                maskedTextBox4.Text = "88";
+            }
         }
 
         private void Show_Click(object sender, EventArgs e)

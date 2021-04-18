@@ -16,7 +16,7 @@
 >
     <DockPanel Name="DOCK">
         <StackPanel Name="LEFT" Background="Crimson" Orientation="Horizontal" DockPanel.Dock="Left">
-            <Image x:Name="CLOSE" Width="26" Height="16" Source="/Witcher.WPF;component/Resources/Notify/Standard/Multiply.png" RenderOptions.BitmapScalingMode="Fant" Stretch="Uniform" Cursor="Hand" MouseEnter="CLOSE_MouseEnter" MouseLeave="CLOSE_MouseLeave" MouseLeftButtonUp="CLOSE_MouseLeftButtonUp"/>
+            <Image x:Name="CLOSE" Width="26" Height="16" Source="/Witcher.WPF;component/Resources/Notify/Shared/Multiply.png" RenderOptions.BitmapScalingMode="Fant" Stretch="Uniform" Cursor="Hand" MouseEnter="CLOSE_MouseEnter" MouseLeave="CLOSE_MouseLeave" MouseLeftButtonUp="CLOSE_MouseLeftButtonUp"/>
         </StackPanel>
         <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Border Name="TOP" DockPanel.Dock="Top" Height="58">
