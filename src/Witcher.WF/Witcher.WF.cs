@@ -4,6 +4,7 @@ using System;
 using System.Windows.Forms;
 using Witcher.Enum;
 using Witcher.Message;
+using Witcher.WF.Notify.Beautiful;
 using Witcher.WF.Notify.Manager;
 using Witcher.WF.Notify.Standard;
 using Witcher.WF.Struct;
@@ -176,7 +177,7 @@ namespace Witcher.WF
                                 Show(new WitcherStandardWF(Data));
                                 break;
                             case Enums.NotifyType.Beautiful:
-                                //Show(new WitcherBeautifulWF(Data));
+                                Show(new WitcherBeautifulWF(Data));
                                 break;
                         }
                     }

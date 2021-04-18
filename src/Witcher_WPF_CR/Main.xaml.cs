@@ -32,7 +32,7 @@ namespace Witcher_WPF_CR
             },
             Size = new() { Width = 400, Height = 60 },
             Pause = true,
-            Close = false,
+            Close = true,
             Top = true,
             Time = 5000
         };

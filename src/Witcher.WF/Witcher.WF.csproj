@@ -77,6 +77,9 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Notify\Beautiful\WF.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -89,10 +92,6 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Notify\Beautiful\" />
   </ItemGroup>
 
 </Project>

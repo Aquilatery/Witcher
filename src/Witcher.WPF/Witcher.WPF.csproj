@@ -78,15 +78,15 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Notify\Standard\Cancel.png" />
-    <Resource Include="Resources\Notify\Standard\Checkmark.png" />
-    <Resource Include="Resources\Notify\Standard\Error.png" />
-    <Resource Include="Resources\Notify\Standard\ExclamationMarkA.png" />
-    <Resource Include="Resources\Notify\Standard\ExclamationMarkB.png" />
-    <Resource Include="Resources\Notify\Standard\Importance.png" />
-    <Resource Include="Resources\Notify\Standard\Multiply.png" />
-    <Resource Include="Resources\Notify\Standard\Question.png" />
-    <Resource Include="Resources\Notify\Standard\Warning.png" />
+    <Resource Include="Resources\Notify\Beautiful\Cancel.png" />
+    <Resource Include="Resources\Notify\Beautiful\Checkmark.png" />
+    <Resource Include="Resources\Notify\Beautiful\Error.png" />
+    <Resource Include="Resources\Notify\Beautiful\ExclamationMarkA.png" />
+    <Resource Include="Resources\Notify\Beautiful\ExclamationMarkB.png" />
+    <Resource Include="Resources\Notify\Beautiful\Importance.png" />
+    <Resource Include="Resources\Notify\Beautiful\Question.png" />
+    <Resource Include="Resources\Notify\Beautiful\Warning.png" />
+    <Resource Include="Resources\Notify\Shared\Multiply.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -105,6 +105,7 @@ Changes are detailed at https://github.com/Soferity/Witcher/releases
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Resources\Notify\Standard\" />
     <Folder Include="Notify\Beautiful\" />
   </ItemGroup>
 
