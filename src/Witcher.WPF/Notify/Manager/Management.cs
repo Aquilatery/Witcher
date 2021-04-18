@@ -21,6 +21,7 @@ namespace Witcher.WPF.Notify.Manager
         public WitcherManagement()
         {
             InitializeComponent();
+            Text = ManagementName;
         }
 
         private void Control_Tick(object sender, EventArgs e)

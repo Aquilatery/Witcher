@@ -9,17 +9,22 @@
         /// <summary>
         /// 
         /// </summary>
-        internal static int Max = 5;
+        internal static int MaxOpen = 5;
 
         /// <summary>
         /// 
         /// </summary>
-        internal static int Time = 100;
+        internal static int DefaultTime = 100;
 
         /// <summary>
         /// 
         /// </summary>
-        internal static string NotifyName = "SWN";
+        internal static string ManagementName = "Witcher Management";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        internal static string NotifyName = "Witcher Notify-";
         #endregion
     }
 }

@@ -9,7 +9,7 @@ using Witcher.Value;
 //     Creator: Taiizor
 //     Website: www.Soferity.com
 //     Created: 12.Apr.2021
-//     Changed: 16.Apr.2021
+//     Changed: 18.Apr.2021
 //     Version: 1.0.0.3
 //
 // |---------DO-NOT-REMOVE---------|
@@ -35,14 +35,27 @@ namespace Witcher
             /// </summary>
             public static int MaxOpen
             {
-                get => Values.Max;
-                set => Values.Max = value;
+                get => Values.MaxOpen;
+                set => Values.MaxOpen = value;
             }
 
             /// <summary>
             /// 
             /// </summary>
-            public static int DefaultTime => Values.Time;
+            public static int DefaultTime
+            {
+                get => Values.DefaultTime;
+                internal set => Values.DefaultTime = value;
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public static string ManagementName
+            {
+                get => Values.ManagementName;
+                internal set => Values.ManagementName = value;
+            }
 
             /// <summary>
             /// 
