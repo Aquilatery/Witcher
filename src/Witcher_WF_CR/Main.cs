@@ -153,7 +153,7 @@ namespace Witcher_WF_CR
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             Data.Type = (NotifyType)comboBox2.SelectedIndex;
-            
+
             if (Data.Type == NotifyType.Standard)
             {
                 maskedTextBox5.Text = "400";

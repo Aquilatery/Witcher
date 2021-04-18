@@ -4,6 +4,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Witcher.Helper;
+using Witcher.WF.Properties;
 using Witcher.WF.Struct;
 using Witcher.WF.Value;
 using static Taskbar.Enum.Enums;
@@ -53,7 +54,7 @@ namespace Witcher.WF.Notify.Beautiful
             RIGHT.Visible = Local.Close;
             BOT.Visible = Local.Close;
 
-            if (Local.Theme == ThemeType.Dark || Local.Theme == ThemeType.Light)
+            if (Local.Theme is ThemeType.Dark or ThemeType.Light)
             {
                 if (Local.Theme == ThemeType.Dark)
                 {
@@ -72,15 +73,19 @@ namespace Witcher.WF.Notify.Beautiful
                 {
                     case AlertType.Success:
                         LBAR.BackColor = Color.SeaGreen;
+                        STATE.Image = Resources.Checkmark;
                         break;
                     case AlertType.Warning:
                         LBAR.BackColor = Color.FromArgb(255, 128, 0);
+                        STATE.Image = Resources.ExclamationMarkA;
                         break;
                     case AlertType.Error:
                         LBAR.BackColor = Color.Crimson;
+                        STATE.Image = Resources.Multiply;
                         break;
                     case AlertType.Info:
                         LBAR.BackColor = Color.Gray;
+                        STATE.Image = Resources.ExclamationMarkB;
                         break;
                 }
 
@@ -195,7 +200,7 @@ namespace Witcher.WF.Notify.Beautiful
                     if (Local.Distance > 0)
                     {
                         Local.Distance -= 2;
-                        if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.BotCenter || Local.Location == EdgeLocationType.BotLeft || Local.Location == EdgeLocationType.LeftCenter || Local.Location == EdgeLocationType.FullCenter)
+                        if (Local.Location is EdgeLocationType.BotRight or EdgeLocationType.BotCenter or EdgeLocationType.BotLeft or EdgeLocationType.LeftCenter or EdgeLocationType.FullCenter)
                         {
                             Location = new Point(Location.X, Location.Y + 2);
                         }

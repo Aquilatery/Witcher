@@ -66,7 +66,7 @@ namespace Witcher.WF.Notify.Manager
 
                 if (State)
                 {
-                    if (Values.Location == EdgeLocationType.BotRight || Values.Location == EdgeLocationType.BotCenter || Values.Location == EdgeLocationType.BotLeft || Values.Location == EdgeLocationType.LeftCenter || Values.Location == EdgeLocationType.FullCenter)
+                    if (Values.Location is EdgeLocationType.BotRight or EdgeLocationType.BotCenter or EdgeLocationType.BotLeft or EdgeLocationType.LeftCenter or EdgeLocationType.FullCenter)
                     {
                         Form.Location = new System.Drawing.Point(Form.Location.X, Form.Location.Y + Form.Height);
                     }

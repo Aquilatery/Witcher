@@ -47,7 +47,7 @@ namespace Witcher.WF.Notify.Standard
 
             PANEL.Visible = Local.Close;
 
-            if (Local.Theme == ThemeType.Dark || Local.Theme == ThemeType.Light)
+            if (Local.Theme is ThemeType.Dark or ThemeType.Light)
             {
                 if (Local.Theme == ThemeType.Dark)
                 {
@@ -190,7 +190,7 @@ namespace Witcher.WF.Notify.Standard
                     if (Local.Distance > 0)
                     {
                         Local.Distance -= 2;
-                        if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.BotCenter || Local.Location == EdgeLocationType.BotLeft || Local.Location == EdgeLocationType.LeftCenter || Local.Location == EdgeLocationType.FullCenter)
+                        if (Local.Location is EdgeLocationType.BotRight or EdgeLocationType.BotCenter or EdgeLocationType.BotLeft or EdgeLocationType.LeftCenter or EdgeLocationType.FullCenter)
                         {
                             Location = new Point(Location.X, Location.Y + 2);
                         }
@@ -210,7 +210,7 @@ namespace Witcher.WF.Notify.Standard
                     {
                         if (Local.Close)
                         {
-                            if (Local.Location == EdgeLocationType.BotRight || Local.Location == EdgeLocationType.TopRight || Local.Location == EdgeLocationType.RightCenter || Local.Location == EdgeLocationType.FullCenter)
+                            if (Local.Location is EdgeLocationType.BotRight or EdgeLocationType.TopRight or EdgeLocationType.RightCenter or EdgeLocationType.FullCenter)
                             {
                                 Value += PANEL.Width / (Local.Time / General.Interval);
 
