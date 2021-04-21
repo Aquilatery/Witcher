@@ -113,64 +113,57 @@ namespace Witcher.WPF.Notify.Standard
             Left = Location.X;
             Top = Location.Y;
 
-            if (Local.Location == EdgeLocationType.BotRight)
+            switch (Local.Location)
             {
-                Left += ActiveOpen * Height;
-                Top -= Local.Distance;
-                DockPanel.SetDock(LEFT, Dock.Right);
-                BAR.HorizontalAlignment = HorizontalAlignment.Right;
-            }
-            else if (Local.Location == EdgeLocationType.BotCenter)
-            {
-                Top -= Local.Distance;
-            }
-            else if (Local.Location == EdgeLocationType.BotLeft)
-            {
-                Left -= ActiveOpen * Height;
-                Top -= Local.Distance;
-            }
-            else if (Local.Location == EdgeLocationType.TopRight)
-            {
-                Left += ActiveOpen * Height;
-                Top += Local.Distance;
-                DockPanel.SetDock(TOP, Dock.Bottom);
-                DockPanel.SetDock(LEFT, Dock.Right);
-                BAR.HorizontalAlignment = HorizontalAlignment.Right;
-            }
-            else if (Local.Location == EdgeLocationType.TopCenter)
-            {
-                Top += Local.Distance;
-                DockPanel.SetDock(TOP, Dock.Bottom);
-            }
-            else if (Local.Location == EdgeLocationType.TopLeft)
-            {
-                Left -= ActiveOpen * Height;
-                Top += Local.Distance;
-                DockPanel.SetDock(TOP, Dock.Bottom);
-            }
-            else if (Local.Location == EdgeLocationType.LeftCenter)
-            {
-                Left -= ActiveOpen * Height;
-                Top -= ActiveOpen * Height;
-                DockPanel.SetDock(TOP, Dock.Bottom);
-            }
-            else if (Local.Location == EdgeLocationType.RightCenter)
-            {
-                Left += ActiveOpen * Height;
-                Top += ActiveOpen * Height;
-                DockPanel.SetDock(LEFT, Dock.Right);
-                BAR.HorizontalAlignment = HorizontalAlignment.Right;
-            }
-            else if (Local.Location == EdgeLocationType.CalcCenter)
-            {
-                Top += ActiveOpen * Height;
-            }
-            else
-            {
-                Top -= ActiveOpen * Height;
-                DockPanel.SetDock(TOP, Dock.Bottom);
-                DockPanel.SetDock(LEFT, Dock.Right);
-                BAR.HorizontalAlignment = HorizontalAlignment.Right;
+                case EdgeLocationType.BotRight:
+                    Left += ActiveOpen * Height;
+                    Top -= Local.Distance;
+                    DockPanel.SetDock(LEFT, Dock.Right);
+                    BAR.HorizontalAlignment = HorizontalAlignment.Right;
+                    break;
+                case EdgeLocationType.BotCenter:
+                    Top -= Local.Distance;
+                    break;
+                case EdgeLocationType.BotLeft:
+                    Left -= ActiveOpen * Height;
+                    Top -= Local.Distance;
+                    break;
+                case EdgeLocationType.TopRight:
+                    Left += ActiveOpen * Height;
+                    Top += Local.Distance;
+                    DockPanel.SetDock(TOP, Dock.Bottom);
+                    DockPanel.SetDock(LEFT, Dock.Right);
+                    BAR.HorizontalAlignment = HorizontalAlignment.Right;
+                    break;
+                case EdgeLocationType.TopCenter:
+                    Top += Local.Distance;
+                    DockPanel.SetDock(TOP, Dock.Bottom);
+                    break;
+                case EdgeLocationType.TopLeft:
+                    Left -= ActiveOpen * Height;
+                    Top += Local.Distance;
+                    DockPanel.SetDock(TOP, Dock.Bottom);
+                    break;
+                case EdgeLocationType.LeftCenter:
+                    Left -= ActiveOpen * Height;
+                    Top -= ActiveOpen * Height;
+                    DockPanel.SetDock(TOP, Dock.Bottom);
+                    break;
+                case EdgeLocationType.RightCenter:
+                    Left += ActiveOpen * Height;
+                    Top += ActiveOpen * Height;
+                    DockPanel.SetDock(LEFT, Dock.Right);
+                    BAR.HorizontalAlignment = HorizontalAlignment.Right;
+                    break;
+                case EdgeLocationType.CalcCenter:
+                    Top += ActiveOpen * Height;
+                    break;
+                default:
+                    Top -= ActiveOpen * Height;
+                    DockPanel.SetDock(TOP, Dock.Bottom);
+                    DockPanel.SetDock(LEFT, Dock.Right);
+                    BAR.HorizontalAlignment = HorizontalAlignment.Right;
+                    break;
             }
         }
 

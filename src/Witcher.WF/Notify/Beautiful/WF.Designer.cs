@@ -164,7 +164,6 @@
             // 
             // TBAR
             // 
-            this.TBAR.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TBAR.BackColor = System.Drawing.Color.Crimson;
             this.TBAR.Location = new System.Drawing.Point(0, 0);
             this.TBAR.Margin = new System.Windows.Forms.Padding(0);
@@ -185,7 +184,7 @@
             // 
             // BBAR
             // 
-            this.BBAR.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BBAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BBAR.BackColor = System.Drawing.Color.Crimson;
             this.BBAR.Location = new System.Drawing.Point(446, 0);
             this.BBAR.Margin = new System.Windows.Forms.Padding(0);

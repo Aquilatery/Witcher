@@ -91,54 +91,47 @@ namespace Witcher.WF.Notify.Standard
         {
             Location = SingleLocation(Local.Location, Width, Height, (ActiveOpen * Height) + Local.Distance);
 
-            if (Local.Location == EdgeLocationType.BotRight)
+            switch (Local.Location)
             {
-                Location = new Point(Location.X + (ActiveOpen * Height), Location.Y - Local.Distance);
-                LEFT.Dock = DockStyle.Right;
-            }
-            else if (Local.Location == EdgeLocationType.BotCenter)
-            {
-                Location = new Point(Location.X, Location.Y - Local.Distance);
-            }
-            else if (Local.Location == EdgeLocationType.BotLeft)
-            {
-                Location = new Point(Location.X - (ActiveOpen * Height), Location.Y - Local.Distance);
-            }
-            else if (Local.Location == EdgeLocationType.TopRight)
-            {
-                Location = new Point(Location.X + (ActiveOpen * Height), Location.Y + Local.Distance);
-                PANEL.Dock = DockStyle.Top;
-                LEFT.Dock = DockStyle.Right;
-            }
-            else if (Local.Location == EdgeLocationType.TopCenter)
-            {
-                Location = new Point(Location.X, Location.Y + Local.Distance);
-                PANEL.Dock = DockStyle.Top;
-            }
-            else if (Local.Location == EdgeLocationType.TopLeft)
-            {
-                Location = new Point(Location.X - (ActiveOpen * Height), Location.Y + Local.Distance);
-                PANEL.Dock = DockStyle.Top;
-            }
-            else if (Local.Location == EdgeLocationType.LeftCenter)
-            {
-                Location = new Point(Location.X - (ActiveOpen * Height), Location.Y - (ActiveOpen * Height));
-                PANEL.Dock = DockStyle.Top;
-            }
-            else if (Local.Location == EdgeLocationType.RightCenter)
-            {
-                Location = new Point(Location.X + (ActiveOpen * Height), Location.Y + (ActiveOpen * Height));
-                LEFT.Dock = DockStyle.Right;
-            }
-            else if (Local.Location == EdgeLocationType.CalcCenter)
-            {
-                Location = new Point(Location.X, Location.Y + (ActiveOpen * Height));
-            }
-            else
-            {
-                Location = new Point(Location.X, Location.Y - (ActiveOpen * Height));
-                PANEL.Dock = DockStyle.Top;
-                LEFT.Dock = DockStyle.Right;
+                case EdgeLocationType.BotRight:
+                    Location = new Point(Location.X + ActiveOpen * Height, Location.Y - Local.Distance);
+                    LEFT.Dock = DockStyle.Right;
+                    break;
+                case EdgeLocationType.BotCenter:
+                    Location = new Point(Location.X, Location.Y - Local.Distance);
+                    break;
+                case EdgeLocationType.BotLeft:
+                    Location = new Point(Location.X - ActiveOpen * Height, Location.Y - Local.Distance);
+                    break;
+                case EdgeLocationType.TopRight:
+                    Location = new Point(Location.X + ActiveOpen * Height, Location.Y + Local.Distance);
+                    PANEL.Dock = DockStyle.Top;
+                    LEFT.Dock = DockStyle.Right;
+                    break;
+                case EdgeLocationType.TopCenter:
+                    Location = new Point(Location.X, Location.Y + Local.Distance);
+                    PANEL.Dock = DockStyle.Top;
+                    break;
+                case EdgeLocationType.TopLeft:
+                    Location = new Point(Location.X - ActiveOpen * Height, Location.Y + Local.Distance);
+                    PANEL.Dock = DockStyle.Top;
+                    break;
+                case EdgeLocationType.LeftCenter:
+                    Location = new Point(Location.X - ActiveOpen * Height, Location.Y - ActiveOpen * Height);
+                    PANEL.Dock = DockStyle.Top;
+                    break;
+                case EdgeLocationType.RightCenter:
+                    Location = new Point(Location.X + ActiveOpen * Height, Location.Y + ActiveOpen * Height);
+                    LEFT.Dock = DockStyle.Right;
+                    break;
+                case EdgeLocationType.CalcCenter:
+                    Location = new Point(Location.X, Location.Y + ActiveOpen * Height);
+                    break;
+                default:
+                    Location = new Point(Location.X, Location.Y - ActiveOpen * Height);
+                    PANEL.Dock = DockStyle.Top;
+                    LEFT.Dock = DockStyle.Right;
+                    break;
             }
         }
 
