@@ -9,7 +9,7 @@ using Witcher.Value;
 //     Creator: Taiizor
 //     Website: www.Soferity.com
 //     Created: 12.Apr.2021
-//     Changed: 18.Apr.2021
+//     Changed: 21.Apr.2021
 //     Version: 1.0.0.3
 //
 // |---------DO-NOT-REMOVE---------|
