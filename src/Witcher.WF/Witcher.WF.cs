@@ -18,8 +18,8 @@ using static Witcher.Witcher.Property;
 //     Creator: Taiizor
 //     Website: www.Soferity.com
 //     Created: 12.Apr.2021
-//     Changed: 25.Dec.2021
-//     Version: 1.0.0.3
+//     Changed: 26.Dec.2021
+//     Version: 1.0.0.4
 //
 // |---------DO-NOT-REMOVE---------|
 
