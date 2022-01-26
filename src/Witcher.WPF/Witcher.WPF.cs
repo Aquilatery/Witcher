@@ -17,7 +17,7 @@ using static Witcher.Witcher.Property;
 //     Creator: Taiizor
 //     Website: www.Soferity.com
 //     Created: 12.Apr.2021
-//     Changed: 26.Dec.2021
+//     Changed: 26.Jan.2022
 //     Version: 1.0.0.4
 //
 // |---------DO-NOT-REMOVE---------|

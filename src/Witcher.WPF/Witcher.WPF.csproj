@@ -25,7 +25,7 @@
     <PackageReleaseNotes>Major changes have been made.
 Changes are detailed at https://github.com/Soferity/Witcher/releases
     </PackageReleaseNotes>
-    <PackageTags>Witcher Taiizor Soferity C# CSharp VBC VB VisualBasic DotNET .NET NET WPF Presentation Foundation Notify Notification Manager Windows</PackageTags>
+    <PackageTags>Witcher Taiizor Soferity Vegalya C# CSharp VBC VB VisualBasic DotNET .NET NET WPF Presentation Foundation Notify Notification Manager Windows</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <!--<DocumentationFile>..\$(PackageId)\bin$(OutputPath)\$(Configuration)\$(TargetFramework)\$(PackageId).xml</DocumentationFile>-->
     <PackageProjectUrl>https://github.com/Soferity/Witcher</PackageProjectUrl>
