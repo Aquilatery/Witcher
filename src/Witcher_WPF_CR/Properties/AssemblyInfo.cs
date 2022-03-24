@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Soferity LLC")]
 [assembly: AssemblyProduct("Witcher WPF CR")]
-[assembly: AssemblyCopyright("Copyright © 2021 Soferity LLC")]
+[assembly: AssemblyCopyright("Copyright © 2022 Soferity LLC")]
 [assembly: AssemblyTrademark("Witcher")]
 [assembly: AssemblyCulture("")]
 
