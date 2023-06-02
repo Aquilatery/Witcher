@@ -27,7 +27,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 			</sub>
 		</a>
 		<br/>
-		<a href="https://github.com/Soferity/Witcher/commits?author=Taiizor" title="Code">💻</a>
+		<a href="https://github.com/Aquilatery/Witcher/commits?author=Taiizor" title="Code">💻</a>
 		<a href="https://www.vegalya.com" title="Ideas & Planning, Feedback">🤔</a>
 	</td>
   </tr>
@@ -65,16 +65,16 @@ Step 2：Enjoy manages
 
 ### Witcher WF CR
 
-[![WitcherWFCR](.screenshots/Witcher_WF_CR.png)](https://github.com/Aquilatery/Witcher/tree/develop/src/Witcher_WF_CR "WitcherWFCR")
+[![WitcherWFCR](.screenshots/Witcher_WF_CR.png)](src/Witcher_WF_CR "WitcherWFCR")
 
 #### Show
 
-[![WitcherWFCRShow](.screenshots/Witcher_WF_CR.gif)](https://github.com/Aquilatery/Witcher/tree/develop/src/Witcher_WF_CR "WitcherWFCRShow")
+[![WitcherWFCRShow](.screenshots/Witcher_WF_CR.gif)](src/Witcher_WF_CR "WitcherWFCRShow")
 
 ### Witcher WPF CR
 
-[![WitcherWPFCR](.screenshots/Witcher_WPF_CR.png)](https://github.com/Aquilatery/Witcher/tree/develop/src/Witcher_WPF_CR "WitcherWPFCR")
+[![WitcherWPFCR](.screenshots/Witcher_WPF_CR.png)](src/Witcher_WPF_CR "WitcherWPFCR")
 
 #### Show
 
-[![WitcherWPFCRShow](.screenshots/Witcher_WPF_CR.gif)](https://github.com/Aquilatery/Witcher/tree/develop/src/Witcher_WPF_CR "WitcherWPFCRShow")
+[![WitcherWPFCRShow](.screenshots/Witcher_WPF_CR.gif)](src/Witcher_WPF_CR "WitcherWPFCRShow")

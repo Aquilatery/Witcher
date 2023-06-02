@@ -27,7 +27,7 @@ Bu harika insanlara teşekkürler ([emoji anahtarı](https://allcontributors.org
 			</sub>
 		</a>
 		<br/>
-		<a href="https://github.com/Soferity/Witcher/commits?author=Taiizor" title="Kodlama">💻</a>
+		<a href="https://github.com/Aquilatery/Witcher/commits?author=Taiizor" title="Kodlama">💻</a>
 		<a href="https://www.vegalya.com" title="Fikirler & Planlama, Geri Bildirim">🤔</a>
 	</td>
   </tr>
