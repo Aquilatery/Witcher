@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/Soferity/Witcher/develop/.images/Logo.png)
+![Logo](.images/Logo.png)
 
 ![Dot-Net-Framework-Version](https://img.shields.io/badge/.NET%20Framework-%3E%3D4.8-blue)
 ![Dot-Net-Core-Version](https://img.shields.io/badge/.NET%20Core-%3E%3D3.1-blue)
@@ -28,7 +28,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 		</a>
 		<br/>
 		<a href="https://github.com/Soferity/Witcher/commits?author=Taiizor" title="Code">💻</a>
-		<a href="https://www.taiizor.com" title="Ideas & Planning, Feedback">🤔</a>
+		<a href="https://www.vegalya.com" title="Ideas & Planning, Feedback">🤔</a>
 	</td>
   </tr>
 </table>
@@ -65,16 +65,16 @@ Step 2：Enjoy manages
 
 ### Witcher WF CR
 
-[![WitcherWFCR](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/Witcher_WF_CR.png)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_WF_CR "WitcherWFCR")
+[![WitcherWFCR](.screenshots/Witcher_WF_CR.png)](https://github.com/Aquilatery/Witcher/tree/develop/src/Witcher_WF_CR "WitcherWFCR")
 
 #### Show
 
-[![WitcherWFCRShow](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/Witcher_WF_CR.gif)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_WF_CR "WitcherWFCRShow")
+[![WitcherWFCRShow](.screenshots/Witcher_WF_CR.gif)](https://github.com/Aquilatery/Witcher/tree/develop/src/Witcher_WF_CR "WitcherWFCRShow")
 
 ### Witcher WPF CR
 
-[![WitcherWPFCR](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/Witcher_WPF_CR.png)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_WPF_CR "WitcherWPFCR")
+[![WitcherWPFCR](.screenshots/Witcher_WPF_CR.png)](https://github.com/Aquilatery/Witcher/tree/develop/src/Witcher_WPF_CR "WitcherWPFCR")
 
 #### Show
 
-[![WitcherWPFCRShow](https://raw.githubusercontent.com/Soferity/Witcher/develop/.screenshots/Witcher_WPF_CR.gif)](https://github.com/Soferity/Witcher/tree/develop/src/Witcher_WPF_CR "WitcherWPFCRShow")
+[![WitcherWPFCRShow](.screenshots/Witcher_WPF_CR.gif)](https://github.com/Aquilatery/Witcher/tree/develop/src/Witcher_WPF_CR "WitcherWPFCRShow")
