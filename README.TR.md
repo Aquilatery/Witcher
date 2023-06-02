@@ -65,16 +65,16 @@ Adım 2：Yönetmelerin tadını çıkarın
 
 ### Witcher WF CR
 
-[![WitcherWFCR](.screenshots/Witcher_WF_CR.png)](https://github.com/Aquilatery/Witcher/tree/develop/src/Witcher_WF_CR "WitcherWFCR")
+[![WitcherWFCR](.screenshots/Witcher_WF_CR.png)](src/Witcher_WF_CR "WitcherWFCR")
 
 #### Gösterim
 
-[![WitcherWFCRShow](.screenshots/Witcher_WF_CR.gif)](https://github.com/Aquilatery/Witcher/tree/develop/src/Witcher_WF_CR "WitcherWFCRShow")
+[![WitcherWFCRShow](.screenshots/Witcher_WF_CR.gif)](src/Witcher_WF_CR "WitcherWFCRShow")
 
 ### Witcher WPF CR
 
-[![WitcherWPFCR](.screenshots/Witcher_WPF_CR.png)](https://github.com/Aquilatery/Witcher/tree/develop/src/Witcher_WPF_CR "WitcherWPFCR")
+[![WitcherWPFCR](.screenshots/Witcher_WPF_CR.png)](src/Witcher_WPF_CR "WitcherWPFCR")
 
 #### Gösterim
 
-[![WitcherWPFCRShow](.screenshots/Witcher_WPF_CR.gif)](https://github.com/Aquilatery/Witcher/tree/develop/src/Witcher_WPF_CR "WitcherWPFCRShow")
+[![WitcherWPFCRShow](.screenshots/Witcher_WPF_CR.gif)](src/Witcher_WPF_CR "WitcherWPFCRShow")
